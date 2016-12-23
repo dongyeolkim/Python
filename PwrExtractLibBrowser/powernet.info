@@ -1,0 +1,12 @@
+power-net 
+	metal width
+	bottlenec
+	numbers of via
+
+power-mesh
+	m4-m3 by via3
+	m3-m2 by via2
+	m2-m1 by via1
+	m4-m2 by via3 & via2
+	m3-m1 by via2 & via1
+OR M1   by hasj

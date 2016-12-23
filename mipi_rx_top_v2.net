@@ -1,0 +1,2203 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  PI4008K_AP
+* Top Cell Name: mipi_rx_top_v2
+* View Name:     schematic
+* Netlisted on:  Aug 12 10:05:06 2016
+************************************************************************
+
+*.INCLUDE  /rnda2/Project/DesignKit/UMC55nm_LP_LATEST/RuleDecks/LVS/CDL_include_file.cir
+*.BIPOLAR
+*.RESI = 2000 
+*.RESVAL
+*.CAPVAL
+*.DIOPERI
+*.DIOAREA
+*.EQUATION
+*.SCALE METER
+*.MEGA
+*.PARAM
+
+
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    lsft_mipi
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT lsft_mipi gnda_in in out outb vdda_in vddd_in
+*.PININFO in:I out:O outb:O gnda_in:B vdda_in:B vddd_in:B
+MPM4 inb_b1 in_b vdda_in vdda_in P_25OD33_LP W=500n L=400n M=1
+MPM5 in_b1 inb_b vdda_in vdda_in P_25OD33_LP W=500n L=400n M=1
+MPM9 inb_b net056 inb_b1 vdda_in P_25OD33_LP W=500n L=400n M=1
+MPM6 outb inb_b vdda_in vdda_in P_25OD33_LP W=1.5u L=500n M=1
+MPM7 out outb vdda_in vdda_in P_25OD33_LP W=1.5u L=500n M=1
+MPM8 in_b net053 in_b1 vdda_in P_25OD33_LP W=500n L=400n M=1
+RR1 in net053 750.814 $SUB=vdda_in $[RNPPO_LP] $W=2u $L=2u M=1
+RR0 net42 net056 750.814 $SUB=vdda_in $[RNPPO_LP] $W=2u $L=2u M=1
+MNM1 in_b net053 gnda_in gnda_in N_25OD33_LP W=3u L=500n M=1
+MNM2 inb_b net056 gnda_in gnda_in N_25OD33_LP W=3u L=500n M=1
+MNM3 outb inb_b gnda_in gnda_in N_25OD33_LP W=500n L=500n M=1
+MNM8 net056 gnda_in gnda_in gnda_in N_25OD33_LP W=4u L=500n M=1
+MNM4 out outb gnda_in gnda_in N_25OD33_LP W=500n L=500n M=1
+MNM7 net053 gnda_in gnda_in gnda_in N_25OD33_LP W=4u L=500n M=1
+MNM5 net42 net053 gnda_in gnda_in N_12_LPRVT W=1u L=60n M=1
+MPM10 net42 net053 vddd_in vddd_in P_12_LPRVT W=3u L=60n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_lvls
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_lvls mipi_clk_pd_O mipi_clk_pd_buf mipi_cterm_en_O 
++ mipi_cterm_en_buf mipi_data_pd_O<0> mipi_data_pd_O<1> mipi_data_pd_O<2> 
++ mipi_data_pd_O<3> mipi_data_pd_buf<0> mipi_data_pd_buf<1> 
++ mipi_data_pd_buf<2> mipi_data_pd_buf<3> mipi_dterm_en_O<3> 
++ mipi_dterm_en_O<2> mipi_dterm_en_O<1> mipi_dterm_en_O<0> 
++ mipi_dterm_en_buf<3> mipi_dterm_en_buf<2> mipi_dterm_en_buf<1> 
++ mipi_dterm_en_buf<0> mipi_ref_pd_O mipi_ref_pdb_buf vddd vddio vssd
+*.PININFO mipi_clk_pd_O:I mipi_cterm_en_O:I mipi_data_pd_O<0>:I 
+*.PININFO mipi_data_pd_O<1>:I mipi_data_pd_O<2>:I mipi_data_pd_O<3>:I 
+*.PININFO mipi_dterm_en_O<3>:I mipi_dterm_en_O<2>:I mipi_dterm_en_O<1>:I 
+*.PININFO mipi_dterm_en_O<0>:I mipi_ref_pd_O:I mipi_clk_pd_buf:O 
+*.PININFO mipi_cterm_en_buf:O mipi_data_pd_buf<0>:O mipi_data_pd_buf<1>:O 
+*.PININFO mipi_data_pd_buf<2>:O mipi_data_pd_buf<3>:O mipi_dterm_en_buf<3>:O 
+*.PININFO mipi_dterm_en_buf<2>:O mipi_dterm_en_buf<1>:O mipi_dterm_en_buf<0>:O 
+*.PININFO mipi_ref_pdb_buf:O vddd:B vddio:B vssd:B
+XI15<3> vssd mipi_dterm_en_O<3> mipi_dterm_en_buf<3> net025<0> vddio vddd / 
++ lsft_mipi
+XI15<2> vssd mipi_dterm_en_O<2> mipi_dterm_en_buf<2> net025<1> vddio vddd / 
++ lsft_mipi
+XI15<1> vssd mipi_dterm_en_O<1> mipi_dterm_en_buf<1> net025<2> vddio vddd / 
++ lsft_mipi
+XI15<0> vssd mipi_dterm_en_O<0> mipi_dterm_en_buf<0> net025<3> vddio vddd / 
++ lsft_mipi
+XI13 vssd mipi_cterm_en_O mipi_cterm_en_buf net027 vddio vddd / lsft_mipi
+XI11 vssd mipi_ref_pd_O net020 mipi_ref_pdb_buf vddio vddd / lsft_mipi
+XI7 vssd mipi_data_pd_O<2> mipi_data_pd_buf<2> net018 vddio vddd / lsft_mipi
+XI5 vssd mipi_data_pd_O<3> mipi_data_pd_buf<3> net016 vddio vddd / lsft_mipi
+XI3 vssd mipi_data_pd_O<1> mipi_data_pd_buf<1> net16 vddio vddd / lsft_mipi
+XI1 vssd mipi_data_pd_O<0> mipi_data_pd_buf<0> net18 vddio vddd / lsft_mipi
+XI82 vssd mipi_clk_pd_O mipi_clk_pd_buf net17 vddio vddd / lsft_mipi
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_rx_inv2x
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_rx_inv2x in out vddd vssd
+*.PININFO in:I out:O vddd:B vssd:B
+MNM0 out in vssd vssd N_12_LPRVT W=300n L=60n M=1
+MPM0 out in vddd vddd P_12_LPRVT W=900n L=60n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_ref_amp_v2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_ref_amp_v2 inn inp out stdby12 stdby12b vddd vp1 vssd
+*.PININFO inn:I inp:I stdby12:I stdby12b:I vp1:I out:O vddd:B vssd:B
+MNM1 out net77 vssd vssd N_12_LPRVT W=1u L=500n M=1
+MNM2 net77 net77 vssd vssd N_12_LPRVT W=1u L=500n M=1
+MNM0 net0344 net0344 vssd vssd N_12_LPRVT W=1u L=500n M=1
+MNM3 net0342 net0344 vssd vssd N_12_LPRVT W=1u L=500n M=1
+MNM6 net0344 stdby12 vssd vssd N_12_LPRVT W=300n L=200n M=1
+MNM4 net77 stdby12 vssd vssd N_12_LPRVT W=300n L=200n M=1
+MPM2 vcm vp1 vddd vddd P_12_LPRVT W=6u L=2u M=4
+MPM0 out net0342 vddd vddd P_12_LPRVT W=6u L=500n M=1
+MPM1 net0344 inn vcm vcm P_12_LPRVT W=24u L=500n M=1
+MPM3 net0342 net0342 vddd vddd P_12_LPRVT W=6u L=500n M=1
+MPM4 net77 inp vcm vcm P_12_LPRVT W=24u L=500n M=1
+MPM5 net0342 stdby12b vddd vddd P_12_LPRVT W=900n L=200n M=1
+MPM6 out stdby12b vddd vddd P_12_LPRVT W=500n L=200n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_ref_amp_nmos
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_ref_amp_nmos inn inp out stdby12b vddd vn1 vssd
+*.PININFO inn:I inp:I stdby12b:I vn1:I out:O vddd:B vssd:B
+MNM0 mirr inp net16 vssd N_12_LPRVT W=8u L=500n M=1
+MNM1 out inn net16 vssd N_12_LPRVT W=8u L=500n M=1
+MNM2 net16 vn1 vssd vssd N_12_LPRVT W=4u L=2u M=1
+MPM2 mirr mirr vddd vddd P_12_LPRVT W=12u L=500n M=1
+MPM0 out mirr vddd vddd P_12_LPRVT W=12u L=500n M=1
+MPM1 mirr stdby12b vddd vddd P_12_LPRVT W=6u L=500n M=1
+MPM3 out stdby12b vddd vddd P_12_LPRVT W=6u L=500n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_rx_nand2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_rx_nand2 a b out vddd vssd
+*.PININFO a:I b:I out:O vddd:B vssd:B
+MNM0 net062 b vssd vssd N_12_LPRVT W=500n L=60n M=1
+MNM1 out a net062 vssd N_12_LPRVT W=500n L=60n M=1
+MPM0 out a vddd vddd P_12_LPRVT W=900n L=60n M=1
+MPM1 out b vddd vddd P_12_LPRVT W=900n L=60n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_rx_dec2b
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_rx_dec2b b<1> b<0> o<3> o<2> o<1> o<0> ob<3> ob<2> ob<1> ob<0> 
++ vddd vssd
+*.PININFO b<1>:I b<0>:I o<3>:O o<2>:O o<1>:O o<0>:O ob<3>:O ob<2>:O ob<1>:O 
+*.PININFO ob<0>:O vddd:B vssd:B
+XI1 net58 o<0> vddd vssd / mipi_rx_inv2x
+XI28 o<2> ob<2> vddd vssd / mipi_rx_inv2x
+XI26 net0164 o<3> vddd vssd / mipi_rx_inv2x
+XI9 b<0> b0b vddd vssd / mipi_rx_inv2x
+XI10 b0b b0 vddd vssd / mipi_rx_inv2x
+XI11 o<0> ob<0> vddd vssd / mipi_rx_inv2x
+XI16 b<1> b1b vddd vssd / mipi_rx_inv2x
+XI15 b1b b1 vddd vssd / mipi_rx_inv2x
+XI23 net0171 o<1> vddd vssd / mipi_rx_inv2x
+XI22 o<1> ob<1> vddd vssd / mipi_rx_inv2x
+XI27 o<3> ob<3> vddd vssd / mipi_rx_inv2x
+XI29 net0157 o<2> vddd vssd / mipi_rx_inv2x
+XI0 b0b b1b net58 vddd vssd / mipi_rx_nand2
+XI25 b0b b1 net0157 vddd vssd / mipi_rx_nand2
+XI24 b0 b1 net0164 vddd vssd / mipi_rx_nand2
+XI21 b0 b1b net0171 vddd vssd / mipi_rx_nand2
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_rx_lpth
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_rx_lpth v06 vddd vhigh vhtrim<1> vhtrim<0> vlow vltrim<1> 
++ vltrim<0> vn1 vp1 vssd stdby stdbyb
+*.PININFO stdby:I stdbyb:I v06:I vhtrim<1>:I vhtrim<0>:I vltrim<1>:I 
+*.PININFO vltrim<0>:I vn1:I vp1:I vhigh:O vlow:O vddd:B vssd:B
+MNM11 vssd v06 vssd vssd N_12_LPRVT W=6u L=6u M=14
+MNM7 vssd ampout vssd vssd N_12_LPRVT W=6u L=6u M=10
+MNM8 vbot stdbyb vssd vssd N_12_LPRVT W=5u L=300n M=1
+MNM1<4> vref<46> vh<3> net70 vssd N_12_LPRVT W=6u L=300n M=1
+MNM1<3> vref<45> vh<2> net70 vssd N_12_LPRVT W=6u L=300n M=1
+MNM1<2> vref<44> vh<1> net70 vssd N_12_LPRVT W=6u L=300n M=1
+MNM1<1> vref<43> vh<0> net70 vssd N_12_LPRVT W=6u L=300n M=1
+MNM13 vssd vhigh vssd vssd N_12_LPRVT W=6u L=6u M=12
+MNM2<4> vref<30> vl<3> net69 vssd N_12_LPRVT W=6u L=300n M=1
+MNM2<3> vref<29> vl<2> net69 vssd N_12_LPRVT W=6u L=300n M=1
+MNM2<2> vref<28> vl<1> net69 vssd N_12_LPRVT W=6u L=300n M=1
+MNM2<1> vref<27> vl<0> net69 vssd N_12_LPRVT W=6u L=300n M=1
+MNM0 vssd vlow vssd vssd N_12_LPRVT W=6u L=6u M=12
+XI2 vref<30> v06 ampout stdby stdbyb vddd vp1 vssd / mipi_ref_amp_v2
+XI8 vlow net69 vlow stdby stdbyb vddd vp1 vssd / mipi_ref_amp_v2
+MPM15 vssd stdby vbot vddd P_12_LPRVT W=5u L=300n M=1
+MPM12<4> vref<46> vhb<3> net70 vddd P_12_LPRVT W=2u L=100n M=1
+MPM12<3> vref<45> vhb<2> net70 vddd P_12_LPRVT W=2u L=100n M=1
+MPM12<2> vref<44> vhb<1> net70 vddd P_12_LPRVT W=2u L=100n M=1
+MPM12<1> vref<43> vhb<0> net70 vddd P_12_LPRVT W=2u L=100n M=1
+MPM13<4> vref<30> vlb<3> net69 vddd P_12_LPRVT W=2u L=100n M=1
+MPM13<3> vref<29> vlb<2> net69 vddd P_12_LPRVT W=2u L=100n M=1
+MPM13<2> vref<28> vlb<1> net69 vddd P_12_LPRVT W=2u L=100n M=1
+MPM13<1> vref<27> vlb<0> net69 vddd P_12_LPRVT W=2u L=100n M=1
+XI9 vhigh net70 vhigh stdbyb vddd vn1 vssd / mipi_ref_amp_nmos
+RR0<1> vref<1> vbot 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<2> vref<2> vref<1> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<3> vref<3> vref<2> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<4> vref<4> vref<3> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<5> vref<5> vref<4> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<6> vref<6> vref<5> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<7> vref<7> vref<6> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<8> vref<8> vref<7> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<9> vref<9> vref<8> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<10> vref<10> vref<9> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<11> vref<11> vref<10> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<12> vref<12> vref<11> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<13> vref<13> vref<12> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<14> vref<14> vref<13> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<15> vref<15> vref<14> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<16> vref<16> vref<15> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<17> vref<17> vref<16> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<18> vref<18> vref<17> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<19> vref<19> vref<18> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<20> vref<20> vref<19> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<21> vref<21> vref<20> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<22> vref<22> vref<21> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<23> vref<23> vref<22> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<24> vref<24> vref<23> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<25> vref<25> vref<24> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<26> vref<26> vref<25> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<27> vref<27> vref<26> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<28> vref<28> vref<27> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<29> vref<29> vref<28> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<30> vref<30> vref<29> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<31> vref<31> vref<30> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<32> vref<32> vref<31> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<33> vref<33> vref<32> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<34> vref<34> vref<33> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<35> vref<35> vref<34> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<36> vref<36> vref<35> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<37> vref<37> vref<36> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<38> vref<38> vref<37> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<39> vref<39> vref<38> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<40> vref<40> vref<39> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<41> vref<41> vref<40> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<42> vref<42> vref<41> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<43> vref<43> vref<42> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<44> vref<44> vref<43> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<45> vref<45> vref<44> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+RR0<46> vref<46> vref<45> 1.48254K $SUB=vddd $[RNPPO_LP] $W=2u $L=4u M=1
+XI3 vltrim<1> vltrim<0> vl<3> vl<2> vl<1> vl<0> vlb<3> vlb<2> vlb<1> vlb<0> 
++ vddd vssd / mipi_rx_dec2b
+XI28 vhtrim<1> vhtrim<0> vh<3> vh<2> vh<1> vh<0> vhb<3> vhb<2> vhb<1> vhb<0> 
++ vddd vssd / mipi_rx_dec2b
+MNM6 vddd ampout vref<46> vssd N_25OD33_LPNVT W=6u L=2u M=4
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    TIE_HIGH_12
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT TIE_HIGH_12 VDDD VSSD tie_high
+*.PININFO tie_high:O VDDD:B VSSD:B
+MNM0 net7 net7 VSSD VSSD N_12_LPRVT W=500n L=60n M=1
+MPM0 tie_high net7 VDDD VDDD P_12_LPRVT W=1u L=60n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    TIE_LOW_12
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT TIE_LOW_12 VDDD VSSD tie_low
+*.PININFO tie_low:O VDDD:B VSSD:B
+MNM0 tie_low net7 VSSD VSSD N_12_LPRVT W=500n L=60n M=1
+MPM0 net7 net7 VDDD VDDD P_12_LPRVT W=1u L=60n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_bias_v2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_bias_v2 i10u stdby stdbyb vddd vp1 vssd
+*.PININFO i10u:I stdby:I stdbyb:I vp1:O vddd:B vssd:B
+MNM18 i10u stdbyb i10u vssd N_12_LPRVT W=2u L=200n M=1
+MNM20 vp1 low vssd vssd N_12_LPRVT W=2u L=2u M=2
+MNM4 i10u stdby vssd vssd N_12_LPRVT W=2u L=60n M=1
+MNM1 i10u i10u vssd vssd N_12_LPRVT W=2u L=2u M=1
+MNM0 vp1 i10u vssd vssd N_12_LPRVT W=2u L=2u M=2
+MNM19 i10u low vssd vssd N_12_LPRVT W=2u L=2u M=1
+XI3 vddd vssd low / TIE_LOW_12
+MPM17 vp1 stdbyb vddd vddd P_12_LPRVT W=5u L=300n M=1
+MPM16 vp1 vp1 vddd vddd P_12_LPRVT W=5u L=500n M=2
+MPM18 vddd vp1 vddd vddd P_12_LPRVT W=5u L=5u M=2
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_rx_ref_v2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_rx_ref_v2 i5u i5u_1 stdby stdbyb33 v06 vddd vddio vhigh vhtrim<1> 
++ vhtrim<0> vlow vltrim<1> vltrim<0> vn1 vp1_delay vp1_mipi vp1_mipi33 vssd
+*.PININFO i5u:I stdby:I stdbyb33:I v06:I vhtrim<1>:I vhtrim<0>:I vltrim<1>:I 
+*.PININFO vltrim<0>:I i5u_1:O vhigh:O vlow:O vn1:O vp1_delay:O vp1_mipi:O 
+*.PININFO vp1_mipi33:O vddd:B vddio:B vssd:B
+MNdum1 vssd vssd vssd vssd N_25OD33_LP W=2u L=500n M=3
+MNdum2 vp1_mipi vssd vssd vssd N_25OD33_LP W=2u L=500n M=1
+MNM0 vp1_mipi33 i5u vssd vssd N_25OD33_LP W=2u L=2u M=6
+MNM3 vp1_mipi i5u vssd vssd N_25OD33_LP W=2u L=2u M=3
+MNM13 i5u stdby vssd vssd N_25OD33_LP W=2u L=500n M=1
+MNM14 i5u stdbyb33 i5u vssd N_25OD33_LP W=2u L=500n M=1
+MNM5 i5u i5u vssd vssd N_25OD33_LP W=2u L=2u M=1
+MNM4 vssd i5u vssd vssd N_25OD33_LP W=5u L=5u M=1
+MPdum vddd net055 vddd vddd P_12_LPRVT W=6u L=200n M=3
+MPM33 vp1_mipi stdbyb vddd vddd P_12_LPRVT W=6u L=200n M=1
+MPM30 vp1_mipi vp1_mipi vddd vddd P_12_LPRVT W=6u L=2u M=3
+MPM1 vn1 vp1_mipi vddd vddd P_12_LPRVT W=6u L=2u M=2
+MPM0 i5u_1 vp1_mipi vddd vddd P_12_LPRVT W=6u L=2u M=1
+XI4 stdby stdbyb vddd vssd / mipi_rx_inv2x
+XIlpth v06 vddd vhigh vhtrim<1> vhtrim<0> vlow vltrim<1> vltrim<0> vn1 
++ vp1_mipi vssd stdby stdbyb / mipi_rx_lpth
+MNM9 vp1_mipi33 vp1_mipi33 vddio vddio P_25OD33_LP W=36u L=2u M=1
+MNM12 vddd vssd vddd vddd P_25OD33_LP W=13u L=10u M=1
+MPM2 vp1_mipi33 stdbyb33 vddio vddio P_25OD33_LP W=6u L=400n M=1
+XI12 vddd vssd net055 / TIE_HIGH_12
+XIdelay_bias vn1 stdby stdbyb vddd vp1_delay vssd / delay_dac_bias_v2
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_inv4x
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_inv4x in out vddd vssd
+*.PININFO in:I out:O vddd:B vssd:B
+MNM11 out in vssd vssd N_12_LPRVT W=300n L=60n M=2
+MPM5 out in vddd vddd P_12_LPRVT W=900n L=60n M=2
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_rx_inv4x
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_rx_inv4x in out vddd vssd
+*.PININFO in:I out:O vddd:B vssd:B
+MNM0 out in vssd vssd N_12_LPRVT W=300n L=60n M=2
+MPM0 out in vddd vddd P_12_LPRVT W=900n L=60n M=2
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_rx_inv8x
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_rx_inv8x in out vddd vssd
+*.PININFO in:I out:O vddd:B vssd:B
+MNM0 out in vssd vssd N_12_LPRVT W=300n L=60n M=4
+MPM0 out in vddd vddd P_12_LPRVT W=900n L=60n M=4
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_rx_nor2_io
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_rx_nor2_io a b out vddd vssd
+*.PININFO a:I b:I out:O vddd:B vssd:B
+MNM0 out b vssd vssd N_25OD33_LP W=400n L=500n M=1
+MNM1 out a vssd vssd N_25OD33_LP W=400n L=500n M=1
+MPM0 out a net031 vddd P_25OD33_LP W=1u L=400n M=2
+MPM1 net031 b vddd vddd P_25OD33_LP W=1u L=400n M=2
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_rx_nand2_io
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_rx_nand2_io a b out vddd vssd
+*.PININFO a:I b:I out:O vddd:B vssd:B
+MNM0 net062 b vssd vssd N_25OD33_LP W=500n L=500n M=1
+MNM1 out a net062 vssd N_25OD33_LP W=500n L=500n M=1
+MPM0 out a vddd vddd P_25OD33_LP W=900n L=400n M=1
+MPM1 out b vddd vddd P_25OD33_LP W=900n L=400n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_rx_lp_amp_v2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_rx_lp_amp_v2 inn inp out stdby33 vdda vp1_mipi33 vssd
+*.PININFO inn:I inp:I stdby33:I vp1_mipi33:I out:O vdda:B vssd:B
+MNM2 out net19 vssd vssd N_25OD33_LP W=4u L=1u M=1
+MNM3 out stdby33 vssd vssd N_25OD33_LP W=500n L=500n M=1
+MNM4 net19 stdby33 vssd vssd N_25OD33_LP W=500n L=500n M=1
+MNM1 net19 net19 vssd vssd N_25OD33_LP W=4u L=1u M=1
+MPM6 net11 vp1_mipi33 vdda vdda P_25OD33_LP W=6u L=2u M=1
+MPM5 out inn net11 vdda P_25OD33_LP W=6u L=400n M=1
+MPM1 net19 inp net11 vdda P_25OD33_LP W=6u L=400n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_rx_lp_v2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_rx_lp_v2 out stdby33 vddd vddio vhigh vin vlow vp1_mipi33 vssd
+*.PININFO stdby33:I vhigh:I vin:I vlow:I vp1_mipi33:I out:O vddd:B vddio:B 
+*.PININFO vssd:B
+XI32 net06 net013 vddd vssd / mipi_rx_inv4x
+XI33 net013 out vddd vssd / mipi_rx_inv8x
+XI30 net091 net094 vddd vssd / mipi_rx_inv2x
+XI29 net096 net06 vddd vssd / mipi_rx_inv2x
+XI27 ampout_h net094 net096 vddd vssd / mipi_rx_nor2_io
+XI31 ampout_l net06 net091 vddd vssd / mipi_rx_nand2_io
+XI34 vhigh vin ampout_h stdby33 vddio vp1_mipi33 vssd / mipi_rx_lp_amp_v2
+XI35 vlow vin ampout_l stdby33 vddio vp1_mipi33 vssd / mipi_rx_lp_amp_v2
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_rx_tg
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_rx_tg a b sel selb vddd vssd
+*.PININFO sel:I selb:I a:B b:B vddd:B vssd:B
+MPM9 a selb b vddd P_12_LPRVT W=1u L=60n M=1
+MNM12 a sel b vssd N_12_LPRVT W=1u L=60n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_rx_nor4
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_rx_nor4 a b c d out vddd vssd
+*.PININFO a:I b:I c:I d:I out:O vddd:B vssd:B
+MNM3 out c vssd vssd N_12_LPRVT W=300n L=60n M=1
+MNM2 out d vssd vssd N_12_LPRVT W=300n L=60n M=1
+MNM0 out b vssd vssd N_12_LPRVT W=300n L=60n M=1
+MNM1 out a vssd vssd N_12_LPRVT W=300n L=60n M=1
+MPM3 net018 d vddd vddd P_12_LPRVT W=1u L=60n M=1
+MPM2 net020 c net018 vddd P_12_LPRVT W=1u L=60n M=1
+MPM0 out a net031 vddd P_12_LPRVT W=1u L=60n M=1
+MPM1 net031 b net020 vddd P_12_LPRVT W=1u L=60n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_rx_testMux
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_rx_testMux dly dly_test_en hsd hsd_test_en lpn lpn_test_en lpp 
++ lpp_test_en test_out vddd vssd
+*.PININFO dly:I dly_test_en:I hsd:I hsd_test_en:I lpn:I lpn_test_en:I lpp:I 
+*.PININFO lpp_test_en:I test_out:O vddd:B vssd:B
+XI4 dly test_out dly_test_en dly_test_enb vddd vssd / mipi_rx_tg
+XI2 hsd test_out hsd_test_en hsd_test_enb vddd vssd / mipi_rx_tg
+XI0 lpn test_out lpn_test_en lpn_test_enb vddd vssd / mipi_rx_tg
+XI84 lpp test_out lpp_test_en lpp_test_enb vddd vssd / mipi_rx_tg
+XI5 dly_test_en dly_test_enb vddd vssd / mipi_rx_inv2x
+XI3 hsd_test_en hsd_test_enb vddd vssd / mipi_rx_inv2x
+XI1 lpn_test_en lpn_test_enb vddd vssd / mipi_rx_inv2x
+XI81 lpp_test_en lpp_test_enb vddd vssd / mipi_rx_inv2x
+XI6 lpp_test_en lpn_test_en hsd_test_en dly_test_en net13 vddd vssd / 
++ mipi_rx_nor4
+MNM11 test_out net13 vssd vssd N_12_LPRVT W=1u L=60n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_hs_buf_v2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_hs_buf_v2 inn inp out stdby12 stdby12b vddd vp1 vssd
+*.PININFO inn:I inp:I stdby12:I stdby12b:I vp1:I out:O vddd:B vssd:B
+MNM1 out net77 vssd vssd N_12_LPRVT W=300n L=150n M=4
+MNM2 net77 net77 vssd vssd N_12_LPRVT W=300n L=150n M=1
+MNM0 net0344 net0344 vssd vssd N_12_LPRVT W=300n L=150n M=1
+MNM3 net0342 net0344 vssd vssd N_12_LPRVT W=300n L=150n M=4
+MNM7 out stdby12 vssd vssd N_12_LPRVT W=300n L=200n M=1
+MNM6 net0344 stdby12 vssd vssd N_12_LPRVT W=300n L=200n M=1
+MNM4 net77 stdby12 vssd vssd N_12_LPRVT W=300n L=200n M=1
+MPM2 vcm vp1 vddd vddd P_12_LPRVT W=6u L=2u M=4
+MPM0 out net0342 vddd vddd P_12_LPRVT W=1.5u L=150n M=4
+MPM1 net0344 inn vcm vcm P_12_LPRVT W=3u L=60n M=2
+MPM3 net0342 net0342 vddd vddd P_12_LPRVT W=1.5u L=150n M=4
+MPM4 net77 inp vcm vcm P_12_LPRVT W=3u L=60n M=2
+MPMdummy<1> vcm vcm vcm vcm P_12_LPRVT W=3u L=60n M=1
+MPMdummy<2> vcm vcm vcm vcm P_12_LPRVT W=3u L=60n M=1
+MPM5 net0342 stdby12b vddd vddd P_12_LPRVT W=200n L=150n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_rx_hs_v2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_rx_hs_v2 inn inp out stdby stdbyb vdda vddd vp1 vp1_33 vssd
+*.PININFO inn:I inp:I stdby:I stdbyb:I vp1:I vp1_33:I out:O vdda:B vddd:B 
+*.PININFO vssd:B
+MPM7 out1 out1b vddd vddd P_12_LPRVT W=1.8u L=200n M=1
+MPM5 out1b out1b vddd vddd P_12_LPRVT W=2u L=200n M=1
+MPM2 out1 out1 vddd vddd P_12_LPRVT W=2u L=200n M=1
+MPM4 out1b out1 vddd vddd P_12_LPRVT W=1.8u L=200n M=1
+MNM2 out1 n1b vssd vssd N_12_LPRVT W=4u L=200n M=2
+MNM1 n1b n1b vssd vssd N_12_LPRVT W=4u L=200n M=1
+MNM4 n1 stdby vssd vssd N_12_LPRVT W=500n L=200n M=1
+MNM5 n1b stdby vssd vssd N_12_LPRVT W=500n L=200n M=1
+MNM0 n1 n1 vssd vssd N_12_LPRVT W=4u L=200n M=1
+MNM3 out1b n1 vssd vssd N_12_LPRVT W=4u L=200n M=2
+XI26 out1b out1 out stdby stdbyb vddd vp1 vssd / mipi_hs_buf_v2
+MPM14 n1b inp vcm vdda P_25OD33_LP W=6u L=400n M=2
+MNM9 vcm vp1_33 vdda vdda P_25OD33_LP W=36u L=2u M=1
+MPM13 n1 inn vcm vdda P_25OD33_LP W=6u L=400n M=2
+MPM10 vdda vdda vcm vdda P_25OD33_LP W=6u L=400n M=1
+MPM11 vdda vdda vcm vdda P_25OD33_LP W=6u L=400n M=1
+MPM0 vdda vp1_33 vdda vdda P_25OD33_LP W=6u L=3u M=2
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_rx_term_v2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_rx_term_v2 dn dp en33 vdda vssd
+*.PININFO dn:I dp:I en33:I vdda:B vssd:B
+RR18 dn net038 120.028 $SUB=vdda $[RNPPO_LP] $W=20u $L=3.26u M=1
+RR19 dn net038 120.028 $SUB=vdda $[RNPPO_LP] $W=20u $L=3.26u M=1
+RR13 dp net039 120.028 $SUB=vdda $[RNPPO_LP] $W=20u $L=3.26u M=1
+RR17 dp net039 120.028 $SUB=vdda $[RNPPO_LP] $W=20u $L=3.26u M=1
+RR16 dp net039 120.028 $SUB=vdda $[RNPPO_LP] $W=20u $L=3.26u M=1
+RR20 dn net038 120.028 $SUB=vdda $[RNPPO_LP] $W=20u $L=3.26u M=1
+CC0 vssd vcom $[PCAP_25_LP] m=1 wf=18u lf=10.5u nf=4
+MPM0 net056 net026 vdda vdda P_25OD33_LP W=3u L=400n M=1
+MNM6 net026 en33 vdda vdda P_25OD33_LP W=500n L=400n M=1
+MPM2 en_buf net063 vdda vdda P_25OD33_LP W=18u L=400n M=1
+MPM1 net063 net056 vdda vdda P_25OD33_LP W=6u L=400n M=1
+MNM4 net038 en_buf vcom vssd N_25OD33_LP W=300u L=500n M=1
+MNM1 net039 en_buf vcom vssd N_25OD33_LP W=300u L=500n M=1
+MNM8 net063 net056 vssd vssd N_25OD33_LP W=4u L=500n M=1
+MNM9 en_buf net063 vssd vssd N_25OD33_LP W=12u L=500n M=1
+MNM7 net056 net026 vssd vssd N_25OD33_LP W=2u L=500n M=1
+MNM5 net026 en33 vssd vssd N_25OD33_LP W=500n L=500n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    std
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT std in outn outp vddd vssd
+*.PININFO in:I outn:O outp:O vddd:B vssd:B
+XI38 vddd vssd net15 / TIE_HIGH_12
+MNM1 in net15 outp vssd N_12_LPRVT W=1u L=150.0n M=1
+MNM0 outn in vssd vssd N_12_LPRVT W=1u L=150.0n M=1
+MPM0 outn in vddd vddd P_12_LPRVT W=3u L=150.0n M=1
+MPM1 in net18 outp vddd P_12_LPRVT W=3u L=150.0n M=1
+XI39 vddd vssd net18 / TIE_LOW_12
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    dts
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT dts inn inp out vddd vssd stdby stdbyb vn1
+*.PININFO inn:I inp:I stdby:I stdbyb:I vn1:I out:O vddd:B vssd:B
+MNM7 out net059 vssd vssd N_12_LPRVT W=2u L=60n M=4
+MNM6 net059 net054 vssd vssd N_12_LPRVT W=2u L=60n M=2
+MNM4 net054 net049 vssd vssd N_12_LPRVT W=2u L=60n M=1
+MNM0 net0120 inn net20 vssd N_12_LPRVT W=5u L=60n M=1
+MNM3 net049 ampout vssd vssd N_12_LPRVT W=500n L=90n M=1
+MNM1 net0194 inp net20 vssd N_12_LPRVT W=5u L=60n M=1
+MNM2 net20 vn1 vssd vssd N_12_LPRVT W=10u L=2u M=1
+MNM9 ampout net058 vssd vssd N_12_LPRVT W=2u L=500n M=4
+MNM8 net058 net058 vssd vssd N_12_LPRVT W=2u L=500n M=1
+MNM13 net058 stdby vssd vssd N_12_LPRVT W=2u L=200n M=1
+MNM12 ampout stdby vssd vssd N_12_LPRVT W=1u L=200n M=1
+MPM6 out net059 vddd vddd P_12_LPRVT W=6u L=60n M=4
+MPM5 net059 net054 vddd vddd P_12_LPRVT W=6u L=60n M=2
+MPM0 net054 net049 vddd vddd P_12_LPRVT W=6u L=60n M=1
+MPM1 net0120 net0120 vddd vddd P_12_LPRVT W=3u L=500n M=1
+MPM2 net0194 net0194 vddd vddd P_12_LPRVT W=3u L=500n M=1
+MPM4 net049 ampout vddd vddd P_12_LPRVT W=4u L=60n M=1
+MPM9 net058 net0120 vddd vddd P_12_LPRVT W=3u L=500n M=1
+MPM8 ampout net0194 vddd vddd P_12_LPRVT W=3u L=500n M=4
+MPM14 net0194 stdbyb vddd vddd P_12_LPRVT W=3u L=300n M=1
+MPM15 net0120 stdbyb vddd vddd P_12_LPRVT W=3u L=300n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    dll_delay_align
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT dll_delay_align in out stdby stdbyb vddd vn1 vssd
+*.PININFO in:I stdby:I stdbyb:I vn1:I out:O vddd:B vssd:B
+XIstd in inn inp vddd vssd / std
+MNM1 vssd vn1 vssd vssd N_12_LPNVT W=5u L=5u M=2
+XIin_buffer inn inp out vddd vssd stdby stdbyb vn1 / dts
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_inv
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_inv gndd_in in out vddd_in
+*.PININFO in:I out:O gndd_in:B vddd_in:B
+MNM11 out in gndd_in gndd_in N_12_LPRVT W=300n L=60n M=1
+MPM5 out in vddd_in vddd_in P_12_LPRVT W=900n L=60n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_inv_x4
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_inv_x4 in out vddd vssd
+*.PININFO in:I out:O vddd:B vssd:B
+MNM0 out in vssd vssd N_12_LPRVT W=300n L=60n M=2
+MPM0 out in vddd vddd P_12_LPRVT W=900n L=60n M=2
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_chain_v6
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_chain_v6 iin in out stdby vddd vssd
+*.PININFO iin:I in:I stdby:I out:O vddd:B vssd:B
+MNM23 n6a n5 net0106 vssd N_12_LPRVT W=2u L=60n M=1
+MNM22 net0106 vn vssd vssd N_12_LPRVT W=1u L=700n M=1
+MNM24<4> n1a stdby vssd vssd N_12_LPRVT W=300n L=60n M=1
+MNM24<3> n2a stdby vssd vssd N_12_LPRVT W=300n L=60n M=1
+MNM24<2> n3a stdby vssd vssd N_12_LPRVT W=300n L=60n M=1
+MNM24<1> n4a stdby vssd vssd N_12_LPRVT W=300n L=60n M=1
+MNM24<0> n5a stdby vssd vssd N_12_LPRVT W=300n L=60n M=1
+MNM17 n6a stdby vssd vssd N_12_LPRVT W=2u L=200n M=1
+MNM21 n5a n4 net094 vssd N_12_LPRVT W=2u L=60n M=1
+MNM20 net094 vn vssd vssd N_12_LPRVT W=1u L=700n M=1
+MNM13 vn stdby vssd vssd N_12_LPRVT W=3u L=200n M=1
+MNM12 iin stdbyb vn vssd N_12_LPRVT W=3u L=200n M=1
+MNM10 n4a n3 net067 vssd N_12_LPRVT W=2u L=60n M=1
+MNM9 net067 vn vssd vssd N_12_LPRVT W=1u L=700n M=1
+MNM8 net068 vn vssd vssd N_12_LPRVT W=1u L=700n M=1
+MNM7 n3a n2 net068 vssd N_12_LPRVT W=2u L=60n M=1
+MNM3 vssd vn vssd vssd N_12_LPRVT W=3u L=1.5u M=4
+MNM4 vp vn vssd vssd N_12_LPRVT W=1u L=700n M=1
+MNM0 n1a in net20 vssd N_12_LPRVT W=2u L=60n M=1
+MNM2 net20 vn vssd vssd N_12_LPRVT W=1u L=700n M=1
+MNM5 net069 vn vssd vssd N_12_LPRVT W=1u L=700n M=1
+MNM6 n2a n1 net069 vssd N_12_LPRVT W=2u L=60n M=1
+MNM11 iin vn vssd vssd N_12_LPRVT W=3u L=700n M=1
+MPM20 net0107 vp vddd vddd P_12_LPRVT W=1u L=700n M=1
+MPM19 n6a n5 net0107 vddd P_12_LPRVT W=2u L=60n M=1
+MPM18 net093 vp vddd vddd P_12_LPRVT W=1u L=700n M=1
+MPM17 n5a n4 net093 vddd P_12_LPRVT W=2u L=60n M=1
+MPM10 vn stdby iin vddd P_12_LPRVT W=1u L=200n M=1
+MPM9 vddd vp vddd vddd P_12_LPRVT W=10u L=6u M=2
+MPM8 net063 vp vddd vddd P_12_LPRVT W=1u L=700n M=1
+MPM7 n4a n3 net063 vddd P_12_LPRVT W=2u L=60n M=1
+MPM6 n3a n2 net064 vddd P_12_LPRVT W=2u L=60n M=1
+MPM0 net066 vp vddd vddd P_12_LPRVT W=1u L=700n M=1
+MPM5 net064 vp vddd vddd P_12_LPRVT W=1u L=700n M=1
+MPM2 vp vp vddd vddd P_12_LPRVT W=1u L=700n M=1
+MPM3 n2a n1 net065 vddd P_12_LPRVT W=2u L=60n M=1
+MPM1 n1a in net066 vddd P_12_LPRVT W=2u L=60n M=1
+MPM4 net065 vp vddd vddd P_12_LPRVT W=1u L=700n M=1
+XI3<4> vssd net0119<0> n1 vddd / delay_inv
+XI3<3> vssd net0119<1> n2 vddd / delay_inv
+XI3<2> vssd net0119<2> n3 vddd / delay_inv
+XI3<1> vssd net0119<3> n4 vddd / delay_inv
+XI3<0> vssd net0119<4> n5 vddd / delay_inv
+XI1<4> vssd n1a net0119<0> vddd / delay_inv
+XI1<3> vssd n2a net0119<1> vddd / delay_inv
+XI1<2> vssd n3a net0119<2> vddd / delay_inv
+XI1<1> vssd n4a net0119<3> vddd / delay_inv
+XI1<0> vssd n5a net0119<4> vddd / delay_inv
+XI0 vssd stdby stdbyb vddd / delay_inv
+XI30 vssd n6a net096 vddd / delay_inv
+XI8 net096 out vddd vssd / delay_inv_x4
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_inv2x
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_inv2x in out vddd vssd
+*.PININFO in:I out:O vddd:B vssd:B
+MNM11 out in vssd vssd N_12_LPRVT W=300n L=60n M=1
+MPM5 out in vddd vddd P_12_LPRVT W=900n L=60n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_nand2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_nand2 a b out vddd vssd
+*.PININFO a:I b:I out:O vddd:B vssd:B
+MNM0 net062 b vssd vssd N_12_LPRVT W=500n L=60n M=1
+MNM1 out a net062 vssd N_12_LPRVT W=500n L=60n M=1
+MPM0 out a vddd vddd P_12_LPRVT W=900n L=60n M=1
+MPM1 out b vddd vddd P_12_LPRVT W=900n L=60n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_nor2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_nor2 a b out vddd vssd
+*.PININFO a:I b:I out:O vddd:B vssd:B
+MNM0 out b vssd vssd N_12_LPRVT W=300n L=60n M=1
+MNM1 out a vssd vssd N_12_LPRVT W=300n L=60n M=1
+MPM0 out a net031 vddd P_12_LPRVT W=2u L=60n M=1
+MPM1 net031 b vddd vddd P_12_LPRVT W=2u L=60n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_thm_dec_0_3
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_thm_dec_0_3 a0 a1 a2 a3 dt0 dt1 vddd vssd
+*.PININFO dt0:I dt1:I vddd:I vssd:I a0:O a1:O a2:O a3:O
+XI72 dt1 dt0 net51 vddd vssd / delay_dac_nand2
+XI76 vddd vssd net028 / TIE_LOW_12
+XI64 dt1 dt0 net58 vddd vssd / delay_dac_nor2
+XI71 dt1 net53 vddd vssd / delay_dac_inv2x
+XI62 net028 a0 vddd vssd / delay_dac_inv4x
+XI75 net51 a3 vddd vssd / delay_dac_inv4x
+XI65 net58 a1 vddd vssd / delay_dac_inv4x
+XI70 net53 a2 vddd vssd / delay_dac_inv4x
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_thm_dec_v2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_thm_dec_v2 a0 a1 a2 a3 d0 d1 vddd vssd
+*.PININFO d0:I d1:I a0:O a1:O a2:O a3:O vddd:B vssd:B
+XI47 d1 net68 vddd vssd / delay_dac_inv2x
+XI49 d0 net109 vddd vssd / delay_dac_inv2x
+XI38 a0 a1 a2 a3 net109 net68 vddd vssd / delay_dac_thm_dec_0_3
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_rx_nand2_DELAY_DAC_V2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_rx_nand2_DELAY_DAC_V2 a b out vddd vssd
+*.PININFO a:I b:I out:O vddd:B vssd:B
+MNM0 net062 b vssd vssd N_12_LPRVT W=500n L=60n M=1
+MNM1 out a net062 vssd N_12_LPRVT W=500n L=60n M=1
+MPM0 out a vddd vddd P_12_LPRVT W=900n L=60n M=1
+MPM1 out b vddd vddd P_12_LPRVT W=900n L=60n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_inv2x_DELAY_DAC_V2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_inv2x_DELAY_DAC_V2 in out vddd vssd
+*.PININFO in:I out:O vddd:B vssd:B
+MNM11 out in vssd vssd N_12_LPRVT W=300n L=60n M=1
+MPM5 out in vddd vddd P_12_LPRVT W=900n L=60n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_cell_2_DELAY_DAC_V2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_cell_2_DELAY_DAC_V2 col colp1 iout row vddd vp1 vssd
+*.PININFO col:I colp1:I row:I vp1:I iout:B vddd:B vssd:B
+XI31 net017 net015 net023 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI34 col row net015 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI35 net023 net026 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+XI36 colp1 net017 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+MPM0 net0110 vp1 vddd vddd P_12_LPRVT W=750n L=500n M=1
+MPM2 iout net026 net0110 vddd P_12_LPRVT W=1u L=200n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_cell_16_DELAY_DAC_V2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_cell_16_DELAY_DAC_V2 col colp1 iout row vddd vp1 vssd
+*.PININFO col:I colp1:I row:I vp1:I iout:B vddd:B vssd:B
+XI31 net017 net015 net023 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI34 col row net015 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI36 colp1 net017 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+XI35 net023 net026 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+MPM0 net0110 vp1 vddd vddd P_12_LPRVT W=45u L=500n M=1
+MPM2 iout net026 net0110 vddd P_12_LPRVT W=1u L=200n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_cell_15_DELAY_DAC_V2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_cell_15_DELAY_DAC_V2 col colp1 iout row vddd vp1 vssd
+*.PININFO col:I colp1:I row:I vp1:I iout:B vddd:B vssd:B
+XI31 net017 net015 net023 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI34 col row net015 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI35 net023 net026 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+XI36 colp1 net017 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+MPM0 net0110 vp1 vddd vddd P_12_LPRVT W=15u L=500n M=1
+MPM2 iout net026 net0110 vddd P_12_LPRVT W=1u L=200n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_cell_14_DELAY_DAC_V2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_cell_14_DELAY_DAC_V2 col colp1 iout row vddd vp1 vssd
+*.PININFO col:I colp1:I row:I vp1:I iout:B vddd:B vssd:B
+XI31 net017 net015 net023 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI34 col row net015 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI35 net023 net026 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+XI36 colp1 net017 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+MPM0 net0110 vp1 vddd vddd P_12_LPRVT W=7.5u L=500n M=1
+MPM2 iout net026 net0110 vddd P_12_LPRVT W=1u L=200n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_cell_13_DELAY_DAC_V2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_cell_13_DELAY_DAC_V2 col colp1 iout row vddd vp1 vssd
+*.PININFO col:I colp1:I row:I vp1:I iout:B vddd:B vssd:B
+XI31 net017 net015 net023 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI34 col row net015 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI35 net023 net026 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+XI36 colp1 net017 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+MPM0 net0110 vp1 vddd vddd P_12_LPRVT W=5u L=500n M=1
+MPM2 iout net026 net0110 vddd P_12_LPRVT W=1u L=200n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_cell_3_DELAY_DAC_V2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_cell_3_DELAY_DAC_V2 col colp1 iout row vddd vp1 vssd
+*.PININFO col:I colp1:I row:I vp1:I iout:B vddd:B vssd:B
+XI31 net017 net015 net023 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI34 col row net015 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI35 net023 net026 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+XI36 colp1 net017 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+MPM0 net0110 vp1 vddd vddd P_12_LPRVT W=500n L=500n M=1
+MPM2 iout net026 net0110 vddd P_12_LPRVT W=1u L=200n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_cell_4_DELAY_DAC_V2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_cell_4_DELAY_DAC_V2 col colp1 iout row vddd vp1 vssd
+*.PININFO col:I colp1:I row:I vp1:I iout:B vddd:B vssd:B
+XI31 net017 net015 net023 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI34 col row net015 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI35 net023 net026 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+XI36 colp1 net017 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+MPM0 net0110 vp1 vddd vddd P_12_LPRVT W=750n L=500n M=1
+MPM2 iout net026 net0110 vddd P_12_LPRVT W=1u L=200n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_cell_8_DELAY_DAC_V2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_cell_8_DELAY_DAC_V2 col colp1 iout row vddd vp1 vssd
+*.PININFO col:I colp1:I row:I vp1:I iout:B vddd:B vssd:B
+XI31 net017 net015 net023 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI34 col row net015 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI35 net023 net026 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+XI36 colp1 net017 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+MPM0 net0110 vp1 vddd vddd P_12_LPRVT W=1.5u L=500n M=1
+MPM2 iout net026 net0110 vddd P_12_LPRVT W=1u L=200n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_cell_7_DELAY_DAC_V2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_cell_7_DELAY_DAC_V2 col colp1 iout row vddd vp1 vssd
+*.PININFO col:I colp1:I row:I vp1:I iout:B vddd:B vssd:B
+XI31 net017 net015 net023 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI34 col row net015 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI36 colp1 net017 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+XI35 net023 net026 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+MPM0 net0110 vp1 vddd vddd P_12_LPRVT W=1u L=500n M=1
+MPM2 iout net026 net0110 vddd P_12_LPRVT W=1u L=200n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_cell_6_DELAY_DAC_V2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_cell_6_DELAY_DAC_V2 col colp1 iout row vddd vp1 vssd
+*.PININFO col:I colp1:I row:I vp1:I iout:B vddd:B vssd:B
+XI31 net017 net015 net023 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI34 col row net015 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI35 net023 net026 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+XI36 colp1 net017 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+MPM0 net0110 vp1 vddd vddd P_12_LPRVT W=500n L=250n M=1
+MPM2 iout net026 net0110 vddd P_12_LPRVT W=1u L=200n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_cell_5_DELAY_DAC_V2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_cell_5_DELAY_DAC_V2 col colp1 iout row vddd vp1 vssd
+*.PININFO col:I colp1:I row:I vp1:I iout:B vddd:B vssd:B
+XI31 net017 net015 net023 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI34 col row net015 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI35 net023 net026 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+XI36 colp1 net017 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+MPM0 net0110 vp1 vddd vddd P_12_LPRVT W=1u L=500n M=1
+MPM2 iout net026 net0110 vddd P_12_LPRVT W=1u L=200n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_cell_9_DELAY_DAC_V2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_cell_9_DELAY_DAC_V2 col colp1 iout row vddd vp1 vssd
+*.PININFO col:I colp1:I row:I vp1:I iout:B vddd:B vssd:B
+XI31 net017 net015 net023 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI34 col row net015 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI36 colp1 net017 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+XI35 net023 net026 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+MPM0 net0110 vp1 vddd vddd P_12_LPRVT W=2u L=500n M=1
+MPM2 iout net026 net0110 vddd P_12_LPRVT W=1u L=200n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_cell_10_DELAY_DAC_V2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_cell_10_DELAY_DAC_V2 col colp1 iout row vddd vp1 vssd
+*.PININFO col:I colp1:I row:I vp1:I iout:B vddd:B vssd:B
+XI31 net017 net015 net023 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI34 col row net015 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI35 net023 net026 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+XI36 colp1 net017 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+MPM0 net0110 vp1 vddd vddd P_12_LPRVT W=2u L=500n M=1
+MPM2 iout net026 net0110 vddd P_12_LPRVT W=1u L=200n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_cell_11_DELAY_DAC_V2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_cell_11_DELAY_DAC_V2 col colp1 iout row vddd vp1 vssd
+*.PININFO col:I colp1:I row:I vp1:I iout:B vddd:B vssd:B
+XI31 net017 net015 net023 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI34 col row net015 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI35 net023 net026 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+XI36 colp1 net017 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+MPM3 net0110 vp1 vddd vddd P_12_LPRVT W=500n L=500n M=1
+MPM0 net0110 vp1 vddd vddd P_12_LPRVT W=2.5u L=500n M=1
+MPM2 iout net026 net0110 vddd P_12_LPRVT W=1u L=200n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_cell_12_DELAY_DAC_V2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_cell_12_DELAY_DAC_V2 col colp1 iout row vddd vp1 vssd
+*.PININFO col:I colp1:I row:I vp1:I iout:B vddd:B vssd:B
+XI31 net017 net015 net023 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI34 col row net015 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI35 net023 net026 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+XI36 colp1 net017 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+MPM3 net0110 vp1 vddd vddd P_12_LPRVT W=1u L=500n M=1
+MPM0 net0110 vp1 vddd vddd P_12_LPRVT W=2.5u L=500n M=1
+MPM2 iout net026 net0110 vddd P_12_LPRVT W=1u L=200n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_cell_1_DELAY_DAC_V2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_cell_1_DELAY_DAC_V2 col colp1 iout row vddd vp1 vssd
+*.PININFO col:I colp1:I row:I vp1:I iout:B vddd:B vssd:B
+XI31 net017 net015 net023 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI34 col row net015 vddd vssd / mipi_rx_nand2_DELAY_DAC_V2
+XI35 net023 net026 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+XI37 colp1 net017 vddd vssd / delay_dac_inv2x_DELAY_DAC_V2
+MPM3 net0110 vp1 vddd vddd P_12_LPRVT W=500n L=500n M=1
+MPM0 net0110 vp1 vddd vddd P_12_LPRVT W=10u L=500n M=1
+MPM2 iout net026 net0110 vddd P_12_LPRVT W=1u L=200n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac2_4x4_v2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac2_4x4_v2 cola colb colc cold colp1 iout rowa rowb rowc rowd 
++ vddd vp1 vssd
+*.PININFO cola:I colb:I colc:I cold:I colp1:I rowa:I rowb:I rowc:I rowd:I 
+*.PININFO vp1:I iout:B vddd:B vssd:B
+XI2 cola colb iout rowb vddd vp1 vssd / delay_dac_cell_2_DELAY_DAC_V2
+XI35 cold colp1 iout rowd vddd vp1 vssd / delay_dac_cell_16_DELAY_DAC_V2
+XI34 cold colp1 iout rowc vddd vp1 vssd / delay_dac_cell_15_DELAY_DAC_V2
+XI33 cold colp1 iout rowb vddd vp1 vssd / delay_dac_cell_14_DELAY_DAC_V2
+XI32 cold colp1 iout rowa vddd vp1 vssd / delay_dac_cell_13_DELAY_DAC_V2
+XI3 cola colb iout rowc vddd vp1 vssd / delay_dac_cell_3_DELAY_DAC_V2
+XI4 cola colb iout rowd vddd vp1 vssd / delay_dac_cell_4_DELAY_DAC_V2
+XI28 colb colc iout rowd vddd vp1 vssd / delay_dac_cell_8_DELAY_DAC_V2
+XI29 colb colc iout rowc vddd vp1 vssd / delay_dac_cell_7_DELAY_DAC_V2
+XI30 colb colc iout rowb vddd vp1 vssd / delay_dac_cell_6_DELAY_DAC_V2
+XI5 colb colc iout rowa vddd vp1 vssd / delay_dac_cell_5_DELAY_DAC_V2
+XI39 colc cold iout rowa vddd vp1 vssd / delay_dac_cell_9_DELAY_DAC_V2
+XI38 colc cold iout rowb vddd vp1 vssd / delay_dac_cell_10_DELAY_DAC_V2
+XI37 colc cold iout rowc vddd vp1 vssd / delay_dac_cell_11_DELAY_DAC_V2
+XI36 colc cold iout rowd vddd vp1 vssd / delay_dac_cell_12_DELAY_DAC_V2
+XI1 cola colb iout rowa vddd vp1 vssd / delay_dac_cell_1_DELAY_DAC_V2
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_dac_v2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_dac_v2 dt<3> dt<2> dt<1> dt<0> iout vddd vp1 vssd
+*.PININFO dt<3>:I dt<2>:I dt<1>:I dt<0>:I vp1:I iout:B vddd:B vssd:B
+XI98 vddd vssd net16 / TIE_LOW_12
+MPM0 vddd vp1 vddd vddd P_12_LPRVT W=5u L=4.5u M=1
+XIdec_r r0 r1 r2 r3 dt<2> dt<3> vddd vssd / delay_dac_thm_dec_v2
+XIdec_c c0 c1 c2 c3 dt<0> dt<1> vddd vssd / delay_dac_thm_dec_v2
+XIcellarray r0 r1 r2 r3 net16 iout c0 c1 c2 c3 vddd vp1 vssd / 
++ delay_dac2_4x4_v2
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_top_v2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_top_v2 d<3> d<2> d<1> d<0> in out stdby vddd vp1 vssd
+*.PININFO d<3>:I d<2>:I d<1>:I d<0>:I in:I stdby:I vp1:I out:O vddd:B vssd:B
+XI63 net7 in out stdby vddd vssd / delay_chain_v6
+XI64 d<3> d<2> d<1> d<0> net7 vddd vp1 vssd / delay_dac_v2
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_rx_data_v2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_rx_data_v2 delay<3> delay<2> delay<1> delay<0> in out stdby 
++ stdbyb vddd vn1 vp1 vssd
+*.PININFO delay<3>:I delay<2>:I delay<1>:I delay<0>:I in:I stdby:I stdbyb:I 
+*.PININFO vn1:I vp1:I out:O vddd:B vssd:B
+XI65 delay_out out stdby stdbyb vddd vn1 vssd / dll_delay_align
+XI68 delay<3> delay<2> delay<1> delay<0> in delay_out stdby vddd vp1 vssd / 
++ delay_top_v2
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_rx_data_top_v2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_rx_data_top_v2 data data_delay<3> data_delay<2> data_delay<1> 
++ data_delay<0> dly_test_en dn dp hsd_test_en lpdn lpdp lpn_test_en 
++ lpp_test_en stdby stdby33 term_en term_en33 test_out vddd vddio vhigh vlow 
++ vn1_delay vp1_delay vp1_mipi vp1_mipi33 vssd
+*.PININFO data_delay<3>:I data_delay<2>:I data_delay<1>:I data_delay<0>:I 
+*.PININFO dly_test_en:I dn:I dp:I hsd_test_en:I lpn_test_en:I lpp_test_en:I 
+*.PININFO stdby:I stdby33:I term_en:I term_en33:I vhigh:I vlow:I vn1_delay:I 
+*.PININFO vp1_delay:I vp1_mipi:I vp1_mipi33:I data:O lpdn:O lpdp:O test_out:O 
+*.PININFO vddd:B vddio:B vssd:B
+XI81 stdby stdbyb vddd vssd / mipi_rx_inv2x
+RR0 dp net011 556.322 $SUB=vddio $[RNPPO_LP] $W=1u $L=700n M=1
+RR1 net07 dn 556.322 $SUB=vddio $[RNPPO_LP] $W=1u $L=700n M=1
+XI35 net025 net020 vddd vssd / delay_dac_inv4x
+XIlp lpdp stdby33 vddd vddio vhigh net011 vlow vp1_mipi33 vssd / mipi_rx_lp_v2
+XI83 lpdn stdby33 vddd vddio vhigh net07 vlow vp1_mipi33 vssd / mipi_rx_lp_v2
+XI31 hsd term_en net025 vddd vssd / mipi_rx_nand2
+XItest_mux data dly_test_en hsd hsd_test_en lpdn lpn_test_en lpdp lpp_test_en 
++ test_out vddd vssd / mipi_rx_testMux
+XIhs net07 net011 hsd stdby stdbyb vddio vddd vp1_mipi vp1_mipi33 vssd / 
++ mipi_rx_hs_v2
+XIterm dn dp term_en33 vddio vssd / mipi_rx_term_v2
+XIdelay data_delay<3> data_delay<2> data_delay<1> data_delay<0> net020 data 
++ stdby stdbyb vddd vn1_delay vp1_delay vssd / mipi_rx_data_v2
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    dll_cp
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT dll_cp down downb i2u out stdby stdbyb up upb vddd vssd
+*.PININFO down:I downb:I i2u:I stdby:I stdbyb:I up:I upb:I out:B vddd:B vssd:B
+MNM2 i2u stdbyb net031 vssd N_12_LPRVT W=5u L=300n M=1
+MNM6 ampout downb net20 vssd N_12_LPRVT W=5u L=100n M=1
+MNM5 net094 upb ampout vssd N_12_LPRVT W=5u L=100n M=1
+MNM1 out down net20 vssd N_12_LPRVT W=5u L=100n M=1
+MNdown net20 net031 vssd vssd N_12_LPRVT W=5u L=5u M=1
+MNM0 ampout net069 vssd vssd N_12_LPRVT W=5u L=5u M=1
+MNM4 net069 net069 vssd vssd N_12_LPRVT W=5u L=5u M=1
+MNM3 net094 up out vssd N_12_LPRVT W=5u L=100n M=1
+MNM7 i2u net031 vssd vssd N_12_LPRVT W=5u L=5u M=1
+MNM8 net035 net031 vssd vssd N_12_LPRVT W=5u L=5u M=1
+MNM11 vssd ampout vssd vssd N_12_LPRVT W=5u L=5u M=4
+MNM9 net031 stdby vssd vssd N_12_LPRVT W=5u L=300n M=1
+MNM10 vssd net031 vssd vssd N_12_LPRVT W=5u L=5u M=10
+MPup net094 net035 vddd vddd P_12_LPRVT W=15u L=5u M=1
+MPM8 net20 down ampout vddd P_12_LPRVT W=5u L=100n M=1
+MPM3 ampout up net094 vddd P_12_LPRVT W=5u L=100n M=1
+MPM4 net20 downb out vddd P_12_LPRVT W=5u L=100n M=1
+MPM0 net0106 net035 vddd vddd P_12_LPRVT W=15u L=1u M=1
+MPM1 ampout ampout net0106 net0106 P_12_LPRVT W=5u L=500n M=1
+MPM6 net069 out net0106 net0106 P_12_LPRVT W=5u L=500n M=1
+MPM2 out upb net094 vddd P_12_LPRVT W=5u L=100n M=1
+MPM11 vddd net035 vddd vddd P_12_LPRVT W=15u L=5u M=5
+MPM9 net035 net035 vddd vddd P_12_LPRVT W=15u L=5u M=1
+MPM10 net035 stdbyb vddd vddd P_12_LPRVT W=5u L=300n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    dll_inv4x
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT dll_inv4x in out vddd vssd
+*.PININFO in:I out:O vddd:B vssd:B
+MNM0 out in vssd vssd N_12_LPRVT W=300n L=60n M=2
+MPM0 out in vddd vddd P_12_LPRVT W=900n L=60n M=2
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    dll_inv2x
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT dll_inv2x gndd_in in out vddd_in
+*.PININFO in:I out:O gndd_in:B vddd_in:B
+MNM11 out in gndd_in gndd_in N_12_LPRVT W=300n L=60n M=1
+MPM5 out in vddd_in vddd_in P_12_LPRVT W=900n L=60n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    dll_nor2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT dll_nor2 a b out vddd vssd
+*.PININFO a:I b:I out:O vddd:B vssd:B
+MNM0 out b vssd vssd N_12_LPRVT W=300n L=60n M=1
+MNM1 out a vssd vssd N_12_LPRVT W=300n L=60n M=1
+MPM0 out a net031 vddd P_12_LPRVT W=1u L=60n M=2
+MPM1 net031 b vddd vddd P_12_LPRVT W=1u L=60n M=2
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    pfd_tspc
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT pfd_tspc data down downb ref stdby up upb vddd vssd
+*.PININFO data:I ref:I stdby:I down:O downb:O up:O upb:O vddd:B vssd:B
+XI8 net152 upb vddd vssd / dll_inv4x
+XI44 net079 down vddd vssd / dll_inv4x
+XI35 net067 up vddd vssd / dll_inv4x
+XI1 vssd ref net172 vddd / dll_inv2x
+XI33 vssd n4 net148 vddd / dll_inv2x
+XI20 vssd data net160 vddd / dll_inv2x
+XI31 vssd net148 downb vddd / dll_inv2x
+XI30 vssd n2 net152 vddd / dll_inv2x
+XI43 vssd net0182 rst_a vddd / dll_inv2x
+XI40 vssd rst net0166 vddd / dll_inv2x
+XI41 vssd net0166 net0174 vddd / dll_inv2x
+XI38 vssd net160 data_a vddd / dll_inv2x
+XI37 vssd net172 ref_a vddd / dll_inv2x
+MNM7 n4 net073 net079 vssd N_12_LPRVT W=300n L=60n M=1
+MNM6 n2 net073 net067 vssd N_12_LPRVT W=300n L=60n M=1
+MNM5 n3 rst_a vssd vssd N_12_LPRVT W=1u L=60n M=1
+MNM2 n2 ref_a net100 vssd N_12_LPRVT W=1u L=60n M=1
+MNM1 net100 n1 vssd vssd N_12_LPRVT W=1u L=60n M=1
+MNM4 net88 n3 vssd vssd N_12_LPRVT W=1u L=60n M=1
+MNM0 n1 rst_a vssd vssd N_12_LPRVT W=1u L=60n M=1
+MNM3 n4 data_a net88 vssd N_12_LPRVT W=1u L=60n M=1
+MPM7 n4 net076 net079 vddd P_12_LPRVT W=900n L=60n M=1
+MPM3 n2 net076 net067 vddd P_12_LPRVT W=900n L=60n M=1
+MPM5 net111 rst_a vddd vddd P_12_LPRVT W=4u L=60n M=1
+MPM4 n4 n3 vddd vddd P_12_LPRVT W=4u L=60n M=1
+MPM1 net127 rst_a vddd vddd P_12_LPRVT W=4u L=60n M=1
+MPM0 n1 ref_a net127 vddd P_12_LPRVT W=4u L=60n M=1
+MPM2 n2 n1 vddd vddd P_12_LPRVT W=4u L=60n M=1
+MPM6 n3 data_a net111 vddd P_12_LPRVT W=4u L=60n M=1
+XI48 vddd vssd net073 / TIE_HIGH_12
+XI47 vddd vssd net076 / TIE_LOW_12
+XI46 net0174 stdby net0182 vddd vssd / dll_nor2
+XI39 n2 n4 rst vddd vssd / dll_nor2
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    delay_cell
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT delay_cell inn inp outn outp vddd vn1 vp1 vssd
+*.PININFO inn:I inp:I vn1:I vp1:I outn:O outp:O vddd:B vssd:B
+MNM3 vssd vn1 vssd vssd N_12_LPRVT W=4u L=4u M=4
+MNM0 outp inn net20 vssd N_12_LPRVT W=10u L=100n M=1
+MNM1 outn inp net20 vssd N_12_LPRVT W=10u L=100n M=1
+MNM2 net20 vn1 vssd vssd N_12_LPRVT W=5u L=2u M=1
+MPM0 outp outp vddd vddd P_12_LPRVT W=15u L=200n M=1
+MPM1 outp vp1 vddd vddd P_12_LPRVT W=15u L=200n M=1
+MPM3 outn outn vddd vddd P_12_LPRVT W=15u L=200n M=1
+MPM2 outn vp1 vddd vddd P_12_LPRVT W=15u L=200n M=1
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    replica_delay_cell
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT replica_delay_cell stdby stdbyb vbn vctrl vddd vn1 vp1 vssd
+*.PININFO stdby:I stdbyb:I vbn:I vctrl:I vn1:O vp1:O vddd:B vssd:B
+MNM0 vn1 net27 vssd vssd N_12_LPRVT W=2u L=1u M=1
+MNM1 net27 net27 vssd vssd N_12_LPRVT W=2u L=1u M=1
+MNM2 net9 vbn vssd vssd N_12_LPRVT W=2u L=2u M=2
+MNM6 vn1 stdby vssd vssd N_12_LPRVT W=2u L=300n M=1
+MNM7 vssd vn1 vssd vssd N_12_LPRVT W=10u L=10u M=4
+MPM0 net48 net9 vddd vddd P_12_LPRVT W=10u L=1u M=1
+MPM1 vn1 vctrl net48 vddd P_12_LPRVT W=10u L=500n M=1
+MPM2 net27 replica_out net48 vddd P_12_LPRVT W=10u L=500n M=1
+MPM3 net9 net9 vddd vddd P_12_LPRVT W=10u L=2u M=1
+MPM5 net9 stdbyb vddd vddd P_12_LPRVT W=2u L=300n M=1
+XIhigh vddd vssd net029 / TIE_HIGH_12
+XIreplica_delay_cell net029 net033 net43 replica_out vddd vn1 vctrl vssd / 
++ delay_cell
+XI5 net029 net033 net078 vp1 vddd vn1 vp1 vssd / delay_cell
+XIlow vddd vssd net033 / TIE_LOW_12
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    dll_vcdl
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT dll_vcdl i2u_out i5u in out0 out90 out180 outn180 stdby stdbyb vctrl 
++ vddd vssd
+*.PININFO i5u:I in:I stdby:I stdbyb:I vctrl:I i2u_out:O out0:O out90:O 
+*.PININFO out180:O outn180:O vddd:B vssd:B
+MNM1 i5u stdbyb vbn vssd N_12_LPRVT W=2u L=200n M=1
+MNM2 i5u vbn vssd vssd N_12_LPRVT W=2u L=2u M=1
+MNM5 net045 vbn vssd vssd N_12_LPRVT W=2u L=2u M=1
+MNM6 vbn stdby vssd vssd N_12_LPRVT W=2u L=200n M=1
+XIstd in inn inp vddd vssd / std
+XIreplica stdby stdbyb vbn vctrl vddd vn1 vp1 vssd / replica_delay_cell
+MPM1 i2u_out net045 vddd vddd P_12_LPRVT W=2u L=5u M=1
+MPM0 net045 net045 vddd vddd P_12_LPRVT W=5u L=5u M=1
+MPM2 net045 stdbyb vddd vddd P_12_LPRVT W=5u L=300n M=1
+MPM3 vctrl stdbyb vddd vddd P_12_LPRVT W=2u L=2u M=1
+XId4 p_90 n_90 net0112 net0106 vddd vn1 vp1 vssd / delay_cell
+XId6 net028 net027 p_180 n_180 vddd vn1 vp1 vssd / delay_cell
+XId1 inn inp net0120 net030 vddd vn1 vp1 vssd / delay_cell
+XId3 net035 net029 n_90 p_90 vddd vn1 vp1 vssd / delay_cell
+XI62 net030 net0120 net029 net035 vddd vn1 vp1 vssd / delay_cell
+XI63 net0106 net0112 net027 net028 vddd vn1 vp1 vssd / delay_cell
+MNM0 vssd vbn vssd vssd N_12_LPNVT W=10u L=10u M=6
+XI59 p_180 n_180 outn180 vddd vssd stdby stdbyb vbn / dts
+XI57 n_90 p_90 out90 vddd vssd stdby stdbyb vbn / dts
+XI58 n_180 p_180 out180 vddd vssd stdby stdbyb vbn / dts
+XIin_buffer inn inp out0 vddd vssd stdby stdbyb vbn / dts
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    dll_top
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT dll_top clk clk0 clk180 clk90 i5u stdby12 vddd vssd
+*.PININFO clk:I i5u:I stdby12:I clk0:O clk90:O clk180:O vddd:B vssd:B
+XIcp up upb net014 vctrl pd pdn down downb vddd vssd / dll_cp
+XIpfd outn180 down downb clk0 pd up upb vddd vssd / pfd_tspc
+XIvcdl net014 i5u clk clk0 clk90 clk180 outn180 pd pdn vctrl vddd vssd / 
++ dll_vcdl
+XI5 vssd stdby12 pdn vddd / dll_inv2x
+XI6 vssd pdn pd vddd / dll_inv2x
+MPM0 vddd vctrl vddd vddd P_12_LPRVT W=10u L=10u M=30
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_rx_clk_v2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_rx_clk_v2 clk0 clk90 clk180 delay<3> delay<2> delay<1> delay<0> 
++ dll_i5u dll_pd in vddd vp1 vssd
+*.PININFO delay<3>:I delay<2>:I delay<1>:I delay<0>:I dll_i5u:I dll_pd:I in:I 
+*.PININFO vp1:I clk0:O clk90:O clk180:O vddd:B vssd:B
+XIdelay delay<3> delay<2> delay<1> delay<0> in delay_chain_out dll_pd vddd vp1 
++ vssd / delay_top_v2
+XIdll delay_chain_out clk0 clk180 clk90 dll_i5u dll_pd vddd vssd / dll_top
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_rx_clk_top_v2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mipi_rx_clk_top_v2 clk0 clk90 clk180 clk_delay<3> clk_delay<2> 
++ clk_delay<1> clk_delay<0> dll_i5u dll_pd dly_test_en dn dp hsd_test_en lpdn 
++ lpdp lpn_test_en lpp_test_en stdby stdby33 term_en term_en33 test_out vddd 
++ vddio vhigh vlow vp1_delay vp1_mipi vp1_mipi33 vssd
+*.PININFO clk_delay<3>:I clk_delay<2>:I clk_delay<1>:I clk_delay<0>:I 
+*.PININFO dll_i5u:I dll_pd:I dly_test_en:I dn:I dp:I hsd_test_en:I 
+*.PININFO lpn_test_en:I lpp_test_en:I stdby:I stdby33:I term_en:I term_en33:I 
+*.PININFO vhigh:I vlow:I vp1_delay:I vp1_mipi:I vp1_mipi33:I clk0:O clk90:O 
+*.PININFO clk180:O lpdn:O lpdp:O test_out:O vddd:B vddio:B vssd:B
+XI72 clk0 clk90 clk180 clk_delay<3> clk_delay<2> clk_delay<1> clk_delay<0> 
++ dll_i5u dll_pd net045 vddd vp1_delay vssd / mipi_rx_clk_v2
+XIlp lpdp stdby33 vddd vddio vhigh net016 vlow vp1_mipi33 vssd / mipi_rx_lp_v2
+XIln lpdn stdby33 vddd vddio vhigh net011 vlow vp1_mipi33 vssd / mipi_rx_lp_v2
+XIhs net011 net016 hsd stdby stdbyb vddio vddd vp1_mipi vp1_mipi33 vssd / 
++ mipi_rx_hs_v2
+RR1 dp net016 556.322 $SUB=vddio $[RNPPO_LP] $W=1u $L=700n M=1
+RR0 dn net011 556.322 $SUB=vddio $[RNPPO_LP] $W=1u $L=700n M=1
+XI78 stdby stdbyb vddd vssd / mipi_rx_inv2x
+XI35 net040 net045 vddd vssd / delay_dac_inv4x
+XI31 hsd term_en net040 vddd vssd / mipi_rx_nand2
+XI84 clk0 dly_test_en hsd hsd_test_en lpdn lpn_test_en lpdp lpp_test_en 
++ test_out vddd vssd / mipi_rx_testMux
+XIterm dn dp term_en33 vddio vssd / mipi_rx_term_v2
+.ENDS
+
+************************************************************************
+* Library Name: PI4008K_AP
+* Cell Name:    mipi_rx_top_v2
+* View Name:    schematic
+************************************************************************
+
+*.SUBCKT mipi_rx_top_v2 CN_PAD CP_PAD DN0_PAD DN1_PAD DN2_PAD DN3_PAD DP0_PAD 
+*+ DP1_PAD DP2_PAD DP3_PAD mipi_clk0_I mipi_clk90_I mipi_clk180_I 
+*+ mipi_clk_delay_O<3> mipi_clk_delay_O<2> mipi_clk_delay_O<1> 
+*+ mipi_clk_delay_O<0> mipi_clk_pd_O mipi_cterm_en_O mipi_data0_I 
+*+ mipi_data0_delay_O<3> mipi_data0_delay_O<2> mipi_data0_delay_O<1> 
+*+ mipi_data0_delay_O<0> mipi_data1_I mipi_data1_delay_O<3> 
+*+ mipi_data1_delay_O<2> mipi_data1_delay_O<1> mipi_data1_delay_O<0> 
+*+ mipi_data2_I mipi_data2_delay_O<3> mipi_data2_delay_O<2> 
+*+ mipi_data2_delay_O<1> mipi_data2_delay_O<0> mipi_data3_I 
+*+ mipi_data3_delay_O<3> mipi_data3_delay_O<2> mipi_data3_delay_O<1> 
+*+ mipi_data3_delay_O<0> mipi_data_pd_O<3> mipi_data_pd_O<2> mipi_data_pd_O<1> 
+*+ mipi_data_pd_O<0> mipi_dll_pd_O mipi_dly_test_en_O mipi_dterm_en_O<3> 
+*+ mipi_dterm_en_O<2> mipi_dterm_en_O<1> mipi_dterm_en_O<0> mipi_hsd_test_en_O 
+*+ mipi_i5u mipi_lpcn_I mipi_lpcp_I mipi_lpdn0_I mipi_lpdn1_I mipi_lpdn2_I 
+*+ mipi_lpdn3_I mipi_lpdp0_I mipi_lpdp1_I mipi_lpdp2_I mipi_lpdp3_I 
+*+ mipi_lpn_test_en_O mipi_lpp_test_en_O mipi_ref_pd_O mipi_test_out_I<0> 
+*+ mipi_test_out_I<1> mipi_test_out_I<2> mipi_test_out_I<3> mipi_test_out_I<4> 
+*+ mipi_v06 mipi_vhtrim_O<1> mipi_vhtrim_O<0> mipi_vltrim_O<1> mipi_vltrim_O<0> 
+*+ vddd vddio vssd
+*.PININFO CN_PAD:I CP_PAD:I DN0_PAD:I DN1_PAD:I DN2_PAD:I DN3_PAD:I DP0_PAD:I 
+*.PININFO DP1_PAD:I DP2_PAD:I DP3_PAD:I mipi_clk_delay_O<3>:I 
+*.PININFO mipi_clk_delay_O<2>:I mipi_clk_delay_O<1>:I mipi_clk_delay_O<0>:I 
+*.PININFO mipi_clk_pd_O:I mipi_cterm_en_O:I mipi_data0_delay_O<3>:I 
+*.PININFO mipi_data0_delay_O<2>:I mipi_data0_delay_O<1>:I 
+*.PININFO mipi_data0_delay_O<0>:I mipi_data1_delay_O<3>:I 
+*.PININFO mipi_data1_delay_O<2>:I mipi_data1_delay_O<1>:I 
+*.PININFO mipi_data1_delay_O<0>:I mipi_data2_delay_O<3>:I 
+*.PININFO mipi_data2_delay_O<2>:I mipi_data2_delay_O<1>:I 
+*.PININFO mipi_data2_delay_O<0>:I mipi_data3_delay_O<3>:I 
+*.PININFO mipi_data3_delay_O<2>:I mipi_data3_delay_O<1>:I 
+*.PININFO mipi_data3_delay_O<0>:I mipi_data_pd_O<3>:I mipi_data_pd_O<2>:I 
+*.PININFO mipi_data_pd_O<1>:I mipi_data_pd_O<0>:I mipi_dll_pd_O:I 
+*.PININFO mipi_dly_test_en_O:I mipi_dterm_en_O<3>:I mipi_dterm_en_O<2>:I 
+*.PININFO mipi_dterm_en_O<1>:I mipi_dterm_en_O<0>:I mipi_hsd_test_en_O:I 
+*.PININFO mipi_i5u:I mipi_lpn_test_en_O:I mipi_lpp_test_en_O:I mipi_ref_pd_O:I 
+*.PININFO mipi_v06:I mipi_vhtrim_O<1>:I mipi_vhtrim_O<0>:I mipi_vltrim_O<1>:I 
+*.PININFO mipi_vltrim_O<0>:I mipi_clk0_I:O mipi_clk90_I:O mipi_clk180_I:O 
+*.PININFO mipi_data0_I:O mipi_data1_I:O mipi_data2_I:O mipi_data3_I:O 
+*.PININFO mipi_lpcn_I:O mipi_lpcp_I:O mipi_lpdn0_I:O mipi_lpdn1_I:O 
+*.PININFO mipi_lpdn2_I:O mipi_lpdn3_I:O mipi_lpdp0_I:O mipi_lpdp1_I:O 
+*.PININFO mipi_lpdp2_I:O mipi_lpdp3_I:O mipi_test_out_I<0>:O 
+*.PININFO mipi_test_out_I<1>:O mipi_test_out_I<2>:O mipi_test_out_I<3>:O 
+*.PININFO mipi_test_out_I<4>:O vddd:B vddio:B vssd:B
+XIlvls mipi_clk_pd_O mipi_clk_pd_buf mipi_cterm_en_O mipi_cterm_en_buf 
++ mipi_data_pd_O<0> mipi_data_pd_O<1> mipi_data_pd_O<2> mipi_data_pd_O<3> 
++ mipi_data_pd_buf<0> mipi_data_pd_buf<1> mipi_data_pd_buf<2> 
++ mipi_data_pd_buf<3> mipi_dterm_en_O<3> mipi_dterm_en_O<2> mipi_dterm_en_O<1> 
++ mipi_dterm_en_O<0> mipi_dterm_en_buf<3> mipi_dterm_en_buf<2> 
++ mipi_dterm_en_buf<1> mipi_dterm_en_buf<0> mipi_ref_pd_O mipi_ref_pdb_buf 
++ vddd vddio vssd / mipi_lvls
+XIref mipi_i5u dll_i5u mipi_ref_pd_O mipi_ref_pdb_buf mipi_v06 vddd vddio 
++ vlpth_high mipi_vhtrim_O<1> mipi_vhtrim_O<0> vlpth_low mipi_vltrim_O<1> 
++ mipi_vltrim_O<0> vn1_delay vp1_delay vp1_mipi vp1_mipi33 vssd / 
++ mipi_rx_ref_v2
+MNM0<31> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<30> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<29> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<28> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<27> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<26> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<25> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<24> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<23> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<22> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<21> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<20> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<19> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<18> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<17> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<16> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<15> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<14> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<13> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<12> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<11> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<10> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<9> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<8> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<7> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<6> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<5> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<4> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<3> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<2> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+MNM0<1> vssd vddd vssd vssd N_25OD33_LP W=5u L=5u M=1
+XIch3 mipi_data3_I mipi_data3_delay_O<3> mipi_data3_delay_O<2> 
++ mipi_data3_delay_O<1> mipi_data3_delay_O<0> mipi_dly_test_en_O DN3_PAD 
++ DP3_PAD mipi_hsd_test_en_O mipi_lpdn3_I mipi_lpdp3_I mipi_lpn_test_en_O 
++ mipi_lpp_test_en_O mipi_data_pd_O<3> mipi_data_pd_buf<3> mipi_dterm_en_O<3> 
++ mipi_dterm_en_buf<3> mipi_test_out_I<3> vddd vddio vlpth_high vlpth_low 
++ vn1_delay vp1_delay vp1_mipi vp1_mipi33 vssd / mipi_rx_data_top_v2
+XIch0 mipi_data0_I mipi_data0_delay_O<3> mipi_data0_delay_O<2> 
++ mipi_data0_delay_O<1> mipi_data0_delay_O<0> mipi_dly_test_en_O DN0_PAD 
++ DP0_PAD mipi_hsd_test_en_O mipi_lpdn0_I mipi_lpdp0_I mipi_lpn_test_en_O 
++ mipi_lpp_test_en_O mipi_data_pd_O<0> mipi_data_pd_buf<0> mipi_dterm_en_O<0> 
++ mipi_dterm_en_buf<0> mipi_test_out_I<0> vddd vddio vlpth_high vlpth_low 
++ vn1_delay vp1_delay vp1_mipi vp1_mipi33 vssd / mipi_rx_data_top_v2
+XIch1 mipi_data1_I mipi_data1_delay_O<3> mipi_data1_delay_O<2> 
++ mipi_data1_delay_O<1> mipi_data1_delay_O<0> mipi_dly_test_en_O DN1_PAD 
++ DP1_PAD mipi_hsd_test_en_O mipi_lpdn1_I mipi_lpdp1_I mipi_lpn_test_en_O 
++ mipi_lpp_test_en_O mipi_data_pd_O<1> mipi_data_pd_buf<1> mipi_dterm_en_O<1> 
++ mipi_dterm_en_buf<1> mipi_test_out_I<1> vddd vddio vlpth_high vlpth_low 
++ vn1_delay vp1_delay vp1_mipi vp1_mipi33 vssd / mipi_rx_data_top_v2
+XIch2 mipi_data2_I mipi_data2_delay_O<3> mipi_data2_delay_O<2> 
++ mipi_data2_delay_O<1> mipi_data2_delay_O<0> mipi_dly_test_en_O DN2_PAD 
++ DP2_PAD mipi_hsd_test_en_O mipi_lpdn2_I mipi_lpdp2_I mipi_lpn_test_en_O 
++ mipi_lpp_test_en_O mipi_data_pd_O<2> mipi_data_pd_buf<2> mipi_dterm_en_O<2> 
++ mipi_dterm_en_buf<2> mipi_test_out_I<2> vddd vddio vlpth_high vlpth_low 
++ vn1_delay vp1_delay vp1_mipi vp1_mipi33 vssd / mipi_rx_data_top_v2
+XIclk mipi_clk0_I mipi_clk90_I mipi_clk180_I mipi_clk_delay_O<3> 
++ mipi_clk_delay_O<2> mipi_clk_delay_O<1> mipi_clk_delay_O<0> dll_i5u 
++ mipi_dll_pd_O mipi_dly_test_en_O CN_PAD CP_PAD mipi_hsd_test_en_O 
++ mipi_lpcn_I mipi_lpcp_I mipi_lpn_test_en_O mipi_lpp_test_en_O mipi_clk_pd_O 
++ mipi_clk_pd_buf mipi_cterm_en_O mipi_cterm_en_buf mipi_test_out_I<4> vddd 
++ vddio vlpth_high vlpth_low vp1_delay vp1_mipi vp1_mipi33 vssd / 
++ mipi_rx_clk_top_v2
+MPM0<532> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<531> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<530> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<529> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<528> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<527> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<526> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<525> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<524> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<523> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<522> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<521> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<520> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<519> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<518> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<517> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<516> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<515> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<514> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<513> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<512> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<511> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<510> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<509> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<508> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<507> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<506> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<505> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<504> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<503> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<502> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<501> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<500> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<499> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<498> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<497> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<496> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<495> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<494> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<493> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<492> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<491> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<490> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<489> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<488> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<487> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<486> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<485> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<484> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<483> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<482> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<481> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<480> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<479> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<478> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<477> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<476> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<475> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<474> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<473> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<472> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<471> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<470> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<469> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<468> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<467> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<466> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<465> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<464> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<463> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<462> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<461> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<460> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<459> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<458> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<457> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<456> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<455> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<454> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<453> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<452> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<451> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<450> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<449> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<448> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<447> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<446> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<445> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<444> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<443> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<442> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<441> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<440> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<439> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<438> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<437> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<436> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<435> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<434> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<433> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<432> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<431> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<430> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<429> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<428> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<427> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<426> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<425> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<424> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<423> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<422> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<421> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<420> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<419> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<418> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<417> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<416> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<415> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<414> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<413> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<412> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<411> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<410> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<409> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<408> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<407> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<406> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<405> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<404> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<403> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<402> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<401> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<400> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<399> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<398> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<397> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<396> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<395> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<394> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<393> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<392> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<391> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<390> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<389> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<388> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<387> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<386> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<385> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<384> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<383> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<382> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<381> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<380> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<379> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<378> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<377> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<376> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<375> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<374> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<373> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<372> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<371> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<370> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<369> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<368> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<367> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<366> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<365> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<364> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<363> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<362> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<361> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<360> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<359> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<358> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<357> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<356> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<355> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<354> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<353> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<352> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<351> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<350> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<349> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<348> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<347> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<346> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<345> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<344> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<343> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<342> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<341> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<340> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<339> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<338> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<337> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<336> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<335> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<334> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<333> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<332> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<331> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<330> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<329> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<328> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<327> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<326> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<325> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<324> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<323> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<322> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<321> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<320> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<319> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<318> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<317> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<316> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<315> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<314> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<313> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<312> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<311> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<310> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<309> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<308> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<307> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<306> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<305> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<304> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<303> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<302> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<301> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<300> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<299> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<298> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<297> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<296> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<295> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<294> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<293> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<292> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<291> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<290> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<289> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<288> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<287> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<286> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<285> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<284> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<283> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<282> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<281> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<280> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<279> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<278> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<277> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<276> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<275> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<274> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<273> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<272> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<271> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<270> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<269> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<268> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<267> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<266> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<265> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<264> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<263> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<262> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<261> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<260> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<259> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<258> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<257> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<256> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<255> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<254> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<253> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<252> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<251> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<250> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<249> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<248> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<247> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<246> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<245> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<244> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<243> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<242> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<241> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<240> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<239> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<238> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<237> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<236> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<235> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<234> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<233> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<232> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<231> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<230> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<229> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<228> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<227> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<226> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<225> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<224> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<223> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<222> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<221> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<220> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<219> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<218> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<217> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<216> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<215> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<214> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<213> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<212> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<211> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<210> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<209> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<208> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<207> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<206> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<205> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<204> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<203> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<202> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<201> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<200> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<199> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<198> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<197> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<196> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<195> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<194> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<193> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<192> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<191> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<190> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<189> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<188> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<187> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<186> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<185> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<184> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<183> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<182> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<181> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<180> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<179> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<178> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<177> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<176> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<175> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<174> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<173> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<172> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<171> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<170> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<169> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<168> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<167> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<166> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<165> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<164> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<163> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<162> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<161> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<160> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<159> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<158> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<157> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<156> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<155> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<154> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<153> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<152> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<151> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<150> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<149> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<148> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<147> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<146> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<145> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<144> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<143> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<142> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<141> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<140> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<139> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<138> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<137> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<136> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<135> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<134> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<133> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<132> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<131> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<130> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<129> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<128> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<127> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<126> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<125> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<124> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<123> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<122> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<121> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<120> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<119> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<118> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<117> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<116> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<115> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<114> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<113> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<112> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<111> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<110> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<109> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<108> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<107> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<106> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<105> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<104> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<103> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<102> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<101> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<100> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<99> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<98> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<97> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<96> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<95> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<94> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<93> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<92> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<91> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<90> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<89> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<88> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<87> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<86> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<85> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<84> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<83> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<82> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<81> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<80> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<79> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<78> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<77> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<76> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<75> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<74> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<73> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<72> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<71> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<70> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<69> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<68> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<67> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<66> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<65> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<64> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<63> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<62> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<61> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<60> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<59> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<58> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<57> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<56> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<55> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<54> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<53> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<52> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<51> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<50> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<49> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<48> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<47> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<46> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<45> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<44> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<43> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<42> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<41> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<40> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<39> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<38> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<37> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<36> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<35> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<34> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<33> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<32> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<31> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<30> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<29> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<28> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<27> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<26> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<25> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<24> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<23> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<22> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<21> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<20> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<19> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<18> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<17> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<16> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<15> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<14> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<13> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<12> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<11> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<10> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<9> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<8> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<7> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<6> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<5> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<4> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<3> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<2> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM0<1> vddd vssd vddd vddd P_12_LPRVT W=4u L=4u M=1
+MPM2<110> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<109> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<108> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<107> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<106> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<105> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<104> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<103> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<102> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<101> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<100> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<99> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<98> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<97> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<96> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<95> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<94> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<93> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<92> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<91> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<90> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<89> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<88> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<87> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<86> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<85> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<84> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<83> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<82> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<81> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<80> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<79> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<78> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<77> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<76> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<75> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<74> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<73> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<72> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<71> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<70> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<69> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<68> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<67> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<66> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<65> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<64> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<63> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<62> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<61> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<60> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<59> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<58> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<57> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<56> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<55> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<54> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<53> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<52> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<51> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<50> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<49> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<48> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<47> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<46> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<45> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<44> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<43> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<42> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<41> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<40> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<39> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<38> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<37> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<36> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<35> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<34> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<33> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<32> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<31> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<30> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<29> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<28> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<27> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<26> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<25> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<24> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<23> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<22> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<21> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<20> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<19> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<18> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<17> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<16> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<15> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<14> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<13> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<12> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<11> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<10> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<9> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<8> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<7> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<6> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<5> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<4> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<3> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<2> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+MPM2<1> vddio vssd vddio vddio P_25OD33_LP W=3u L=4u M=1
+*.ENDS
+

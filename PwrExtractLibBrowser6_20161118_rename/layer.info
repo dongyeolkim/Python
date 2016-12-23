@@ -1,0 +1,51 @@
+// UMC Proprietary Data                                                 	//
+//   Title    : 0.13 um CMOS Image Sensor 1.5 V/3.3 V 2P4M 			//
+
+LAYER MAP	41	DATATYPE	0	1019 LAYER PO1		1019		// Poly1
+
+LAYER MAP	1	  DATATYPE	0	1001 LAYER DIFF		1001		// Diffusion
+
+LAYER MAP	39	DATATYPE	0	1017 LAYER CONT		1017		// Contact
+
+LAYER MAP	46	DATATYPE	0	1022 LAYER ME1		1022		// Metal1
+LAYER MAP	47	DATATYPE	0	1023 LAYER VI1		1023		// Mvia1
+LAYER MAP	48	DATATYPE	0	1024 LAYER ME2		1024		// Metal2
+LAYER MAP	49	DATATYPE	0	1025 LAYER VI2		1025		// Mvia2
+LAYER MAP	50	DATATYPE	0	1026 LAYER ME3		1026		// Metal3
+LAYER MAP	51	DATATYPE	0	1027 LAYER VI3		1027		// Mvia3
+LAYER MAP	52	DATATYPE	0	1028 LAYER ME4		1028		// Metal4
+
+LAYER MAP	101	TEXTTYPE	0	1065 LAYER M1_TEXT		1065		// Metal1 Text
+LAYER MAP	102	TEXTTYPE	0	1066 LAYER M2_TEXT		1066		// Metal2 Text
+LAYER MAP	103	TEXTTYPE	0	1067 LAYER M3_TEXT		1067		// Metal3 Text
+LAYER MAP	104	TEXTTYPE	0	1068 LAYER M4_TEXT		1068		// Metal4 Text
+
+
+
+1	  // Diffusion
+39  // Contact
+41  // Poly1
+46  // Metal1
+47  // Mvia1
+48  // Metal2
+49  // Mvia2
+50  // Metal3
+51  // Mvia3
+52  // Metal4
+101 // Metal1 Text
+102 // Metal2 Text
+103 // Metal3 Text
+104 // Metal4 Text
+
+46  // Metal1
+47  // Mvia1
+48  // Metal2
+49  // Mvia2
+50  // Metal3
+51  // Mvia3
+52  // Metal4
+
+46 48 47 M1-M2
+48 50 49 M2-M3
+50 52 51 M3-M4
+

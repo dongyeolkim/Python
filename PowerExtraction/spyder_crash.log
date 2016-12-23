@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/rnda10/home/kimdy/anaconda3/lib/python3.5/site-packages/spyderlib/spyder.py", line 2331, in main
+    mainwindow = run_spyder(app, options, args)
+  File "/rnda10/home/kimdy/anaconda3/lib/python3.5/site-packages/spyderlib/spyder.py", line 2215, in run_spyder
+    main.setup()
+  File "/rnda10/home/kimdy/anaconda3/lib/python3.5/site-packages/spyderlib/spyder.py", line 768, in setup
+    self.editor = Editor(self)
+  File "/rnda10/home/kimdy/anaconda3/lib/python3.5/site-packages/spyderlib/plugins/editor.py", line 424, in __init__
+    self.stack_menu_actions, first=True)
+  File "/rnda10/home/kimdy/anaconda3/lib/python3.5/site-packages/spyderlib/widgets/editor.py", line 1946, in __init__
+    self.register_editorstack_cb(self.editorstack)
+  File "/rnda10/home/kimdy/anaconda3/lib/python3.5/site-packages/spyderlib/plugins/editor.py", line 1121, in register_editorstack
+    color_scheme = get_color_scheme(self.get_option('color_scheme_name'))
+  File "/rnda10/home/kimdy/anaconda3/lib/python3.5/site-packages/spyderlib/guiconfig.py", line 140, in get_color_scheme
+    color_scheme[key] = CONF.get("color_schemes", "%s/%s" % (name, key))
+  File "/rnda10/home/kimdy/anaconda3/lib/python3.5/site-packages/spyderlib/userconfig.py", line 385, in get
+    raise cp.NoOptionError(option, section)
+configparser.NoOptionError: No option 'SpyderDark/background' in section: 'color_schemes'

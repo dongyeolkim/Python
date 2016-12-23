@@ -1,0 +1,165 @@
+[PV2109K(Rev.0)]
+
+W0300	# A bank
+W3301	# contant current on
+W3503	# pixelbias
+W3605	# compbias
+W3A7F	# range_sel<5:0>=111111b(1.2V) + sample drv01(default)
+#W3BC6	# rx_fall bias 110b
+#W3C58	# store drv 01(default)
+W3D2F	# rampbuf bias 11
+
+W0301	# B bank
+WB740	# adcoffset 40h
+
+W0304	# E bank
+#W1CBA	# midexp_h(for gain 60h)
+#W1FBA	# maxexp_h
+
+W0307	# H bank
+
+WD915	# rampwave
+WDA54	# rampwave2
+
+
+###
+
+
+W0301	# B bank
+
+W5706	# lsenb edge1 H (1630)
+W585E	# lsenb edge1 L
+W5906	# lsenb edge2 H (1638)
+W5A66	# lsenb edge2 L
+
+W5300	# ls_rst edge1 H (10)
+W540A	# ls_rst edge1 L
+W5506	# ls_rst edge2 H (1591)
+W5637	# ls_rst edge2 L
+
+W9900	# tx_illum edge1 H (162)
+W9AA2	# tx_illum edge1 L
+W9B06	# tx_illum edge2 H (1620)
+W9C54	# tx_illum edge2 L
+
+W6700	# ls_txb edge1 H (162)
+W68A2	# ls_txb edge1 L
+W6900	# ls_txb edge2 H (187)
+W6ABB	# ls_txb edge2 L
+
+W5B00	# sample edge1 H (5)
+W5C05	# sample edge1 L
+W5D06	# sample edge2 H (1620)
+W5E54	# sample edge2 L
+
+W5F00	# store edge1 H (23)
+W6017	# store edge1 L
+W6100	# store edge2 H (154)
+W629A	# store edge2 L
+
+W9D00	# ablc_en edge1 H (156)
+W9E9C	# ablc_en edge1 L
+
+
+W0307	# H bank
+
+WDF00	# blacksun_en edge1 H (156)
+WE09C	# blacksun_en edge1 L
+WE106	# blacksun_en edge2 H (1640)
+WE268	# blacksun_en edge2 L
+
+WCD00	# limiter_en edge1 H (155)
+WCE9B	# limiter_en edge1 L
+WCF0B	# limiter_en edge2 H (3000)
+WD0B8	# limiter_en edge2 L
+
+
+W0301	# B bank
+
+W6F01	# load edge1 H (265)
+W7009	# load edge1 L
+W7106	# load edge2 H (1578)
+W722A	# load edge2 L
+
+W7301	# latch_en edge1 H (269)
+W740D	# latch_en edge1 L
+W7506	# latch_en edge2 H (1576)
+W7628	# latch_en edge2 L
+W7706	# latch_en edge3 H (1646)
+W786E	# latch_en edge3 L
+W7906	# latch_en edge4 H (1648)
+W7A70	# latch_en edge4 L
+
+W8F00	# vramp edge1 H (208)
+W90D0	# vramp edge1 L
+W8B01	# vramp edge2 H (286)
+W8C1E	# vramp edge2 L
+W8D06	# vramp edge4 H (1581)
+W8E2D	# vramp edge4 L
+
+
+W0307	# H bank
+
+WDB01	# adc_clk_en edge1 H (289)
+WDC21	# adc_clk_en edge1 L
+WDD06	# adc_clk_en edge2 H (1569)
+WDE21	# adc_clk_en edge2 L
+
+WD106	# adc_rstbn edge1 H (1644)
+WD26C	# adc_rstbn edge1 L
+WD306	# adc_rstbn edge2 H (1648)
+WD470	# adc_rstbn edge2 L
+
+WD506	# adc_rstbp edge1 H (1645)
+WD66D	# adc_rstbp edge1 L
+WD706	# adc_rstbp edge2 H (1647)
+WD86F	# adc_rstbp edge2 L
+
+
+W0301	# B bank
+
+W8706	# transfer edge1 H (1637)
+W8865	# transfer edge1 L
+W8906	# transfer edge2 H (1642)
+W8A6A	# transfer edge2 L
+
+W9506	# refhold edge1 H (1621)
+W9655	# refhold edge1 L
+W9706	# refhold edge2 H (1636)
+W9864	# refhold edge2 L
+
+W9106	# atten_rst edge1 H (1633)
+W9261	# atten_rst edge1 L
+W9306	# atten_rst edge2 H (1638)
+W9466	# atten_rst edge2 L
+
+W7F06	# pbhold edge1 H (1622)
+W8056	# pbhold edge1 L
+W8106	# pbhold edge2 H (1632)
+W8260	# pbhold edge2 L
+
+W8306	# col_pbhold edge1 H (1623)
+W8457	# col_pbhold edge1 L
+W8506	# col_pbhold edge2 H (1631)
+W865F	# col_pbhold edge2 L
+
+WB906	# col_pbhold2 edge1 H (1624)
+WBA58	# col_pbhold2 edge1 L
+WBB06	# col_pbhold2 edge2 H (1630)
+WBC5E	# col_pbhold2 edge2 L
+
+W3601	# tg_hsync edge1 H (262)
+W3706	# tg_hsync edge1 L
+W3806	# tg_hsync edge2 H (1550)
+W390E	# tg_hsync edge2 L
+
+WA10C	# tg_hsync COffset H (3192)
+WA278	# tg_hsync COffset L
+
+W3E01	# bl_hsync edge1 H (262)
+W3F06	# bl_hsync edge1 L
+W4006	# bl_hsync edge2 H (1550)
+W410E	# bl_hsync edge2 L
+
+WA10C	# bl_hsync COffset H (3192)
+WA278	# bl_hsync COffset L

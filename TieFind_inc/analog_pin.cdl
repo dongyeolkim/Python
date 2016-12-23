@@ -1,0 +1,147 @@
+XU_sensor ANALOG_CORE_PV2109K2 $PINS gnda_in=GNDA_IN gndd_in=GNDD_IN gndr_in=GNDR_IN 
++ gndc_in=GNDC_IN gndpll_in=GNDPLL_IN isin=ISIN_PAD dac_ion=CN_PAD dac_iop=CP_PAD 
++ rext=REXT_PAD OSDC_PAD=OSD_PAD vdd_up=VREFP_PAD gnd_dn=VREFN_PAD vddpll_in=VDDPLL_IN vdda_in=VDDA_IN 
++ vdds_in=VDDS_IN vddd_in=VDDD_IN vddr_in=VDDR_IN vddc_in=VDDC_IN rev_high=rev_high rev_low=rev_low
++ adcdata_c_I[10]=adcdata_c_I[10] adcdata_c_I[9]=adcdata_c_I[9] 
++ adcdata_c_I[8]=adcdata_c_I[8] adcdata_c_I[7]=adcdata_c_I[7] 
++ adcdata_c_I[6]=adcdata_c_I[6] adcdata_c_I[5]=adcdata_c_I[5] 
++ adcdata_c_I[4]=adcdata_c_I[4] adcdata_c_I[3]=adcdata_c_I[3] 
++ adcdata_c_I[2]=adcdata_c_I[2] adcdata_c_I[1]=adcdata_c_I[1] 
++ adcdata_c_I[0]=adcdata_c_I[0] adcdata_a_I[10]=adcdata_a_I[10] 
++ adcdata_a_I[9]=adcdata_a_I[9] adcdata_a_I[8]=adcdata_a_I[8] 
++ adcdata_a_I[7]=adcdata_a_I[7] adcdata_a_I[6]=adcdata_a_I[6] 
++ adcdata_a_I[5]=adcdata_a_I[5] adcdata_a_I[4]=adcdata_a_I[4] 
++ adcdata_a_I[3]=adcdata_a_I[3] adcdata_a_I[2]=adcdata_a_I[2] 
++ adcdata_a_I[1]=adcdata_a_I[1] adcdata_a_I[0]=adcdata_a_I[0] 
++ ablc_res_con_O=ablc_res_con_O ablc_pd_O=ablc_pd_O 
++ dac_fs_ctrl_O[5]=dac_fs_ctrl_O[5] dac_fs_ctrl_O[4]=dac_fs_ctrl_O[4] 
++ dac_fs_ctrl_O[3]=dac_fs_ctrl_O[3] dac_fs_ctrl_O[2]=dac_fs_ctrl_O[2] 
++ dac_fs_ctrl_O[1]=dac_fs_ctrl_O[1] dac_fs_ctrl_O[0]=dac_fs_ctrl_O[0] 
++ dac_clk_ctrl_O=dac_clk_ctrl_O dac_pd_O=dac_pd_O 
++ dac_data_O[9]=dac_fifo_data_O[9] dac_data_O[8]=dac_fifo_data_O[8] 
++ dac_data_O[7]=dac_fifo_data_O[7] dac_data_O[6]=dac_fifo_data_O[6] 
++ dac_data_O[5]=dac_fifo_data_O[5] dac_data_O[4]=dac_fifo_data_O[4] 
++ dac_data_O[3]=dac_fifo_data_O[3] dac_data_O[2]=dac_fifo_data_O[2] 
++ dac_data_O[1]=dac_fifo_data_O[1] dac_data_O[0]=dac_fifo_data_O[0] 
++ osd_s4_O=osd_s4_O tx_illumb_O=tx_illumb_O tx_illum_O=tx_illum_O 
++ blacksun_en_O=blacksun_en_O blacksun_enb_O=blacksun_enb_O 
++ limiter_enb_O=limiter_enb_O limiter_en_O=limiter_en_O col_initb_O=col_initb_O 
++ bgrcon_pd_O=bgrcon_pd_O ana_bgr_sel_O[0]=ana_bgr_sel_O[0] 
++ ramp_nc_sample_n_O=ramp_nc_sample_n_O pll_mux_rstb_O=pll_mux_rstb_O 
++ storedrvb_O[1]=storedrvb_O[1] storedrvb_O[0]=storedrvb_O[0] load_O=load_O 
++ latch_en_O=latch_en_O transfer_O=transfer_O col_clk_O=col_clk_O 
++ adcdata_d_I[10]=adcdata_d_I[10] adcdata_d_I[9]=adcdata_d_I[9] 
++ adcdata_d_I[8]=adcdata_d_I[8] adcdata_d_I[7]=adcdata_d_I[7] 
++ adcdata_d_I[6]=adcdata_d_I[6] adcdata_d_I[5]=adcdata_d_I[5] 
++ adcdata_d_I[4]=adcdata_d_I[4] adcdata_d_I[3]=adcdata_d_I[3] 
++ adcdata_d_I[2]=adcdata_d_I[2] adcdata_d_I[1]=adcdata_d_I[1] 
++ adcdata_d_I[0]=adcdata_d_I[0] col_amp_consti_O=col_amp_consti_O 
++ adc_rstbp_O=adc_rstbp_O adc_rstbn_O=adc_rstbn_O rs_addr_O[10]=rs_addr_O[10] 
++ rs_addr_O[9]=rs_addr_O[9] rs_addr_O[8]=rs_addr_O[8] rs_addr_O[7]=rs_addr_O[7] 
++ rs_addr_O[6]=rs_addr_O[6] rs_addr_O[5]=rs_addr_O[5] rs_addr_O[4]=rs_addr_O[4] 
++ rs_addr_O[3]=rs_addr_O[3] rs_addr_O[2]=rs_addr_O[2] rs_addr_O[1]=rs_addr_O[1] 
++ rs_addr_O[0]=rs_addr_O[0] col_amp_constib_O=col_amp_constib_O 
++ sampledrvb_O[1]=sampledrvb_O[1] sampledrvb_O[0]=sampledrvb_O[0] 
++ col_addr_O[11]=col_addr_O[11] col_addr_O[10]=col_addr_O[10] 
++ col_addr_O[9]=col_addr_O[9] col_addr_O[8]=col_addr_O[8] 
++ col_addr_O[7]=col_addr_O[7] col_addr_O[6]=col_addr_O[6] 
++ col_addr_O[5]=col_addr_O[5] col_addr_O[4]=col_addr_O[4] 
++ col_addr_O[3]=col_addr_O[3] col_addr_O[2]=col_addr_O[2] 
++ adcdata_b_I[10]=adcdata_b_I[10] adcdata_b_I[9]=adcdata_b_I[9] 
++ adcdata_b_I[8]=adcdata_b_I[8] adcdata_b_I[7]=adcdata_b_I[7] 
++ adcdata_b_I[6]=adcdata_b_I[6] adcdata_b_I[5]=adcdata_b_I[5] 
++ adcdata_b_I[4]=adcdata_b_I[4] adcdata_b_I[3]=adcdata_b_I[3] 
++ adcdata_b_I[2]=adcdata_b_I[2] adcdata_b_I[1]=adcdata_b_I[1] 
++ adcdata_b_I[0]=adcdata_b_I[0] adc_clk_O=adc_clk_O 
++ ablc_ramp_con_O[6]=ablc_ramp_con_O[6] ablc_ramp_con_O[5]=ablc_ramp_con_O[5] 
++ ablc_ramp_con_O[4]=ablc_ramp_con_O[4] ablc_ramp_con_O[3]=ablc_ramp_con_O[3] 
++ ablc_ramp_con_O[2]=ablc_ramp_con_O[2] ablc_ramp_con_O[1]=ablc_ramp_con_O[1] 
++ ablc_ramp_con_O[0]=ablc_ramp_con_O[0] ablc_ramp_en_O=ablc_ramp_en_O 
++ col_addrb_O[11]=col_addrb_O[11] col_addrb_O[10]=col_addrb_O[10] 
++ col_addrb_O[9]=col_addrb_O[9] col_addrb_O[8]=col_addrb_O[8] 
++ col_addrb_O[7]=col_addrb_O[7] col_addrb_O[6]=col_addrb_O[6] 
++ col_addrb_O[5]=col_addrb_O[5] col_addrb_O[4]=col_addrb_O[4] 
++ col_addrb_O[3]=col_addrb_O[3] col_addrb_O[2]=col_addrb_O[2] 
++ storedrv_O[1]=storedrv_O[1] storedrv_O[0]=storedrv_O[0] 
++ sampledrv_O[1]=sampledrv_O[1] sampledrv_O[0]=sampledrv_O[0] storeb_O=storeb_O 
++ store_O=store_O 
++ pll_ref_cnt_O[4]=pll_ref_cnt_O[4] pll_ref_cnt_O[3]=pll_ref_cnt_O[3] 
++ pll_ref_cnt_O[2]=pll_ref_cnt_O[2] pll_ref_cnt_O[1]=pll_ref_cnt_O[1] 
++ pll_ref_cnt_O[0]=pll_ref_cnt_O[0] 
++ ramp_nc_en_O=ramp_nc_en_O 
++ pllout_I=pllout_I pll_main_cnt_O[5]=pll_main_cnt_O[5] 
++ pll_main_cnt_O[4]=pll_main_cnt_O[4] pll_main_cnt_O[3]=pll_main_cnt_O[3] 
++ pll_main_cnt_O[2]=pll_main_cnt_O[2] pll_main_cnt_O[1]=pll_main_cnt_O[1] 
++ pll_main_cnt_O[0]=pll_main_cnt_O[0] pll_bypass_O=pll_bypass_O 
++ pll_ref_O=pll_ref_O pll_pd_O=pll_pd_O txdrv_clkctrl_O[1]=txdrv_clkctrl_O[1] 
++ txdrv_clkctrl_O[0]=txdrv_clkctrl_O[0] pll_ivco_O[2]=pll_ivco_O[2] 
++ pll_ivco_O[1]=pll_ivco_O[1] pll_ivco_O[0]=pll_ivco_O[0] 
++ pll_icp_O[2]=pll_icp_O[2] pll_icp_O[1]=pll_icp_O[1] pll_icp_O[0]=pll_icp_O[0] 
++ dac_bgrcon_t_15_O[2]=dac_bgrcon_t_15_O[2] 
++ dac_bgrcon_t_15_O[1]=dac_bgrcon_t_15_O[1] 
++ dac_bgrcon_t_15_O[0]=dac_bgrcon_t_15_O[0] dac_bgrcon_15_O[2]=dac_bgrcon_15_O[2] 
++ dac_bgrcon_15_O[1]=dac_bgrcon_15_O[1] dac_bgrcon_15_O[0]=dac_bgrcon_15_O[0] 
++ refhold_O=refhold_O vrefcap_sel_O=vrefcap_sel_O txl_drv_O[2]=txl_drv_O[2] 
++ txl_drv_O[1]=txl_drv_O[1] txl_drv_O[0]=txl_drv_O[0] 
++ txclk_monitor_I=txclk_monitor_I vgg_pullup_O=vgg_pullup_O 
++ band_trim_O[2]=band_trim_O[2] band_trim_O[1]=band_trim_O[1] 
++ band_trim_O[0]=band_trim_O[0] atten_rst_O=atten_rst_O 
++ range_sel_O[5]=range_sel_O[5] range_sel_O[4]=range_sel_O[4] 
++ range_sel_O[3]=range_sel_O[3] range_sel_O[2]=range_sel_O[2] 
++ range_sel_O[1]=range_sel_O[1] range_sel_O[0]=range_sel_O[0] 
++ globalgainb_O[6]=globalgainb_O[6] globalgainb_O[5]=globalgainb_O[5] 
++ globalgainb_O[4]=globalgainb_O[4] globalgainb_O[3]=globalgainb_O[3] 
++ globalgainb_O[2]=globalgainb_O[2] globalgainb_O[1]=globalgainb_O[1] 
++ globalgainb_O[0]=globalgainb_O[0] compbias_O[4]=compbias_O[4] 
++ compbias_O[3]=compbias_O[3] compbias_O[2]=compbias_O[2] 
++ compbias_O[1]=compbias_O[1] compbias_O[0]=compbias_O[0] 
++ rampcount_O[9]=rampcount_O[9] rampcount_O[8]=rampcount_O[8] 
++ rampcount_O[7]=rampcount_O[7] rampcount_O[6]=rampcount_O[6] 
++ rampcount_O[5]=rampcount_O[5] rampcount_O[4]=rampcount_O[4] 
++ rampcount_O[3]=rampcount_O[3] rampcount_O[2]=rampcount_O[2] 
++ rampcount_O[1]=rampcount_O[1] rampcount_O[0]=rampcount_O[0] 
++ rampbufbias_O[1]=rampbufbias_O[1] rampbufbias_O[0]=rampbufbias_O[0] 
++ limiter_trim_O[5]=limiter_trim_O[5] limiter_trim_O[4]=limiter_trim_O[4] 
++ limiter_trim_O[3]=limiter_trim_O[3] limiter_trim_O[2]=limiter_trim_O[2] 
++ limiter_trim_O[1]=limiter_trim_O[1] limiter_trim_O[0]=limiter_trim_O[0] 
++ col_pbhold2_O=col_pbhold2_O pbhold_O=pbhold_O stdby_ana_O=stdby_ana_O 
++ biascontrol_O=biascontrol_O pixelbias_O[3]=pixelbias_O[3] 
++ pixelbias_O[2]=pixelbias_O[2] pixelbias_O[1]=pixelbias_O[1] 
++ pixelbias_O[0]=pixelbias_O[0] col_pbhold_O=col_pbhold_O 
++ ramp_nc_trim_O[5]=ramp_nc_trim_O[5] ramp_nc_trim_O[4]=ramp_nc_trim_O[4] 
++ ramp_nc_trim_O[3]=ramp_nc_trim_O[3] ramp_nc_trim_O[2]=ramp_nc_trim_O[2] 
++ ramp_nc_trim_O[1]=ramp_nc_trim_O[1] ramp_nc_trim_O[0]=ramp_nc_trim_O[0] 
++ ramp_nc_sample_p_O=ramp_nc_sample_p_O ablc_step_con_O[2]=ablc_step_con_O[2] 
++ ablc_step_con_O[1]=ablc_step_con_O[1] ablc_step_con_O[0]=ablc_step_con_O[0] 
++ sample_O=sample_O sampleb_O=sampleb_O ls_addr_O[10]=ls_addr_O[10] 
++ ls_addr_O[9]=ls_addr_O[9] ls_addr_O[8]=ls_addr_O[8] ls_addr_O[7]=ls_addr_O[7] 
++ ls_addr_O[6]=ls_addr_O[6] ls_addr_O[5]=ls_addr_O[5] ls_addr_O[4]=ls_addr_O[4] 
++ ls_addr_O[3]=ls_addr_O[3] ls_addr_O[2]=ls_addr_O[2] ls_addr_O[1]=ls_addr_O[1] 
++ ls_addr_O[0]=ls_addr_O[0] mq01_O=mq01_O mq10_O=mq10_O ls_rst_O=ls_rst_O 
++ txfall_bias_O[2]=txfall_bias_O[2] txfall_bias_O[1]=txfall_bias_O[1] 
++ txfall_bias_O[0]=txfall_bias_O[0] rsdb_obp_O=rsdb_obp_O 
++ sr_start_I[1]=sr_start_I[1] sr_start_I[0]=sr_start_I[0] 
++ sr_stop_I[1]=sr_stop_I[1] sr_stop_I[0]=sr_stop_I[0] mq00_O=mq00_O 
++ rst_sel_O=rst_sel_O ramp_shift_O[2]=ramp_shift_O[2] 
++ ramp_shift_O[1]=ramp_shift_O[1] ramp_shift_O[0]=ramp_shift_O[0] mq11_O=mq11_O 
++ vclk1_O=vclk1_O vclk2_O=vclk2_O lsenb_O=lsenb_O ls_txb_O=ls_txb_O 
++ sr_txb_O=sr_txb_O osd_store_O=osd_store_O osd_sel_O=osd_sel_O 
++ rxfall_bias_O[2]=rxfall_bias_O[2] rxfall_bias_O[1]=rxfall_bias_O[1] 
++ rxfall_bias_O[0]=rxfall_bias_O[0] sr_rstb_O=sr_rstb_O osd_s3_O=osd_s3_O 
++ osd_s2_O=osd_s2_O osd_s1_O=osd_s1_O osd_pd_O=osd_pd_O vo_ctrl_O[5]=vo_ctrl_O[5] 
++ vo_ctrl_O[4]=vo_ctrl_O[4] vo_ctrl_O[3]=vo_ctrl_O[3] vo_ctrl_O[2]=vo_ctrl_O[2] 
++ vo_ctrl_O[1]=vo_ctrl_O[1] vo_ctrl_O[0]=vo_ctrl_O[0] vh_ctrl_O[2]=vh_ctrl_O[2] 
++ vh_ctrl_O[1]=vh_ctrl_O[1] vh_ctrl_O[0]=vh_ctrl_O[0] vl_ctrl_O[2]=vl_ctrl_O[2] 
++ vl_ctrl_O[1]=vl_ctrl_O[1] vl_ctrl_O[0]=vl_ctrl_O[0] osd_out_I=osd_out_I 
++ comp_blk_ref_I=comp_blk_ref_I txreg_ldol_O[4]=txreg_ldol_O[4] 
++ txreg_ldol_O[3]=txreg_ldol_O[3] txreg_ldol_O[2]=txreg_ldol_O[2] 
++ txreg_ldol_O[1]=txreg_ldol_O[1] txreg_ldol_O[0]=txreg_ldol_O[0] 
++ tx_bypass_h_O=tx_bypass_h_O tx_bypass_l_O=tx_bypass_l_O 
++ dac_load_O[1]=dac_load_O[1] dac_load_O[0]=dac_load_O[0] 
++ osd_sample_O=osd_sample_O osd_s5_O=osd_s5_O txreg_cpl_O[4]=txreg_cpl_O[4] 
++ txreg_cpl_O[3]=txreg_cpl_O[3] txreg_cpl_O[2]=txreg_cpl_O[2] 
++ txreg_cpl_O[1]=txreg_cpl_O[1] txreg_cpl_O[0]=txreg_cpl_O[0] 
++ txdrv_pd_O=txdrv_pd_O txh_drv_O[2]=txh_drv_O[2] txh_drv_O[1]=txh_drv_O[1] 
++ txh_drv_O[0]=txh_drv_O[0] 
++ adc_dummy02_O[7]= adc_dummy02_O[7] adc_dummy02_O[6]= adc_dummy02_O[6] adc_dummy02_O[5]= adc_dummy02_O[5] 
++ adc_dummy02_O[4]= adc_dummy02_O[4] adc_dummy02_O[3]= adc_dummy02_O[3] 

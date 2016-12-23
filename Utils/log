@@ -1,0 +1,315 @@
+; this file is tools/dfII/etc/tools/cdsLibManager/.cdsenv, format is: 
+cdsLibManager.addDisplayAttribute	copyValuesFrom	boolean	nil
+cdsLibManager.ckCancel	useOptionText	string	""
+cdsLibManager.ckCancel	useOptionsOn	boolean	nil
+cdsLibManager.ckGlobal	libCellAlsoManaged	boolean	t
+cdsLibManager.ckIn	dontConfirmSubstituteCmd	boolean	nil
+cdsLibManager.ckIn	selectMatches	toggle	(t nil nil nil)
+cdsLibManager.ckIn	useOptionText	string	""
+cdsLibManager.ckIn	useOptionsOn	boolean	nil
+cdsLibManager.ckOut	useOptionText	string	""
+cdsLibManager.ckOut	useOptionsOn	boolean	nil
+cdsLibManager.copy	addPropFiles	boolean	t
+cdsLibManager.copy	addToCategoryName	string	""
+cdsLibManager.copy	addToCategoryOn	boolean	nil
+cdsLibManager.copy	addToCellsPattern	string	"*"
+cdsLibManager.copy	allViewsOn	boolean	t
+cdsLibManager.copy	exactHierOn	boolean	nil
+cdsLibManager.copy	existenceCheck	boolean	nil
+cdsLibManager.copy	extraViews	string	""
+cdsLibManager.copy	hierOn	boolean	nil
+cdsLibManager.copy	rerefCustomVias	boolean	nil
+cdsLibManager.copy	skipLibsOn	boolean	t
+cdsLibManager.copy	skipLibsText	string	"*"
+cdsLibManager.copy	skipLibsText1	string	""
+cdsLibManager.copy	skipLibsText10	string	""
+cdsLibManager.copy	skipLibsText11	string	""
+cdsLibManager.copy	skipLibsText12	string	""
+cdsLibManager.copy	skipLibsText13	string	""
+cdsLibManager.copy	skipLibsText14	string	""
+cdsLibManager.copy	skipLibsText15	string	""
+cdsLibManager.copy	skipLibsText2	string	""
+cdsLibManager.copy	skipLibsText3	string	""
+cdsLibManager.copy	skipLibsText4	string	""
+cdsLibManager.copy	skipLibsText5	string	""
+cdsLibManager.copy	skipLibsText6	string	""
+cdsLibManager.copy	skipLibsText7	string	""
+cdsLibManager.copy	skipLibsText8	string	""
+cdsLibManager.copy	skipLibsText9	string	""
+cdsLibManager.copy	updateChoice	toggle	(t nil)
+cdsLibManager.copy	updateOn	boolean	nil
+cdsLibManager.copy	viewsText	string	""
+cdsLibManager.copyError	overwriteAll	boolean	nil
+cdsLibManager.copyGlobals	addCellPropFiles	boolean	t
+cdsLibManager.copyGlobals	addLibPropFiles	boolean	t
+cdsLibManager.copyGlobals	expandRadio	toggle	(t nil)
+cdsLibManager.copyGlobals	mpsRadio	toggle	(t nil)
+cdsLibManager.copyGlobals	stopMutations	boolean	t
+cdsLibManager.copyGlobals	useMonitor	boolean	t
+cdsLibManager.copyGlobals	warnRenameDM	boolean	t
+cdsLibManager.copyVersion	openView	boolean	t
+cdsLibManager.copyVersion	toLibrary	string	""
+cdsLibManager.copyVersion	toView	string	""
+cdsLibManager.copyVersion	useOptionText	string	""
+cdsLibManager.copyVersion	useOptionsOn	boolean	nil
+cdsLibManager.copyWizard	addToCategoryName	string	""
+cdsLibManager.copyWizard	addToCategoryOn	boolean	nil
+cdsLibManager.copyWizard	addToCellsPattern	string	"*"
+cdsLibManager.copyWizard	existenceCheck	boolean	nil
+cdsLibManager.copyWizard	extraViews	string	""
+cdsLibManager.copyWizard	rerefCustomVias	boolean	nil
+cdsLibManager.copyWizard	skipLibsText	string	"*"
+cdsLibManager.copyWizard	skipLibsText1	string	""
+cdsLibManager.copyWizard	skipLibsText10	string	""
+cdsLibManager.copyWizard	skipLibsText11	string	""
+cdsLibManager.copyWizard	skipLibsText12	string	""
+cdsLibManager.copyWizard	skipLibsText13	string	""
+cdsLibManager.copyWizard	skipLibsText14	string	""
+cdsLibManager.copyWizard	skipLibsText15	string	""
+cdsLibManager.copyWizard	skipLibsText2	string	""
+cdsLibManager.copyWizard	skipLibsText3	string	""
+cdsLibManager.copyWizard	skipLibsText4	string	""
+cdsLibManager.copyWizard	skipLibsText5	string	""
+cdsLibManager.copyWizard	skipLibsText6	string	""
+cdsLibManager.copyWizard	skipLibsText7	string	""
+cdsLibManager.copyWizard	skipLibsText8	string	""
+cdsLibManager.copyWizard	skipLibsText9	string	""
+cdsLibManager.copyWizard	updateChoice	toggle	(t nil)
+cdsLibManager.copyWizard	updateOn	boolean	t
+cdsLibManager.customize	mapTimeout	float	5.0
+cdsLibManager.customize	showDFIIWarning	boolean	t
+cdsLibManager.customize	startupFile	string	"cdsLibMgr.il"
+cdsLibManager.database	addDb1	string	""
+cdsLibManager.database	addDb2	string	""
+cdsLibManager.database	addDb3	string	""
+cdsLibManager.database	addDb4	string	""
+cdsLibManager.database	addDb5	string	""
+cdsLibManager.database	addDb6	string	""
+cdsLibManager.database	addDb7	string	""
+cdsLibManager.database	addDb8	string	""
+cdsLibManager.database	addDb9	string	""
+cdsLibManager.database	ddDb	string	"com.cadence.interfaces.libAccess.cddLib5xDatabase"
+cdsLibManager.database	server	string	"com.cadence.interfaces.libAccess.ladLibraryServer"
+cdsLibManager.defaults	fileRadio	toggle	(nil t nil)
+cdsLibManager.defaults	saveAllOn	boolean	nil
+cdsLibManager.defaults	saveAsText	string	".cdsenv"
+cdsLibManager.delete	libCheckOn	boolean	t
+cdsLibManager.delete	localRadio	toggle	(t nil)
+cdsLibManager.delete	regExpOn	boolean	nil
+cdsLibManager.deleteTag	overrideRadio	toggle	(t nil nil nil)
+cdsLibManager.deleteView	localRadio	toggle	(t nil)
+cdsLibManager.deleteView	viewFilterList	string	"'abstract', 'ahdl', 'autoLayout', 'behavior', 'cdsSpice', 'cmos_sch', 'cmos.sch', 'functional', 'hpmns', 'hspiceS', 'layout', 'libra', 'mharm', 'schematic', 'spice', 'spectreS', 'symbol', 'system', 'verilog', 'verilogNetlist'"
+cdsLibManager.deleteView	viewFilterList1	string	""
+cdsLibManager.deleteView	viewFilterList10	string	""
+cdsLibManager.deleteView	viewFilterList11	string	""
+cdsLibManager.deleteView	viewFilterList12	string	""
+cdsLibManager.deleteView	viewFilterList13	string	""
+cdsLibManager.deleteView	viewFilterList14	string	""
+cdsLibManager.deleteView	viewFilterList15	string	""
+cdsLibManager.deleteView	viewFilterList2	string	""
+cdsLibManager.deleteView	viewFilterList3	string	""
+cdsLibManager.deleteView	viewFilterList4	string	""
+cdsLibManager.deleteView	viewFilterList5	string	""
+cdsLibManager.deleteView	viewFilterList6	string	""
+cdsLibManager.deleteView	viewFilterList7	string	""
+cdsLibManager.deleteView	viewFilterList8	string	""
+cdsLibManager.deleteView	viewFilterList9	string	""
+cdsLibManager.displayOptions	enableDmQuery	boolean	t
+cdsLibManager.displayOptions	showAllLibrariesStandard	boolean	nil
+cdsLibManager.displayOptions	showHiddenLibraries	boolean	nil
+cdsLibManager.displayOptions	showLibraryColors	boolean	t
+cdsLibManager.displayOptions	showLibraryCustomIcons	boolean	t
+cdsLibManager.displayOptions	showListViewIcons	boolean	t
+cdsLibManager.displayOptions	showViewExtended	boolean	t
+cdsLibManager.displayOptions	pollEnabled	boolean	t
+cdsLibManager.displayOptions	pollSeconds	int	30
+cdsLibManager.displayOptions	pollTimeout	int	10
+cdsLibManager.filter	browseFunction	string	""
+cdsLibManager.filter	cellFilter	string	""
+cdsLibManager.filter	viewFilter	string	""
+cdsLibManager.filter	libSelectCellViewCombineMode	cyclic	"never"
+cdsLibManager.log	addHostID	boolean	nil
+cdsLibManager.log	addProcID	boolean	nil
+cdsLibManager.log	addSequence	boolean	nil
+cdsLibManager.log	addUserID	boolean	nil
+cdsLibManager.log	baseName	string	"libManager"
+cdsLibManager.main	categoryText	string	""
+cdsLibManager.main	cellLevelText	string	""
+cdsLibManager.main	dblClickEditCellView	boolean	t
+cdsLibManager.main	libraryText	string	""
+cdsLibManager.main	showCategoriesOn	boolean	nil
+cdsLibManager.main	showFilesOn	boolean	nil
+cdsLibManager.main	viewLevelText	string	""
+cdsLibManager.newLib	dmRadio	toggle	(t nil)
+cdsLibManager.newLib	pathText	string	""
+cdsLibManager.option	forceEnv	boolean	nil
+cdsLibManager.option	useDMfilter	boolean	t
+cdsLibManager.option	useFastDM	boolean	t
+cdsLibManager.rename	updateOn	boolean	t
+cdsLibManager.renameRefLib	refreshSessionOn	boolean	t
+cdsLibManager.submit	useNameOn	boolean	nil
+cdsLibManager.submit	useNameText	string	""
+cdsLibManager.submit	useOptionText	string	""
+cdsLibManager.submit	useOptionsOn	boolean	nil
+cdsLibManager.update	useNameOn	boolean	nil
+cdsLibManager.update	useNameText	string	""
+cdsLibManager.update	useOptionText	string	""
+cdsLibManager.update	useOptionsOn	boolean	nil
+" this file is tools/dfII/etc/tools/cdsLibManager/.cdsenv, format is: "
+cdsLibManager                   ignoreval               string  ""              t
+cdsLibManager.addDisplayAttribute	copyValuesFrom	boolean nil             nil     nil
+cdsLibManager.ckCancel          useOptionText           string  ""              nil
+cdsLibManager.ckCancel          useOptionsOn            boolean nil             nil     nil
+cdsLibManager.ckGlobal		libCellAlsoManaged 	boolean t             nil     nil
+cdsLibManager.ckIn              dontConfirmSubstituteCmd boolean nil             nil     nil
+cdsLibManager.ckIn              selectMatches           toggle  (t nil nil nil)  nil  ("all" "ckOut" "noDM" "ckInWritable")
+cdsLibManager.ckIn              useOptionText           string  ""              nil
+cdsLibManager.ckIn              useOptionsOn            boolean nil             nil     nil
+cdsLibManager.ckOut             useOptionText           string  ""              nil
+cdsLibManager.ckOut             useOptionsOn            boolean nil             nil     nil
+cdsLibManager.copy              addPropFiles            boolean t               nil
+cdsLibManager.copy              addToCategoryName       string  ""              nil
+cdsLibManager.copy              addToCategoryOn         boolean nil             nil     nil
+cdsLibManager.copy              addToCellsPattern       string  "*"             nil
+cdsLibManager.copy              allViewsOn              boolean t               nil     nil
+cdsLibManager.copy              exactHierOn             boolean nil             nil
+cdsLibManager.copy              existenceCheck          boolean nil             nil
+cdsLibManager.copy              extraViews              string  ""              nil
+cdsLibManager.copy              hierOn                  boolean nil             nil     nil
+cdsLibManager.copy              rerefCustomVias         boolean nil             nil     nil
+cdsLibManager.copy              skipLibsOn              boolean t               nil     nil
+cdsLibManager.copy              skipLibsText            string  "*"             nil
+cdsLibManager.copy              skipLibsText1           string  ""              nil
+cdsLibManager.copy              skipLibsText10          string  ""              nil
+cdsLibManager.copy              skipLibsText11          string  ""              nil
+cdsLibManager.copy              skipLibsText12          string  ""              nil
+cdsLibManager.copy              skipLibsText13          string  ""              nil
+cdsLibManager.copy              skipLibsText14          string  ""              nil
+cdsLibManager.copy              skipLibsText15          string  ""              nil
+cdsLibManager.copy              skipLibsText2           string  ""              nil
+cdsLibManager.copy              skipLibsText3           string  ""              nil
+cdsLibManager.copy              skipLibsText4           string  ""              nil
+cdsLibManager.copy              skipLibsText5           string  ""              nil
+cdsLibManager.copy              skipLibsText6           string  ""              nil
+cdsLibManager.copy              skipLibsText7           string  ""              nil
+cdsLibManager.copy              skipLibsText8           string  ""              nil
+cdsLibManager.copy              skipLibsText9           string  ""              nil
+cdsLibManager.copy              updateChoice            toggle  (t nil)         nil     ("entireLib" "copiesOnly")
+cdsLibManager.copy              updateOn                boolean nil             nil     nil
+cdsLibManager.copy              viewsText               string  ""              nil
+cdsLibManager.copyError         overwriteAll            boolean nil             nil     nil
+cdsLibManager.copyGlobals       addCellPropFiles	boolean t       nil     nil
+cdsLibManager.copyGlobals       addLibPropFiles		boolean t       nil     nil
+cdsLibManager.copyGlobals       expandRadio             toggle  (t nil)  nil  ("comanaged" "all")
+cdsLibManager.copyGlobals       mpsRadio                toggle  (t nil)  nil  ("remote" "local")
+cdsLibManager.copyGlobals       stopMutations           boolean t       nil     nil
+cdsLibManager.copyGlobals       useMonitor              boolean t       nil     nil
+cdsLibManager.copyGlobals       warnRenameDM            boolean t       nil     nil
+cdsLibManager.copyVersion       openView                boolean t               nil     nil
+cdsLibManager.copyVersion       toLibrary               string  ""              nil
+cdsLibManager.copyVersion       toView                  string  ""              nil
+cdsLibManager.copyVersion       useOptionText           string  ""              nil
+cdsLibManager.copyVersion       useOptionsOn            boolean nil             nil     nil
+cdsLibManager.copyWizard        addToCategoryName       string  ""              nil
+cdsLibManager.copyWizard        addToCategoryOn         boolean nil             nil
+cdsLibManager.copyWizard        addToCellsPattern       string  "*"             nil
+cdsLibManager.copyWizard        existenceCheck          boolean nil             nil
+cdsLibManager.copyWizard        extraViews              string  ""              nil
+cdsLibManager.copyWizard        rerefCustomVias         boolean nil             nil     nil
+cdsLibManager.copyWizard        skipLibsText            string  "*"             nil
+cdsLibManager.copyWizard        skipLibsText1           string  ""              nil
+cdsLibManager.copyWizard        skipLibsText10          string  ""              nil
+cdsLibManager.copyWizard        skipLibsText11          string  ""              nil
+cdsLibManager.copyWizard        skipLibsText12          string  ""              nil
+cdsLibManager.copyWizard        skipLibsText13          string  ""              nil
+cdsLibManager.copyWizard        skipLibsText14          string  ""              nil
+cdsLibManager.copyWizard        skipLibsText15          string  ""              nil
+cdsLibManager.copyWizard        skipLibsText2           string  ""              nil
+cdsLibManager.copyWizard        skipLibsText3           string  ""              nil
+cdsLibManager.copyWizard        skipLibsText4           string  ""              nil
+cdsLibManager.copyWizard        skipLibsText5           string  ""              nil
+cdsLibManager.copyWizard        skipLibsText6           string  ""              nil
+cdsLibManager.copyWizard        skipLibsText7           string  ""              nil
+cdsLibManager.copyWizard        skipLibsText8           string  ""              nil
+cdsLibManager.copyWizard        skipLibsText9           string  ""              nil
+cdsLibManager.copyWizard        updateChoice            toggle  (t nil)         nil     ("entireLib" "copiesOnly")
+cdsLibManager.copyWizard        updateOn                boolean t               nil     nil
+cdsLibManager.customize         mapTimeout              float   5.0             nil
+cdsLibManager.customize         showDFIIWarning         boolean t               nil     nil
+cdsLibManager.customize         startupFile             string  "cdsLibMgr.il"  nil
+cdsLibManager.database          addDb1                  string  ""              nil
+cdsLibManager.database          addDb2                  string  ""              nil
+cdsLibManager.database          addDb3                  string  ""              nil
+cdsLibManager.database          addDb4                  string  ""              nil
+cdsLibManager.database          addDb5                  string  ""              nil
+cdsLibManager.database          addDb6                  string  ""              nil
+cdsLibManager.database          addDb7                  string  ""              nil
+cdsLibManager.database          addDb8                  string  ""              nil
+cdsLibManager.database          addDb9                  string  ""              nil
+cdsLibManager.database          ddDb                    string  "com.cadence.interfaces.libAccess.cddLib5xDatabase"             nil
+cdsLibManager.database          server                  string  "com.cadence.interfaces.libAccess.ladLibraryServer"             nil
+cdsLibManager.defaults          fileRadio               toggle  (nil t nil )  nil  ("Overwrite" "Merge values" "Retain values")
+cdsLibManager.defaults          saveAllOn               boolean nil             nil
+cdsLibManager.defaults          saveAsText              string  ".cdsenv"       nil
+cdsLibManager.delete            libCheckOn              boolean t               nil
+cdsLibManager.delete            localRadio              toggle  (t nil )  nil  ("both" "local")
+cdsLibManager.delete            regExpOn                boolean nil               nil
+cdsLibManager.deleteTag         overrideRadio           toggle  (t nil nil nil)  nil  ("no" "yes" "yesAll" "cancel")
+cdsLibManager.deleteView        localRadio              toggle  (t nil )  nil  ("both" "local")
+cdsLibManager.deleteView        viewFilterList          string  "'abstract', 'ahdl', 'autoLayout', 'behavior', 'cdsSpice', 'cmos_sch', 'cmos.sch', 'functional', 'hpmns', 'hspiceS', 'layout', 'libra', 'mharm', 'schematic', 'spice', 'spectreS', 'symbol', 'system', 'verilog', 'verilogNetlist'"              nil
+cdsLibManager.deleteView        viewFilterList1         string  ""              nil
+cdsLibManager.deleteView        viewFilterList10        string  ""              nil
+cdsLibManager.deleteView        viewFilterList11        string  ""              nil
+cdsLibManager.deleteView        viewFilterList12        string  ""              nil
+cdsLibManager.deleteView        viewFilterList13        string  ""              nil
+cdsLibManager.deleteView        viewFilterList14        string  ""              nil
+cdsLibManager.deleteView        viewFilterList15        string  ""              nil
+cdsLibManager.deleteView        viewFilterList2         string  ""              nil
+cdsLibManager.deleteView        viewFilterList3         string  ""              nil
+cdsLibManager.deleteView        viewFilterList4         string  ""              nil
+cdsLibManager.deleteView        viewFilterList5         string  ""              nil
+cdsLibManager.deleteView        viewFilterList6         string  ""              nil
+cdsLibManager.deleteView        viewFilterList7         string  ""              nil
+cdsLibManager.deleteView        viewFilterList8         string  ""              nil
+cdsLibManager.deleteView        viewFilterList9         string  ""              nil
+cdsLibManager.displayOptions	enableDmQuery		boolean t             nil	nil
+cdsLibManager.displayOptions	showAllLibrariesStandard		boolean nil             nil	nil
+cdsLibManager.displayOptions	showHiddenLibraries		boolean nil             nil	nil
+cdsLibManager.displayOptions	showLibraryColors		boolean t             nil	nil
+cdsLibManager.displayOptions	showLibraryCustomIcons		boolean t             nil	nil
+cdsLibManager.displayOptions	showListViewIcons		boolean t             nil	nil
+cdsLibManager.displayOptions	showViewExtended		boolean t             nil	nil
+cdsLibManager.displayOptions	pollEnabled			boolean t             nil	nil
+cdsLibManager.displayOptions	pollSeconds		int 	30	nil	1	120
+cdsLibManager.displayOptions	pollTimeout		int 	10	nil	0	300
+cdsLibManager.filter            browseFunction		string  ""		nil
+cdsLibManager.filter            cellFilter              string  ""              nil
+cdsLibManager.filter            viewFilter              string  ""              nil
+cdsLibManager.filter            libSelectCellViewCombineMode  cyclic "never" nil ("never" "always")
+cdsLibManager.log               addHostID               boolean nil             nil
+cdsLibManager.log               addProcID               boolean nil             nil
+cdsLibManager.log               addSequence             boolean nil             nil
+cdsLibManager.log               addUserID               boolean nil             nil
+cdsLibManager.log               baseName                string  "libManager"    nil
+cdsLibManager.main              categoryText            string  ""              nil
+cdsLibManager.main              cellLevelText           string  ""              nil
+cdsLibManager.main              dblClickEditCellView    boolean t       nil     nil
+cdsLibManager.main              libraryText             string  ""              nil
+cdsLibManager.main              showCategoriesOn        boolean         nil     nil
+cdsLibManager.main              showFilesOn             boolean nil             nil     nil
+cdsLibManager.main              viewLevelText           string  ""              nil
+cdsLibManager.newLib            dmRadio                 toggle  (t nil )  nil  ("default" "noDM")
+cdsLibManager.newLib            pathText                string  ""              nil
+cdsLibManager.option            forceEnv                boolean nil             nil
+cdsLibManager.option            useDMfilter             boolean t             nil
+cdsLibManager.option            useFastDM               boolean t             nil
+cdsLibManager.rename            updateOn                boolean t               nil     nil
+cdsLibManager.renameRefLib      refreshSessionOn        boolean t       nil     nil
+cdsLibManager.submit            useNameOn               boolean nil             nil     nil
+cdsLibManager.submit            useNameText             string  ""              nil
+cdsLibManager.submit            useOptionText           string  ""              nil
+cdsLibManager.submit            useOptionsOn            boolean nil             nil     nil
+cdsLibManager.update            useNameOn               boolean nil             nil     nil
+cdsLibManager.update            useNameText             string  ""              nil
+cdsLibManager.update            useOptionText           string  ""              nil
+cdsLibManager.update            useOptionsOn            boolean nil             nil     nil

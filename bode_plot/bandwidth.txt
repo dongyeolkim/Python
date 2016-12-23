@@ -1,0 +1,5 @@
+Natural Freq: Wn=sqrt[(Kvco*Icp)/(2*pi*Cbig*N)]
+ Damping Factor: zeta=(Rlpf/2)*sqrt[(Icp*Cbig*Kvco/2*pi*N)]
+ Open loop bandwidh Freq: w0=(Icp*Kvco*Rlpf)/2*pi*N
+ 3dB Bandwidth: w3dB=wn*sqrt(1+2*zeta^2+sqrt(2+4*zeta^2+4*zeta^4))
+

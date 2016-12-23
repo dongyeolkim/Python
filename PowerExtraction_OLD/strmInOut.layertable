@@ -1,0 +1,16 @@
+PO1,drawing,41,0
+ME1,drawing,46,0
+ME2,drawing,48,0
+ME3,drawing,50,0
+ME4,drawing,52,0
+
+PO2,drawing,41,6
+M1_CAD,TEXT,101,0
+M2_CAD,TEXT,102,0
+M3_CAD,TEXT,103,0
+M4_CAD,TEXT,104,0
+
+CONT,drawing,39,0
+VI1,drawing,47,0
+VI2,drawing,49,0
+VI3,drawing,51,0

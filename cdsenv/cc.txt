@@ -1,0 +1,6 @@
+[kimdy@plus2: /rnda10/home/kimdy/private/Python/cdsenv] ./cdsenv.py ACCU
+hspiceD.opts    ACCURATE        boolean nil
+hspiceS.opts    ACCURA  string  "off"
+hspiceD.opts    ACCURATE        boolean nil     nil
+hspiceS.opts    ACCURA  string  "off"   nil
+

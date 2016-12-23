@@ -1,0 +1,5 @@
+REV
+flat  one lib
+      top cellname = pwrname + date
+hier  top cellname = pwrname + date
+directory  get current directory

@@ -1,0 +1,31 @@
+ 1  import tkinter.messagebox
+  2  import tkinter.simpledialog
+  3  import tkinter.colorchooser
+  4  
+  5  tkinter.messagebox.showinfo("showinfo", "This is an info msg")
+  6  
+  7  tkinter.messagebox.showwarning("showwarning", "This is a warning")
+  8  
+  9  tkinter.messagebox.showerror("showerror", "This is an error")
+ 10  
+ 11  isYes = tkinter.messagebox.askyesno("ashyesno", "Continue?")
+ 12  print(isYes)
+ 13  
+ 14  isOK = tkinter.messagebox.askokcancel("ashokcancle", "OK?")
+ 15  print(isOK)
+ 16  
+ 17  isYesNoCancel = tkinter.messagebox.askyesnocancel(
+ 18      "askyesnocancel", "Yes, No, Cancel?") 
+ 19  print(isYesNoCancel)
+ 20  
+ 21  name = tkinter.simpledialog.askstring(
+ 22      "askstring", "Enter your name")
+ 23  print(name)
+ 24  
+ 25  age = tkinter.simpledialog.askinteger(
+ 26      "askinteger", "Enter your age")
+ 27  print(age)
+ 28  
+ 29  weight = tkinter.simpledialog.askfloat(
+ 30      "askfloat", "Enter your weight")
+ 31  print(weight)

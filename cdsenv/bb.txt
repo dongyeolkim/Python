@@ -1,0 +1,17 @@
+cdsSpice.opts   TEMPDC  string  "25"
+cdsSpice.opts   SPTEMP  string  "1"
+cdsSpiceVerilog.opts    TEMPDC  string  "25"
+cdsSpiceVerilog.opts    SPTEMP  string  "1"
+hspiceD.opts    TEMPDC  string  "25"
+hspiceS.opts    TEMPDC  string  "25"
+spice3.opts     TEMP    string  "27"
+UltraSimVerilog.opts    TEMPDC  string  "27"    t
+hspiceD.opts    TEMPDC  string  "25"    nil
+UltraSim.opts   TEMPDC  string  "27"    t
+cdsSpice.opts   TEMPDC  string  "25"    nil
+cdsSpice.opts   SPTEMP  string  "1"     nil
+cdsSpiceVerilog.opts    TEMPDC  string  "25"    nil
+cdsSpiceVerilog.opts    SPTEMP  string  "1"     nil
+hspiceS.opts    TEMPDC  string  "25"    nil
+
+

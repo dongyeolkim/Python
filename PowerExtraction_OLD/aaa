@@ -1,0 +1,25 @@
+rundir 
+libname 
+cellname 
+viewname 
+gdsfilecheck 0
+gdsfile 
+extnetname 
+newlibcheck 0
+newlib 
+reflibcheck 0
+reflib 
+techfile 
+MIMLOC M1-M2
+M1 
+M2 
+M3 
+M4 
+M1TXT 
+M2TXT 
+M3TXT 
+M4TXT 
+MIM 
+VIA1 
+VIA2 
+VIA3 

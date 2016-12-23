@@ -1,0 +1,7 @@
+-- File Created by  at Tue Aug 21 17:05:00 2007
+-- assisted by CdsLibEditor
+INCLUDE /home/TOOLS/cadence/IC5141_USR6/share/cdssetup/cds.lib
+DEFINE umc13cis /rnda2/Project/DesignKit/UM130FDK_ver.A02_PB/umc13cis
+DEFINE sample /home/TOOLS/cadence/IC5141_USR6/tools/dfII/samples/cdslib/sample
+DEFINE UMCIO /rnda2/Project/DesignKit/UM130FDK_ver.A02_PB/UMC_LIB/UMCIO
+

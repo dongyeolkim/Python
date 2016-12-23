@@ -1,0 +1,1569 @@
+Connected to legacy license vendor daemon
+
+ ****************************************************************************************
+ * Version: AFS 64-bit (2016_Q3)                                                        *
+ * Build date: Thu Sep 22 13:52:19 PDT 2016                                             *
+ * User: tlim, Host: smkc13, Proc id: 20437                                             *
+ * Working Directory: /home/tlim/afs/rayence/testcase8/afs/packdir_jari_20161031/test01 *
+ * OS: Linux, Machine Type: x86_64                                                      *
+ *                                                                                      *
+ * Copyright 2004-2016 Mentor Graphics Corporation                                      *
+ * All Rights Reserved.                                                                 *
+ *                                                                                      *
+ * THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION                          *
+ * WHICH ARE THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS                         *
+ * LICENSORS AND IS SUBJECT TO LICENSE TERMS.                                           *
+ ****************************************************************************************
+
+Job Start Time: Wed Nov  2 14:41:13 2016
+
+***** Command-Line Options
+ afs test01.in -f hspicebin --mt 8 
+
+***** Memory Information
+ Physical Memory : 189.20 GB
+ Available Memory: 184.26 GB
+
+***** CPU Information
+ Model Name: Intel(R) Xeon(R) CPU E5-2697 v2 @ 2.70GHz
+ Processor  PhysicalID  CoreID  Frequency(MHz)
+     0          0         0       1200.000
+     1          0         1       1200.000
+     2          0         2       2700.000
+     3          0         3       1200.000
+     4          0         4       1200.000
+     5          0         5       1200.000
+     6          0         8       1200.000
+     7          0         9       1200.000
+     8          0        10       1200.000
+     9          0        11       1200.000
+    10          0        12       1200.000
+    11          0        13       1200.000
+    12          1         0       1200.000
+    13          1         1       1200.000
+    14          1         2       1200.000
+    15          1         3       1200.000
+    16          1         4       1200.000
+    17          1         5       1200.000
+    18          1         8       1200.000
+    19          1         9       1200.000
+    20          1        10       1200.000
+    21          1        11       1200.000
+    22          1        12       1200.000
+    23          1        13       1200.000
+    24          0         0       1291.304
+    25          0         1       1200.000
+    26          0         2       1200.000
+    27          0         3       1200.000
+    28          0         4       1200.000
+    29          0         5       1200.000
+    30          0         8       1200.000
+    31          0         9       1200.000
+    32          0        10       1200.000
+    33          0        11       1200.000
+    34          0        12       1200.000
+    35          0        13       1200.000
+    36          1         0       1200.000
+    37          1         1       1200.000
+    38          1         2       1200.000
+    39          1         3       1200.000
+    40          1         4       1200.000
+    41          1         5       1200.000
+    42          1         8       1200.000
+    43          1         9       1200.000
+    44          1        10       1200.000
+    45          1        11       1200.000
+    46          1        12       1200.000
+    47          1        13       1200.000
+
+
+Machine Load: 2 out of 48 processor cores busy.
+Trying to acquire 1 AFS Nano license(s) for invocation
+Acquired AFS Nano license
+SIM_WARNING[GEN340]: The following options are not valid and will be ignored :
+ gramp 
+
+SIM_WARNING[GEN340]: The following options are not valid and will be ignored :
+ noascii 
+
+SIM_WARNING[GEN340]: The following options are not valid and will be ignored :
+ modwl 
+
+SIM_WARNING[GEN340]: The following options are not valid and will be ignored :
+ engnot 
+
+SIM_WARNING[GEN340]: The following options are not valid and will be ignored :
+ aex 
+
+SIM_WARNING[MOD28]: /home/tlim/afs/rayence/testcase8/afs/packdir_jari_20161031/SPICEINCLUDE/ne3i.mod:29: The parameter tlev = 1.000000e+00 in MOS model x_inv_25d_57da2.xm2.ne3imod.14 is not supported. It will be ignored.
+SIM_WARNING[DEV149]: Device x_inv_25d_57da2.xm2.m1 has model parameter noic=-5.200000e-13. A negative value can cause unphysical noise behavior.
+SIM_WARNING[MOD28]: /home/tlim/afs/rayence/testcase8/afs/packdir_jari_20161031/SPICEINCLUDE/pe3.mod:29: The parameter tlev = 1.000000e+00 in MOS model x_inv_25d_57da2.xm1.pe3mod.13 is not supported. It will be ignored.
+SIM_WARNING[DEV23]: x_inv_25d_57da2.xm1.m1: Pd = 4.96e-06 is less than weff.
+SIM_WARNING[DEV23]: x_inv_25d_57da2.xm1.m1: Ps = 4.96e-06 is less than weff.
+SIM_WARNING[MOD28]: /home/tlim/afs/rayence/testcase8/afs/packdir_jari_20161031/SPICEINCLUDE/ne3i.mod:29: The parameter tlev = 1.000000e+00 in MOS model x_inv_25_332.xm2.ne3imod.13 is not supported. It will be ignored.
+SIM_WARNING[DEV149]: Device x_inv_25_332.xm2.m1 has model parameter noic=-5.200000e-13. A negative value can cause unphysical noise behavior.
+SIM_WARNING[MOD28]: /home/tlim/afs/rayence/testcase8/afs/packdir_jari_20161031/SPICEINCLUDE/nb3.mod:43: The parameter fbbtrbot = 1.000000e+09 in MOS model x_pix_smp_col21.xm14.nb3mod is not supported. It will be ignored.
+SIM_WARNING[MOD28]: /home/tlim/afs/rayence/testcase8/afs/packdir_jari_20161031/SPICEINCLUDE/nb3.mod:43: The parameter fbbtrgat = 4.548000e+09 in MOS model x_pix_smp_col21.xm14.nb3mod is not supported. It will be ignored.
+	Further occurrences of this warning will be suppressed.
+SIM_WARNING[DEV23]: x_pix_smp_col21.xm8.m1: Pd = 4.96e-06 is less than weff.
+SIM_WARNING[DEV23]: x_pix_smp_col21.xm8.m1: Ps = 4.96e-06 is less than weff.
+SIM_WARNING[DEV149]: Device x_pix_smp_col21.xm8.m1 has model parameter noic=-3.000000e-13. A negative value can cause unphysical noise behavior.
+SIM_WARNING[DEV149]: Device x_pix_smp_col21.xm47.m1 has model parameter noic=-3.000000e-13. A negative value can cause unphysical noise behavior.
+SIM_WARNING[DEV149]: Device x_pix_smp_col21.xm43.m1 has model parameter noic=-3.000000e-13. A negative value can cause unphysical noise behavior.
+SIM_WARNING[DEV23]: x_pix_smp_col21.xm2.m1: Pd = 4.96e-06 is less than weff.
+	Further occurrences of this warning will be suppressed.
+	Further occurrences of this warning will be suppressed.
+Circuit has only 96 unmerged elements; the AFS Nano license needed has already been acquired at invocation
+
+Number of processor cores (limited by system) available: 48
+Number of processor cores to be used for multi-threading a single simulation run (mt): 8 
+
+Requesting licenses for 7 processor core(s) to allocate required 8 cores for the first simulation run (process# 0)
+Trying to acquire 7 additional AFS Nano license(s) for activating 7 additional processor core(s)
+Acquired AFS Nano license
+Acquired AFS Nano license
+Acquired AFS Nano license
+Acquired AFS Nano license
+Acquired AFS Nano license
+Acquired AFS Nano license
+Acquired AFS Nano license
+Found necessary AFS Nano licenses (7) to activate 7 cores
+Summary of possible problems in circuit:
+  Open-circuit current source   0       
+  Dangling MOS gate             0       
+  Dangling MOS bulk             0       
+  Dangling BJT substrate        0       
+  Dangling controlling node     0       
+  Dangling controlled isource   0       
+  Non-rail bulk terminal        0       
+Running simulation employing 8 threads, each on a processor core (--mt 8).
+Circuit equation has 124 nodes 68 unknowns 96 elements
+Circuit has 68 internal nodes in MOS elements.
+Circuit inventory:
+                    _bsim3v324   32      
+                      bsim4v70   22      
+                     capacitor   10      
+                       isource   2       
+                      resistor   6       
+                          vcvs   1       
+                       vsource   23      
+bin parameters        #resistors  #merged    #trimmed  #dangling 
+1.0e-01 -> 1.0e+00          1          0          0          0  
+1.0e+00 -> 1.0e+01          4          0          0          0  
+1.0e+03 -> 1.0e+04          1          0          0          0  
+
+
+bin parameters        #capacitors  #merged    #trimmed  #dangling 
+1.0e-13 -> 1.0e-12          1          0          0          0  
+1.0e-12 -> 1.0e-11          2          0          0          0  
+1.0e-11 -> 1.0e-10          3          0          0          0  
+1.0e-10 -> 1.0e-09          2          0          0          0  
+1.0e-08 -> 1.0e-07          1          0          0          0  
+1.0e-07 -> 1.0e-06          1          0          0          0  
+
+
+
+
+***** Options Used
+ noiseoff=x_pix_smp_col21
+ gmin=1e-20
+ abstol=1e-18
+ errpreset=3
+ temp=25
+
+***** Options Ignored
+ gramp
+ noascii
+ modwl
+ engnot
+ aex
+
+Trying to upgrade licensing by exchanging 8 AFS Nano license(s) with 3 AFS license(s) to enable 'transient noise' analysis
+Released AFS Nano license
+Released AFS Nano license
+Released AFS Nano license
+Released AFS Nano license
+Released AFS Nano license
+Released AFS Nano license
+Released AFS Nano license
+Released AFS Nano license
+All AFS Nano licenses released for upgrading to AFS license(s).
+Trying to acquire the initial AFS license
+Acquired AFS license
+Trying to acquire 2 additional AFS license(s) to match the released AFS Nano licenses for supporting multiple processor cores
+Acquired AFS license
+Acquired AFS license
+Found necessary AFS licenses (2) to activate 7 cores
+Upgrade from AFS Nano license mode to AFS license mode successful
+
+***** Parsing and Setup Complete; Total Parsing Time:
+	Wallclock Time: 00 00:00:14
+	CPU Time: 00 00:00:02
+
+***** Probe Information
+24 Voltage probes
+2 Current probes
+Total number of probes 26
+
+Starting Sweep..
+Sweep parameter nbrun=1.
+noiseoff=x_pix_smp_col21 turns off noise in 59 devices
+Starting traditional Newton Raphson..
+---------------------
+Autoselected Solver 0
+---------------------
+SIM_WARNING[ANA4]: For dc analysis, traditional Newton Raphson did not converge.
+Starting allgmin stepping..
+For dc analysis, allgmin stepping successful at 1.000000e-03
+For dc analysis, allgmin stepping successful at 1.000000e-04
+For dc analysis, allgmin stepping successful at 1.000000e-05
+For dc analysis, allgmin stepping successful at 1.000000e-06
+For dc analysis, allgmin stepping successful at 1.000000e-07
+For dc analysis, allgmin stepping successful at 1.000000e-08
+For dc analysis, allgmin stepping successful at 1.000000e-09
+For dc analysis, allgmin stepping successful at 1.000000e-10
+For dc analysis, allgmin stepping successful at 1.000000e-11
+For dc analysis, allgmin stepping successful at 1.000000e-12
+For dc analysis, allgmin stepping successful at 1.000000e-13
+For dc analysis, allgmin stepping successful at 1.000000e-14
+For dc analysis, allgmin stepping successful at 1.000000e-15
+For dc analysis, allgmin stepping successful at 1.000000e-16
+For dc analysis, allgmin stepping successful at 1.000000e-17
+For dc analysis, allgmin stepping successful at 3.162278e-18
+For dc analysis, allgmin stepping successful at 2.942727e-18
+For DC analysis, allgmin stepping finished successfully.
+  DC solution range: ( vdd = 3.328 , vsr0 = -2.274e-14 ) V  ( x_pix_smp_col21.v12#branch = 0 , x_pix_smp_col21.v12#branch = 0 ) A 
+	abstol(I) = 1 aA      
+	abstol(V) = 1 uV      
+	cmin = 0 F       
+	ctrim = 1e-20
+	devicematrixopt = 1
+	errpreset = conservative
+	fast = 0
+	fastmatrixopt = 0
+	fixdanglingnodes = 2
+	fixtopologyresistor = 1e+20
+	gmin = 0.01 aS   
+	ignoretstep = yes
+	latencyscale = 1
+	ltecheck = 1
+	ltemethod = 2
+	maxiterationsfordc = 100
+	maxiterationsfortransient = 10
+	maxstep = 0.50 ns   
+	merge = yes
+	method = trap
+	minimum timestep = 0.001ps
+	msolver = 0
+	msolverdc = automatically selected
+	mt = 8
+	outputstart = 0 s       
+	postprocessmeasure = no
+	reltol = 0.0001
+	remove dangling element = ON
+	rlargetrim = 1e+21
+	rtrim = 0.001
+	seriesmerge = ON
+	skipdc = no
+	start = 0 s       
+	stop = 58.10 us  
+	temp = 25 C      
+	noisefmax = 1 GHz     
+	noisermin = 0
+	noisescale = 1         
+	noiseseed = 1
+	noisetstart = 0 s       
+	tnom = 27 C      
+	uselumpedmodel = 0
+---------------------
+Autoselected Solver 0
+---------------------
+Running transient from 0.000000e+00 to 5.810000e-05.
+---------------------
+Autoselected Solver 0
+---------------------
+tran: time = 0.8770 us      (1.5095 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 2.8345 us      (4.8787 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 5.0475 us      (8.6876 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 7.3505 us     (12.6515 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 9.6460 us     (16.6024 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 11.9460 us    (20.5611 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 14.3055 us    (24.6222 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 16.6445 us    (28.6480 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 19.0170 us    (32.7315 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 21.3735 us    (36.7874 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 23.4675 us    (40.3916 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 25.4815 us    (43.8580 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 27.7800 us    (47.8141 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 30.1305 us    (51.8597 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 32.4560 us    (55.8623 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 34.8015 us    (59.8993 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 37.0620 us    (63.7900 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 39.0530 us    (67.2169 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 41.0390 us    (70.6351 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 43.2400 us    (74.4234 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 45.4765 us    (78.2728 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 47.7050 us    (82.1084 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 49.9385 us    (85.9527 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 52.1765 us    (89.8046 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 54.4207 us    (93.6674 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 56.6160 us    (97.4459 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 58.1000 us   (100.0000 %), step = 0.2031 ns     (0.3496 m%)
+
+
+
+*****MEASURE RESULTS
+  rms_vcol=  2.7879e+00 from=  1.5000e-05 to=  2.0000e-05
+  rms_vcolr=  2.7878e+00 from=  5.0000e-05 to=  5.5000e-05
+  rms_vsr0=  2.4321e-06 from=  5.7000e-05 to=  5.8000e-05
+  rms_vsr0_tk=  2.4321e-06 from=  5.7000e-05 to=  5.8000e-05
+  vpd=  3.1768e+00
+  icol=  3.1856e-06
+  vcol=  2.7879e+00
+  vsr0= -2.3790e-06
+
+
+
+***** Simulation Statistics For This Analysis:
+
+Elapsed WallClock Time (HH:MM:SS) in Analysis: 00 00:00:27.
+Elapsed WallClock Time (HH:MM:SS) in Analysis (excluding setup) : 00 00:00:27.
+DC: Time in Analysis: 00 00:00:00.
+Number of TimeSteps:     116437.
+Current Process  Resident Memory (KB): 90144
+Current Process Peak Resident Memory (KB): 90144
+
+Sweep parameter nbrun=2.
+SIM_WARNING[ANA4]: For dc analysis, traditional Newton Raphson did not converge.
+Starting allgmin stepping..
+For dc analysis, allgmin stepping successful at 1.000000e-03
+For dc analysis, allgmin stepping successful at 1.000000e-04
+For dc analysis, allgmin stepping successful at 1.000000e-05
+For dc analysis, allgmin stepping successful at 1.000000e-06
+For dc analysis, allgmin stepping successful at 1.000000e-07
+For dc analysis, allgmin stepping successful at 1.000000e-08
+For dc analysis, allgmin stepping successful at 1.000000e-09
+For dc analysis, allgmin stepping successful at 1.000000e-10
+For dc analysis, allgmin stepping successful at 1.000000e-11
+For dc analysis, allgmin stepping successful at 1.000000e-12
+For dc analysis, allgmin stepping successful at 1.000000e-13
+For dc analysis, allgmin stepping successful at 1.000000e-14
+For dc analysis, allgmin stepping successful at 1.000000e-15
+For dc analysis, allgmin stepping successful at 1.000000e-16
+For dc analysis, allgmin stepping successful at 1.000000e-17
+For dc analysis, allgmin stepping successful at 3.162278e-18
+For dc analysis, allgmin stepping successful at 2.942727e-18
+For DC analysis, allgmin stepping finished successfully.
+  DC solution range: ( vdd = 3.328 , vsr0 = -2.271e-14 ) V  ( x_pix_smp_col21.v12#branch = 0 , x_pix_smp_col21.v12#branch = 0 ) A 
+	abstol(I) = 1 aA      
+	abstol(V) = 1 uV      
+	cmin = 0 F       
+	ctrim = 1e-20
+	devicematrixopt = 1
+	errpreset = conservative
+	fast = 0
+	fastmatrixopt = 0
+	fixdanglingnodes = 2
+	fixtopologyresistor = 1e+20
+	gmin = 0.01 aS   
+	ignoretstep = yes
+	latencyscale = 1
+	ltecheck = 1
+	ltemethod = 2
+	maxiterationsfordc = 100
+	maxiterationsfortransient = 10
+	maxstep = 0.50 ns   
+	merge = yes
+	method = trap
+	minimum timestep = 0.001ps
+	msolver = 0
+	msolverdc = automatically selected
+	mt = 8
+	outputstart = 0 s       
+	postprocessmeasure = no
+	reltol = 0.0001
+	remove dangling element = ON
+	rlargetrim = 1e+21
+	rtrim = 0.001
+	seriesmerge = ON
+	skipdc = no
+	start = 0 s       
+	stop = 58.10 us  
+	temp = 25 C      
+	noisefmax = 1 GHz     
+	noisermin = 0
+	noisescale = 1         
+	noiseseed = 2
+	noisetstart = 0 s       
+	tnom = 27 C      
+	uselumpedmodel = 0
+Running transient from 0.000000e+00 to 5.810000e-05.
+tran: time = 1.2695 us      (2.1850 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 3.3710 us      (5.8021 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 5.4315 us      (9.3485 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 7.7470 us     (13.3339 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 10.2360 us    (17.6179 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 12.8210 us    (22.0671 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 15.2365 us    (26.2246 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 17.6720 us    (30.4165 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 20.0645 us    (34.5344 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 22.2783 us    (38.3448 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 24.3645 us    (41.9355 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 26.6655 us    (45.8959 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 29.1090 us    (50.1015 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 31.6205 us    (54.4243 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 34.1515 us    (58.7806 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 36.6815 us    (63.1351 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 38.9670 us    (67.0688 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 41.1625 us    (70.8477 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 43.5865 us    (75.0198 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 46.1515 us    (79.4346 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 48.6710 us    (83.7711 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 51.1605 us    (88.0559 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 53.5618 us    (92.1890 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 55.8006 us    (96.0423 %), step = 15.6250 ps   (26.8933 u%)
+tran: time = 58.0068 us    (99.8396 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 58.1000 us   (100.0000 %), step = 0.2031 ns     (0.3496 m%)
+
+
+
+*****MEASURE RESULTS
+  rms_vcol=  2.7879e+00 from=  1.5000e-05 to=  2.0000e-05
+  rms_vcolr=  2.7878e+00 from=  5.0000e-05 to=  5.5000e-05
+  rms_vsr0=  1.1772e-06 from=  5.7000e-05 to=  5.8000e-05
+  rms_vsr0_tk=  1.1772e-06 from=  5.7000e-05 to=  5.8000e-05
+  vpd=  3.1768e+00
+  icol=  3.1856e-06
+  vcol=  2.7879e+00
+  vsr0=  1.1433e-06
+
+
+
+***** Simulation Statistics For This Analysis:
+
+Elapsed WallClock Time (HH:MM:SS) in Analysis: 00 00:00:26.
+Elapsed WallClock Time (HH:MM:SS) in Analysis (excluding setup) : 00 00:00:26.
+DC: Time in Analysis: 00 00:00:00.
+Number of TimeSteps:     116424.
+Current Process  Resident Memory (KB): 90392
+Current Process Peak Resident Memory (KB): 90392
+
+Sweep parameter nbrun=3.
+SIM_WARNING[ANA4]: For dc analysis, traditional Newton Raphson did not converge.
+Starting allgmin stepping..
+For dc analysis, allgmin stepping successful at 1.000000e-03
+For dc analysis, allgmin stepping successful at 1.000000e-04
+For dc analysis, allgmin stepping successful at 1.000000e-05
+For dc analysis, allgmin stepping successful at 1.000000e-06
+For dc analysis, allgmin stepping successful at 1.000000e-07
+For dc analysis, allgmin stepping successful at 1.000000e-08
+For dc analysis, allgmin stepping successful at 1.000000e-09
+For dc analysis, allgmin stepping successful at 1.000000e-10
+For dc analysis, allgmin stepping successful at 1.000000e-11
+For dc analysis, allgmin stepping successful at 1.000000e-12
+For dc analysis, allgmin stepping successful at 1.000000e-13
+For dc analysis, allgmin stepping successful at 1.000000e-14
+For dc analysis, allgmin stepping successful at 1.000000e-15
+For dc analysis, allgmin stepping successful at 1.000000e-16
+For dc analysis, allgmin stepping successful at 1.000000e-17
+For dc analysis, allgmin stepping successful at 3.162278e-18
+For dc analysis, allgmin stepping successful at 2.942727e-18
+For DC analysis, allgmin stepping finished successfully.
+  DC solution range: ( vdd = 3.328 , vsr0 = -2.271e-14 ) V  ( x_pix_smp_col21.v12#branch = 0 , x_pix_smp_col21.v12#branch = 0 ) A 
+	abstol(I) = 1 aA      
+	abstol(V) = 1 uV      
+	cmin = 0 F       
+	ctrim = 1e-20
+	devicematrixopt = 1
+	errpreset = conservative
+	fast = 0
+	fastmatrixopt = 0
+	fixdanglingnodes = 2
+	fixtopologyresistor = 1e+20
+	gmin = 0.01 aS   
+	ignoretstep = yes
+	latencyscale = 1
+	ltecheck = 1
+	ltemethod = 2
+	maxiterationsfordc = 100
+	maxiterationsfortransient = 10
+	maxstep = 0.50 ns   
+	merge = yes
+	method = trap
+	minimum timestep = 0.001ps
+	msolver = 0
+	msolverdc = automatically selected
+	mt = 8
+	outputstart = 0 s       
+	postprocessmeasure = no
+	reltol = 0.0001
+	remove dangling element = ON
+	rlargetrim = 1e+21
+	rtrim = 0.001
+	seriesmerge = ON
+	skipdc = no
+	start = 0 s       
+	stop = 58.10 us  
+	temp = 25 C      
+	noisefmax = 1 GHz     
+	noisermin = 0
+	noisescale = 1         
+	noiseseed = 3
+	noisetstart = 0 s       
+	tnom = 27 C      
+	uselumpedmodel = 0
+Running transient from 0.000000e+00 to 5.810000e-05.
+tran: time = 1.7375 us      (2.9905 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 3.7655 us      (6.4811 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 5.9515 us     (10.2435 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 8.1120 us     (13.9621 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 10.2950 us    (17.7194 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 12.5705 us    (21.6360 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 14.9170 us    (25.6747 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 17.0960 us    (29.4251 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 19.4025 us    (33.3950 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 21.7420 us    (37.4217 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 23.7960 us    (40.9570 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 25.7075 us    (44.2470 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 26.9750 us    (46.4286 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 29.2920 us    (50.4165 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 31.5915 us    (54.3744 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 33.8355 us    (58.2367 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 36.1405 us    (62.2040 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 38.2800 us    (65.8864 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 40.1740 us    (69.1463 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 42.3610 us    (72.9105 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 44.5855 us    (76.7392 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 46.8815 us    (80.6911 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 49.2810 us    (84.8210 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 51.6190 us    (88.8451 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 53.9178 us    (92.8017 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 56.2384 us    (96.7959 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 58.1000 us   (100.0000 %), step = 0.1875 ns     (0.3227 m%)
+
+
+
+*****MEASURE RESULTS
+  rms_vcol=  2.7879e+00 from=  1.5000e-05 to=  2.0000e-05
+  rms_vcolr=  2.7878e+00 from=  5.0000e-05 to=  5.5000e-05
+  rms_vsr0=  8.0063e-07 from=  5.7000e-05 to=  5.8000e-05
+  rms_vsr0_tk=  8.0063e-07 from=  5.7000e-05 to=  5.8000e-05
+  vpd=  3.1768e+00
+  icol=  3.1856e-06
+  vcol=  2.7879e+00
+  vsr0=  8.1190e-07
+
+
+
+***** Simulation Statistics For This Analysis:
+
+Elapsed WallClock Time (HH:MM:SS) in Analysis: 00 00:00:27.
+Elapsed WallClock Time (HH:MM:SS) in Analysis (excluding setup) : 00 00:00:27.
+DC: Time in Analysis: 00 00:00:00.
+Number of TimeSteps:     116427.
+Current Process  Resident Memory (KB): 90528
+Current Process Peak Resident Memory (KB): 90528
+
+Sweep parameter nbrun=4.
+SIM_WARNING[ANA4]: For dc analysis, traditional Newton Raphson did not converge.
+Starting allgmin stepping..
+For dc analysis, allgmin stepping successful at 1.000000e-03
+For dc analysis, allgmin stepping successful at 1.000000e-04
+For dc analysis, allgmin stepping successful at 1.000000e-05
+For dc analysis, allgmin stepping successful at 1.000000e-06
+For dc analysis, allgmin stepping successful at 1.000000e-07
+For dc analysis, allgmin stepping successful at 1.000000e-08
+For dc analysis, allgmin stepping successful at 1.000000e-09
+For dc analysis, allgmin stepping successful at 1.000000e-10
+For dc analysis, allgmin stepping successful at 1.000000e-11
+For dc analysis, allgmin stepping successful at 1.000000e-12
+For dc analysis, allgmin stepping successful at 1.000000e-13
+For dc analysis, allgmin stepping successful at 1.000000e-14
+For dc analysis, allgmin stepping successful at 1.000000e-15
+For dc analysis, allgmin stepping successful at 1.000000e-16
+For dc analysis, allgmin stepping successful at 1.000000e-17
+For dc analysis, allgmin stepping successful at 3.162278e-18
+For dc analysis, allgmin stepping successful at 2.942727e-18
+For DC analysis, allgmin stepping finished successfully.
+  DC solution range: ( vdd = 3.328 , vsr0 = -2.271e-14 ) V  ( x_pix_smp_col21.v12#branch = 0 , x_pix_smp_col21.v12#branch = 0 ) A 
+	abstol(I) = 1 aA      
+	abstol(V) = 1 uV      
+	cmin = 0 F       
+	ctrim = 1e-20
+	devicematrixopt = 1
+	errpreset = conservative
+	fast = 0
+	fastmatrixopt = 0
+	fixdanglingnodes = 2
+	fixtopologyresistor = 1e+20
+	gmin = 0.01 aS   
+	ignoretstep = yes
+	latencyscale = 1
+	ltecheck = 1
+	ltemethod = 2
+	maxiterationsfordc = 100
+	maxiterationsfortransient = 10
+	maxstep = 0.50 ns   
+	merge = yes
+	method = trap
+	minimum timestep = 0.001ps
+	msolver = 0
+	msolverdc = automatically selected
+	mt = 8
+	outputstart = 0 s       
+	postprocessmeasure = no
+	reltol = 0.0001
+	remove dangling element = ON
+	rlargetrim = 1e+21
+	rtrim = 0.001
+	seriesmerge = ON
+	skipdc = no
+	start = 0 s       
+	stop = 58.10 us  
+	temp = 25 C      
+	noisefmax = 1 GHz     
+	noisermin = 0
+	noisescale = 1         
+	noiseseed = 4
+	noisetstart = 0 s       
+	tnom = 27 C      
+	uselumpedmodel = 0
+Running transient from 0.000000e+00 to 5.810000e-05.
+tran: time = 1.0495 us      (1.8064 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 3.0675 us      (5.2797 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 5.2755 us      (9.0800 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 7.6020 us     (13.0843 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 9.9505 us     (17.1265 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 12.3210 us    (21.2065 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 14.6910 us    (25.2857 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 17.0845 us    (29.4053 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 19.4595 us    (33.4931 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 21.8420 us    (37.5938 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 23.9125 us    (41.1575 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 26.2360 us    (45.1566 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 28.6635 us    (49.3348 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 31.0785 us    (53.4914 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 33.4540 us    (57.5800 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 35.7995 us    (61.6170 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 38.1340 us    (65.6351 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 40.1410 us    (69.0895 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 42.4600 us    (73.0809 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 44.8305 us    (77.1609 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 47.1540 us    (81.1601 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 49.5510 us    (85.2857 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 51.9320 us    (89.3838 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 54.2203 us    (93.3224 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 56.4893 us    (97.2278 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 58.1000 us   (100.0000 %), step = 0.2031 ns     (0.3496 m%)
+
+
+
+*****MEASURE RESULTS
+  rms_vcol=  2.7879e+00 from=  1.5000e-05 to=  2.0000e-05
+  rms_vcolr=  2.7878e+00 from=  5.0000e-05 to=  5.5000e-05
+  rms_vsr0=  2.8927e-08 from=  5.7000e-05 to=  5.8000e-05
+  rms_vsr0_tk=  2.8927e-08 from=  5.7000e-05 to=  5.8000e-05
+  vpd=  3.1768e+00
+  icol=  3.1856e-06
+  vcol=  2.7879e+00
+  vsr0=  2.6128e-08
+
+
+
+***** Simulation Statistics For This Analysis:
+
+Elapsed WallClock Time (HH:MM:SS) in Analysis: 00 00:00:25.
+Elapsed WallClock Time (HH:MM:SS) in Analysis (excluding setup) : 00 00:00:25.
+DC: Time in Analysis: 00 00:00:00.
+Number of TimeSteps:     116431.
+Current Process  Resident Memory (KB): 90544
+Current Process Peak Resident Memory (KB): 90548
+
+Sweep parameter nbrun=5.
+SIM_WARNING[ANA4]: For dc analysis, traditional Newton Raphson did not converge.
+Starting allgmin stepping..
+For dc analysis, allgmin stepping successful at 1.000000e-03
+For dc analysis, allgmin stepping successful at 1.000000e-04
+For dc analysis, allgmin stepping successful at 1.000000e-05
+For dc analysis, allgmin stepping successful at 1.000000e-06
+For dc analysis, allgmin stepping successful at 1.000000e-07
+For dc analysis, allgmin stepping successful at 1.000000e-08
+For dc analysis, allgmin stepping successful at 1.000000e-09
+For dc analysis, allgmin stepping successful at 1.000000e-10
+For dc analysis, allgmin stepping successful at 1.000000e-11
+For dc analysis, allgmin stepping successful at 1.000000e-12
+For dc analysis, allgmin stepping successful at 1.000000e-13
+For dc analysis, allgmin stepping successful at 1.000000e-14
+For dc analysis, allgmin stepping successful at 1.000000e-15
+For dc analysis, allgmin stepping successful at 1.000000e-16
+For dc analysis, allgmin stepping successful at 1.000000e-17
+For dc analysis, allgmin stepping successful at 3.162278e-18
+For dc analysis, allgmin stepping successful at 2.942727e-18
+For DC analysis, allgmin stepping finished successfully.
+  DC solution range: ( vdd = 3.328 , vsr0 = -2.271e-14 ) V  ( x_pix_smp_col21.v12#branch = 0 , x_pix_smp_col21.v12#branch = 0 ) A 
+	abstol(I) = 1 aA      
+	abstol(V) = 1 uV      
+	cmin = 0 F       
+	ctrim = 1e-20
+	devicematrixopt = 1
+	errpreset = conservative
+	fast = 0
+	fastmatrixopt = 0
+	fixdanglingnodes = 2
+	fixtopologyresistor = 1e+20
+	gmin = 0.01 aS   
+	ignoretstep = yes
+	latencyscale = 1
+	ltecheck = 1
+	ltemethod = 2
+	maxiterationsfordc = 100
+	maxiterationsfortransient = 10
+	maxstep = 0.50 ns   
+	merge = yes
+	method = trap
+	minimum timestep = 0.001ps
+	msolver = 0
+	msolverdc = automatically selected
+	mt = 8
+	outputstart = 0 s       
+	postprocessmeasure = no
+	reltol = 0.0001
+	remove dangling element = ON
+	rlargetrim = 1e+21
+	rtrim = 0.001
+	seriesmerge = ON
+	skipdc = no
+	start = 0 s       
+	stop = 58.10 us  
+	temp = 25 C      
+	noisefmax = 1 GHz     
+	noisermin = 0
+	noisescale = 1         
+	noiseseed = 5
+	noisetstart = 0 s       
+	tnom = 27 C      
+	uselumpedmodel = 0
+Running transient from 0.000000e+00 to 5.810000e-05.
+tran: time = 1.8490 us      (3.1824 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 3.9715 us      (6.8356 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 6.3740 us     (10.9707 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 8.8200 us     (15.1807 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 11.2835 us    (19.4208 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 13.7415 us    (23.6515 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 16.1890 us    (27.8640 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 18.6275 us    (32.0611 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 21.0750 us    (36.2737 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 23.3240 us    (40.1446 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 25.5625 us    (43.9974 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 28.0135 us    (48.2160 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 30.4705 us    (52.4449 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 32.9150 us    (56.6523 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 35.3670 us    (60.8726 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 37.8360 us    (65.1222 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 39.9095 us    (68.6910 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 42.2430 us    (72.7074 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 44.6455 us    (76.8425 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 47.0635 us    (81.0043 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 49.4885 us    (85.1781 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 51.9190 us    (89.3615 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 54.2593 us    (93.3895 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 56.3430 us    (96.9760 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 58.1000 us   (100.0000 %), step = 0.2031 ns     (0.3496 m%)
+
+
+
+*****MEASURE RESULTS
+  rms_vcol=  2.7879e+00 from=  1.5000e-05 to=  2.0000e-05
+  rms_vcolr=  2.7878e+00 from=  5.0000e-05 to=  5.5000e-05
+  rms_vsr0=  1.3222e-06 from=  5.7000e-05 to=  5.8000e-05
+  rms_vsr0_tk=  1.3222e-06 from=  5.7000e-05 to=  5.8000e-05
+  vpd=  3.1768e+00
+  icol=  3.1856e-06
+  vcol=  2.7879e+00
+  vsr0=  1.3205e-06
+
+
+
+***** Simulation Statistics For This Analysis:
+
+Elapsed WallClock Time (HH:MM:SS) in Analysis: 00 00:00:25.
+Elapsed WallClock Time (HH:MM:SS) in Analysis (excluding setup) : 00 00:00:25.
+DC: Time in Analysis: 00 00:00:00.
+Number of TimeSteps:     116437.
+Current Process  Resident Memory (KB): 90844
+Current Process Peak Resident Memory (KB): 90844
+
+Sweep parameter nbrun=6.
+	Further occurrences of this warning will be suppressed.
+Starting allgmin stepping..
+For dc analysis, allgmin stepping successful at 1.000000e-03
+For dc analysis, allgmin stepping successful at 1.000000e-04
+For dc analysis, allgmin stepping successful at 1.000000e-05
+For dc analysis, allgmin stepping successful at 1.000000e-06
+For dc analysis, allgmin stepping successful at 1.000000e-07
+For dc analysis, allgmin stepping successful at 1.000000e-08
+For dc analysis, allgmin stepping successful at 1.000000e-09
+For dc analysis, allgmin stepping successful at 1.000000e-10
+For dc analysis, allgmin stepping successful at 1.000000e-11
+For dc analysis, allgmin stepping successful at 1.000000e-12
+For dc analysis, allgmin stepping successful at 1.000000e-13
+For dc analysis, allgmin stepping successful at 1.000000e-14
+For dc analysis, allgmin stepping successful at 1.000000e-15
+For dc analysis, allgmin stepping successful at 1.000000e-16
+For dc analysis, allgmin stepping successful at 1.000000e-17
+For dc analysis, allgmin stepping successful at 3.162278e-18
+For dc analysis, allgmin stepping successful at 2.942727e-18
+For DC analysis, allgmin stepping finished successfully.
+  DC solution range: ( vdd = 3.328 , vsr0 = -2.271e-14 ) V  ( x_pix_smp_col21.v12#branch = 0 , x_pix_smp_col21.v12#branch = 0 ) A 
+	abstol(I) = 1 aA      
+	abstol(V) = 1 uV      
+	cmin = 0 F       
+	ctrim = 1e-20
+	devicematrixopt = 1
+	errpreset = conservative
+	fast = 0
+	fastmatrixopt = 0
+	fixdanglingnodes = 2
+	fixtopologyresistor = 1e+20
+	gmin = 0.01 aS   
+	ignoretstep = yes
+	latencyscale = 1
+	ltecheck = 1
+	ltemethod = 2
+	maxiterationsfordc = 100
+	maxiterationsfortransient = 10
+	maxstep = 0.50 ns   
+	merge = yes
+	method = trap
+	minimum timestep = 0.001ps
+	msolver = 0
+	msolverdc = automatically selected
+	mt = 8
+	outputstart = 0 s       
+	postprocessmeasure = no
+	reltol = 0.0001
+	remove dangling element = ON
+	rlargetrim = 1e+21
+	rtrim = 0.001
+	seriesmerge = ON
+	skipdc = no
+	start = 0 s       
+	stop = 58.10 us  
+	temp = 25 C      
+	noisefmax = 1 GHz     
+	noisermin = 0
+	noisescale = 1         
+	noiseseed = 6
+	noisetstart = 0 s       
+	tnom = 27 C      
+	uselumpedmodel = 0
+Running transient from 0.000000e+00 to 5.810000e-05.
+tran: time = 1.9180 us      (3.3012 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 3.9940 us      (6.8744 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 6.2760 us     (10.8021 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 8.4915 us     (14.6153 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 10.7785 us    (18.5516 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 12.9745 us    (22.3313 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 15.2820 us    (26.3029 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 17.5905 us    (30.2763 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 19.8565 us    (34.1764 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 22.0718 us    (37.9893 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 24.0495 us    (41.3933 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 26.3080 us    (45.2806 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 28.5990 us    (49.2238 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 30.9145 us    (53.2091 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 33.2370 us    (57.2065 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 35.5560 us    (61.1979 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 37.8995 us    (65.2315 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 39.8900 us    (68.6575 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 42.1650 us    (72.5732 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 44.5170 us    (76.6213 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 46.8030 us    (80.5559 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 49.1705 us    (84.6308 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 51.4875 us    (88.6188 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 53.7258 us    (92.4713 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 56.0003 us    (96.3861 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 58.1000 us   (100.0000 %), step = 0.2031 ns     (0.3496 m%)
+
+
+
+*****MEASURE RESULTS
+  rms_vcol=  2.7879e+00 from=  1.5000e-05 to=  2.0000e-05
+  rms_vcolr=  2.7878e+00 from=  5.0000e-05 to=  5.5000e-05
+  rms_vsr0=  2.4388e-06 from=  5.7000e-05 to=  5.8000e-05
+  rms_vsr0_tk=  2.4388e-06 from=  5.7000e-05 to=  5.8000e-05
+  vpd=  3.1768e+00
+  icol=  3.1856e-06
+  vcol=  2.7879e+00
+  vsr0=  2.4299e-06
+
+
+
+***** Simulation Statistics For This Analysis:
+
+Elapsed WallClock Time (HH:MM:SS) in Analysis: 00 00:00:27.
+Elapsed WallClock Time (HH:MM:SS) in Analysis (excluding setup) : 00 00:00:27.
+DC: Time in Analysis: 00 00:00:00.
+Number of TimeSteps:     116427.
+Current Process  Resident Memory (KB): 90860
+Current Process Peak Resident Memory (KB): 90860
+
+Sweep parameter nbrun=7.
+Starting allgmin stepping..
+For dc analysis, allgmin stepping successful at 1.000000e-03
+For dc analysis, allgmin stepping successful at 1.000000e-04
+For dc analysis, allgmin stepping successful at 1.000000e-05
+For dc analysis, allgmin stepping successful at 1.000000e-06
+For dc analysis, allgmin stepping successful at 1.000000e-07
+For dc analysis, allgmin stepping successful at 1.000000e-08
+For dc analysis, allgmin stepping successful at 1.000000e-09
+For dc analysis, allgmin stepping successful at 1.000000e-10
+For dc analysis, allgmin stepping successful at 1.000000e-11
+For dc analysis, allgmin stepping successful at 1.000000e-12
+For dc analysis, allgmin stepping successful at 1.000000e-13
+For dc analysis, allgmin stepping successful at 1.000000e-14
+For dc analysis, allgmin stepping successful at 1.000000e-15
+For dc analysis, allgmin stepping successful at 1.000000e-16
+For dc analysis, allgmin stepping successful at 1.000000e-17
+For dc analysis, allgmin stepping successful at 3.162278e-18
+For dc analysis, allgmin stepping successful at 2.942727e-18
+For DC analysis, allgmin stepping finished successfully.
+  DC solution range: ( vdd = 3.328 , vsr0 = -2.271e-14 ) V  ( x_pix_smp_col21.v12#branch = 0 , x_pix_smp_col21.v12#branch = 0 ) A 
+	abstol(I) = 1 aA      
+	abstol(V) = 1 uV      
+	cmin = 0 F       
+	ctrim = 1e-20
+	devicematrixopt = 1
+	errpreset = conservative
+	fast = 0
+	fastmatrixopt = 0
+	fixdanglingnodes = 2
+	fixtopologyresistor = 1e+20
+	gmin = 0.01 aS   
+	ignoretstep = yes
+	latencyscale = 1
+	ltecheck = 1
+	ltemethod = 2
+	maxiterationsfordc = 100
+	maxiterationsfortransient = 10
+	maxstep = 0.50 ns   
+	merge = yes
+	method = trap
+	minimum timestep = 0.001ps
+	msolver = 0
+	msolverdc = automatically selected
+	mt = 8
+	outputstart = 0 s       
+	postprocessmeasure = no
+	reltol = 0.0001
+	remove dangling element = ON
+	rlargetrim = 1e+21
+	rtrim = 0.001
+	seriesmerge = ON
+	skipdc = no
+	start = 0 s       
+	stop = 58.10 us  
+	temp = 25 C      
+	noisefmax = 1 GHz     
+	noisermin = 0
+	noisescale = 1         
+	noiseseed = 7
+	noisetstart = 0 s       
+	tnom = 27 C      
+	uselumpedmodel = 0
+Running transient from 0.000000e+00 to 5.810000e-05.
+tran: time = 1.7420 us      (2.9983 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 3.7690 us      (6.4871 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 6.0390 us     (10.3941 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 8.2680 us     (14.2306 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 10.5625 us    (18.1799 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 12.6520 us    (21.7762 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 14.6420 us    (25.2014 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 16.9490 us    (29.1721 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 19.1735 us    (33.0009 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 21.5805 us    (37.1437 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 23.6740 us    (40.7470 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 25.8920 us    (44.5645 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 28.1825 us    (48.5069 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 30.4290 us    (52.3735 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 32.6790 us    (56.2461 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 35.0420 us    (60.3133 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 37.3405 us    (64.2694 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 39.3315 us    (67.6962 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 41.3975 us    (71.2522 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 43.6035 us    (75.0491 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 45.8825 us    (78.9716 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 48.0645 us    (82.7272 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 50.2380 us    (86.4682 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 52.4510 us    (90.2771 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 54.6658 us    (94.0892 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 56.8335 us    (97.8201 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 58.1000 us   (100.0000 %), step = 0.2031 ns     (0.3496 m%)
+
+
+
+*****MEASURE RESULTS
+  rms_vcol=  2.7879e+00 from=  1.5000e-05 to=  2.0000e-05
+  rms_vcolr=  2.7878e+00 from=  5.0000e-05 to=  5.5000e-05
+  rms_vsr0=  4.0168e-06 from=  5.7000e-05 to=  5.8000e-05
+  rms_vsr0_tk=  4.0168e-06 from=  5.7000e-05 to=  5.8000e-05
+  vpd=  3.1768e+00
+  icol=  3.1856e-06
+  vcol=  2.7879e+00
+  vsr0=  4.0817e-06
+
+
+
+***** Simulation Statistics For This Analysis:
+
+Elapsed WallClock Time (HH:MM:SS) in Analysis: 00 00:00:27.
+Elapsed WallClock Time (HH:MM:SS) in Analysis (excluding setup) : 00 00:00:27.
+DC: Time in Analysis: 00 00:00:00.
+Number of TimeSteps:     116437.
+Current Process  Resident Memory (KB): 90868
+Current Process Peak Resident Memory (KB): 90872
+
+Sweep parameter nbrun=8.
+Starting allgmin stepping..
+For dc analysis, allgmin stepping successful at 1.000000e-03
+For dc analysis, allgmin stepping successful at 1.000000e-04
+For dc analysis, allgmin stepping successful at 1.000000e-05
+For dc analysis, allgmin stepping successful at 1.000000e-06
+For dc analysis, allgmin stepping successful at 1.000000e-07
+For dc analysis, allgmin stepping successful at 1.000000e-08
+For dc analysis, allgmin stepping successful at 1.000000e-09
+For dc analysis, allgmin stepping successful at 1.000000e-10
+For dc analysis, allgmin stepping successful at 1.000000e-11
+For dc analysis, allgmin stepping successful at 1.000000e-12
+For dc analysis, allgmin stepping successful at 1.000000e-13
+For dc analysis, allgmin stepping successful at 1.000000e-14
+For dc analysis, allgmin stepping successful at 1.000000e-15
+For dc analysis, allgmin stepping successful at 1.000000e-16
+For dc analysis, allgmin stepping successful at 1.000000e-17
+For dc analysis, allgmin stepping successful at 3.162278e-18
+For dc analysis, allgmin stepping successful at 2.942727e-18
+For DC analysis, allgmin stepping finished successfully.
+  DC solution range: ( vdd = 3.328 , vsr0 = -2.271e-14 ) V  ( x_pix_smp_col21.v12#branch = 0 , x_pix_smp_col21.v12#branch = 0 ) A 
+	abstol(I) = 1 aA      
+	abstol(V) = 1 uV      
+	cmin = 0 F       
+	ctrim = 1e-20
+	devicematrixopt = 1
+	errpreset = conservative
+	fast = 0
+	fastmatrixopt = 0
+	fixdanglingnodes = 2
+	fixtopologyresistor = 1e+20
+	gmin = 0.01 aS   
+	ignoretstep = yes
+	latencyscale = 1
+	ltecheck = 1
+	ltemethod = 2
+	maxiterationsfordc = 100
+	maxiterationsfortransient = 10
+	maxstep = 0.50 ns   
+	merge = yes
+	method = trap
+	minimum timestep = 0.001ps
+	msolver = 0
+	msolverdc = automatically selected
+	mt = 8
+	outputstart = 0 s       
+	postprocessmeasure = no
+	reltol = 0.0001
+	remove dangling element = ON
+	rlargetrim = 1e+21
+	rtrim = 0.001
+	seriesmerge = ON
+	skipdc = no
+	start = 0 s       
+	stop = 58.10 us  
+	temp = 25 C      
+	noisefmax = 1 GHz     
+	noisermin = 0
+	noisescale = 1         
+	noiseseed = 8
+	noisetstart = 0 s       
+	tnom = 27 C      
+	uselumpedmodel = 0
+Running transient from 0.000000e+00 to 5.810000e-05.
+tran: time = 0.7510 us      (1.2926 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 2.6705 us      (4.5964 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 4.7240 us      (8.1308 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 7.0465 us     (12.1282 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 9.3415 us     (16.0783 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 11.6925 us    (20.1248 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 14.0325 us    (24.1523 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 16.3995 us    (28.2263 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 18.7025 us    (32.1902 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 21.0460 us    (36.2238 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 23.2395 us    (39.9991 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 25.4095 us    (43.7341 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 27.7325 us    (47.7324 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 29.8410 us    (51.3614 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 31.0555 us    (53.4518 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 33.3820 us    (57.4561 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 35.7475 us    (61.5275 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 38.0650 us    (65.5164 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 40.0215 us    (68.8838 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 42.2125 us    (72.6549 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 44.5340 us    (76.6506 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 46.9065 us    (80.7341 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 49.1765 us    (84.6411 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 51.5200 us    (88.6747 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 53.7678 us    (92.5436 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 56.0385 us    (96.4519 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 58.1000 us   (100.0000 %), step = 0.2031 ns     (0.3496 m%)
+
+
+
+*****MEASURE RESULTS
+  rms_vcol=  2.7879e+00 from=  1.5000e-05 to=  2.0000e-05
+  rms_vcolr=  2.7878e+00 from=  5.0000e-05 to=  5.5000e-05
+  rms_vsr0=  5.5511e-06 from=  5.7000e-05 to=  5.8000e-05
+  rms_vsr0_tk=  5.5511e-06 from=  5.7000e-05 to=  5.8000e-05
+  vpd=  3.1768e+00
+  icol=  3.1856e-06
+  vcol=  2.7879e+00
+  vsr0=  5.5450e-06
+
+
+
+***** Simulation Statistics For This Analysis:
+
+Elapsed WallClock Time (HH:MM:SS) in Analysis: 00 00:00:26.
+Elapsed WallClock Time (HH:MM:SS) in Analysis (excluding setup) : 00 00:00:26.
+DC: Time in Analysis: 00 00:00:00.
+Number of TimeSteps:     116437.
+Current Process  Resident Memory (KB): 90884
+Current Process Peak Resident Memory (KB): 90884
+
+Sweep parameter nbrun=9.
+Starting allgmin stepping..
+For dc analysis, allgmin stepping successful at 1.000000e-03
+For dc analysis, allgmin stepping successful at 1.000000e-04
+For dc analysis, allgmin stepping successful at 1.000000e-05
+For dc analysis, allgmin stepping successful at 1.000000e-06
+For dc analysis, allgmin stepping successful at 1.000000e-07
+For dc analysis, allgmin stepping successful at 1.000000e-08
+For dc analysis, allgmin stepping successful at 1.000000e-09
+For dc analysis, allgmin stepping successful at 1.000000e-10
+For dc analysis, allgmin stepping successful at 1.000000e-11
+For dc analysis, allgmin stepping successful at 1.000000e-12
+For dc analysis, allgmin stepping successful at 1.000000e-13
+For dc analysis, allgmin stepping successful at 1.000000e-14
+For dc analysis, allgmin stepping successful at 1.000000e-15
+For dc analysis, allgmin stepping successful at 1.000000e-16
+For dc analysis, allgmin stepping successful at 1.000000e-17
+For dc analysis, allgmin stepping successful at 3.162278e-18
+For dc analysis, allgmin stepping successful at 2.942727e-18
+For DC analysis, allgmin stepping finished successfully.
+  DC solution range: ( vdd = 3.328 , vsr0 = -2.271e-14 ) V  ( x_pix_smp_col21.v12#branch = 0 , x_pix_smp_col21.v12#branch = 0 ) A 
+	abstol(I) = 1 aA      
+	abstol(V) = 1 uV      
+	cmin = 0 F       
+	ctrim = 1e-20
+	devicematrixopt = 1
+	errpreset = conservative
+	fast = 0
+	fastmatrixopt = 0
+	fixdanglingnodes = 2
+	fixtopologyresistor = 1e+20
+	gmin = 0.01 aS   
+	ignoretstep = yes
+	latencyscale = 1
+	ltecheck = 1
+	ltemethod = 2
+	maxiterationsfordc = 100
+	maxiterationsfortransient = 10
+	maxstep = 0.50 ns   
+	merge = yes
+	method = trap
+	minimum timestep = 0.001ps
+	msolver = 0
+	msolverdc = automatically selected
+	mt = 8
+	outputstart = 0 s       
+	postprocessmeasure = no
+	reltol = 0.0001
+	remove dangling element = ON
+	rlargetrim = 1e+21
+	rtrim = 0.001
+	seriesmerge = ON
+	skipdc = no
+	start = 0 s       
+	stop = 58.10 us  
+	temp = 25 C      
+	noisefmax = 1 GHz     
+	noisermin = 0
+	noisescale = 1         
+	noiseseed = 9
+	noisetstart = 0 s       
+	tnom = 27 C      
+	uselumpedmodel = 0
+Running transient from 0.000000e+00 to 5.810000e-05.
+tran: time = 1.0330 us      (1.7780 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 2.9705 us      (5.1127 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 5.1795 us      (8.9148 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 7.4345 us     (12.7960 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 9.6760 us     (16.6540 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 11.9880 us    (20.6334 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 14.2930 us    (24.6007 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 16.6405 us    (28.6411 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 19.0030 us    (32.7074 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 21.3785 us    (36.7960 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 23.4150 us    (40.3012 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 25.4800 us    (43.8554 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 27.7575 us    (47.7754 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 30.0070 us    (51.6472 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 32.3690 us    (55.7126 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 34.7340 us    (59.7831 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 37.1110 us    (63.8744 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 39.1805 us    (67.4363 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 41.3920 us    (71.2427 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 43.7895 us    (75.3692 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 46.1510 us    (79.4337 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 48.0390 us    (82.6833 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 49.7635 us    (85.6515 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 51.9215 us    (89.3658 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 53.9678 us    (92.8878 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 55.9310 us    (96.2669 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 57.9720 us    (99.7797 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 58.1000 us   (100.0000 %), step = 0.2031 ns     (0.3496 m%)
+
+
+
+*****MEASURE RESULTS
+  rms_vcol=  2.7879e+00 from=  1.5000e-05 to=  2.0000e-05
+  rms_vcolr=  2.7878e+00 from=  5.0000e-05 to=  5.5000e-05
+  rms_vsr0=  3.3579e-06 from=  5.7000e-05 to=  5.8000e-05
+  rms_vsr0_tk=  3.3579e-06 from=  5.7000e-05 to=  5.8000e-05
+  vpd=  3.1768e+00
+  icol=  3.1856e-06
+  vcol=  2.7879e+00
+  vsr0=  3.3747e-06
+
+
+
+***** Simulation Statistics For This Analysis:
+
+Elapsed WallClock Time (HH:MM:SS) in Analysis: 00 00:00:28.
+Elapsed WallClock Time (HH:MM:SS) in Analysis (excluding setup) : 00 00:00:28.
+DC: Time in Analysis: 00 00:00:00.
+Number of TimeSteps:     116423.
+Current Process  Resident Memory (KB): 90896
+Current Process Peak Resident Memory (KB): 90896
+
+Sweep parameter nbrun=10.
+Starting allgmin stepping..
+For dc analysis, allgmin stepping successful at 1.000000e-03
+For dc analysis, allgmin stepping successful at 1.000000e-04
+For dc analysis, allgmin stepping successful at 1.000000e-05
+For dc analysis, allgmin stepping successful at 1.000000e-06
+For dc analysis, allgmin stepping successful at 1.000000e-07
+For dc analysis, allgmin stepping successful at 1.000000e-08
+For dc analysis, allgmin stepping successful at 1.000000e-09
+For dc analysis, allgmin stepping successful at 1.000000e-10
+For dc analysis, allgmin stepping successful at 1.000000e-11
+For dc analysis, allgmin stepping successful at 1.000000e-12
+For dc analysis, allgmin stepping successful at 1.000000e-13
+For dc analysis, allgmin stepping successful at 1.000000e-14
+For dc analysis, allgmin stepping successful at 1.000000e-15
+For dc analysis, allgmin stepping successful at 1.000000e-16
+For dc analysis, allgmin stepping successful at 1.000000e-17
+For dc analysis, allgmin stepping successful at 3.162278e-18
+For dc analysis, allgmin stepping successful at 2.942727e-18
+For DC analysis, allgmin stepping finished successfully.
+  DC solution range: ( vdd = 3.328 , vsr0 = -2.271e-14 ) V  ( x_pix_smp_col21.v12#branch = 0 , x_pix_smp_col21.v12#branch = 0 ) A 
+	abstol(I) = 1 aA      
+	abstol(V) = 1 uV      
+	cmin = 0 F       
+	ctrim = 1e-20
+	devicematrixopt = 1
+	errpreset = conservative
+	fast = 0
+	fastmatrixopt = 0
+	fixdanglingnodes = 2
+	fixtopologyresistor = 1e+20
+	gmin = 0.01 aS   
+	ignoretstep = yes
+	latencyscale = 1
+	ltecheck = 1
+	ltemethod = 2
+	maxiterationsfordc = 100
+	maxiterationsfortransient = 10
+	maxstep = 0.50 ns   
+	merge = yes
+	method = trap
+	minimum timestep = 0.001ps
+	msolver = 0
+	msolverdc = automatically selected
+	mt = 8
+	outputstart = 0 s       
+	postprocessmeasure = no
+	reltol = 0.0001
+	remove dangling element = ON
+	rlargetrim = 1e+21
+	rtrim = 0.001
+	seriesmerge = ON
+	skipdc = no
+	start = 0 s       
+	stop = 58.10 us  
+	temp = 25 C      
+	noisefmax = 1 GHz     
+	noisermin = 0
+	noisescale = 1         
+	noiseseed = 10
+	noisetstart = 0 s       
+	tnom = 27 C      
+	uselumpedmodel = 0
+Running transient from 0.000000e+00 to 5.810000e-05.
+tran: time = 0.5305 us      (0.9131 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 2.4285 us      (4.1799 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 4.4730 us      (7.6988 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 6.7290 us     (11.5818 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 8.9795 us     (15.4553 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 11.2140 us    (19.3012 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 13.4350 us    (23.1239 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 15.7770 us    (27.1549 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 18.0675 us    (31.0972 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 20.3515 us    (35.0284 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 22.6252 us    (38.9419 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 24.7570 us    (42.6110 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 27.1360 us    (46.7057 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 29.4420 us    (50.6747 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 31.7830 us    (54.7040 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 34.1655 us    (58.8046 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 36.5635 us    (62.9320 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 38.7460 us    (66.6885 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 40.7440 us    (70.1274 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 43.0195 us    (74.0439 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 45.3440 us    (78.0448 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 47.6805 us    (82.0663 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 49.9910 us    (86.0430 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 52.3635 us    (90.1265 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 54.6878 us    (94.1270 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 56.8274 us    (97.8096 %), step = 0.5000 ns     (0.8606 m%)
+tran: time = 58.1000 us   (100.0000 %), step = 0.1875 ns     (0.3227 m%)
+
+
+
+*****MEASURE RESULTS
+  rms_vcol=  2.7879e+00 from=  1.5000e-05 to=  2.0000e-05
+  rms_vcolr=  2.7878e+00 from=  5.0000e-05 to=  5.5000e-05
+  rms_vsr0=  3.5826e-06 from=  5.7000e-05 to=  5.8000e-05
+  rms_vsr0_tk=  3.5826e-06 from=  5.7000e-05 to=  5.8000e-05
+  vpd=  3.1768e+00
+  icol=  3.1856e-06
+  vcol=  2.7879e+00
+  vsr0=  3.5965e-06
+
+
+
+***** Simulation Statistics For This Analysis:
+
+Elapsed WallClock Time (HH:MM:SS) in Analysis: 00 00:00:27.
+Elapsed WallClock Time (HH:MM:SS) in Analysis (excluding setup) : 00 00:00:27.
+DC: Time in Analysis: 00 00:00:00.
+Number of TimeSteps:     116427.
+Current Process  Resident Memory (KB): 90900
+Current Process Peak Resident Memory (KB): 90912
+
+
+***** Simulation Statistics For This Analysis:
+
+Elapsed WallClock Time (HH:MM:SS) in Analysis: 00 00:04:29.
+Elapsed WallClock Time (HH:MM:SS) in Analysis (excluding setup) : 00 00:04:29.
+DC: Time in Analysis: 00 00:00:00.
+Number of TimeSteps:     116427.
+Current Process  Resident Memory (KB): 90920
+Current Process Peak Resident Memory (KB): 90920
+(GEN_13): 
+(GEN_40): 
+(GEN_18): Elapsed WallClock Time (HH:MM:SS)00 00:00:05
+(GEN_95): Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_137): Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_10): Elapsed WallClock Time (HH:MM:SS)00 00:00:02
+(GEN_293): 00 00:00:00
+(GEN_369): 00 00:00:00
+(GEN_373): 00 00:00:00
+(GEN_341): Transient time for non device stamper devices00 00:00:00
+(GEN_341): Circuit Check Analysis 00 00:00:00
+(GEN_341): Circuit Check Analysis LU Solve Time 00 00:00:00
+(GEN_341): Circuit Check Analysis TR Solve Time 00 00:00:00
+(GEN_334): 00 00:00:00
+(GEN_380): 00 00:00:05
+(GEN_335): 00 00:00:00
+(GEN_327): Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_19):     233724
+(GEN_20):         68
+(GEN_114):        233
+(GEN_115):        233
+(GEN_22):        323
+(GEN_325): 5
+(GEN_326): 214
+(GEN_323): 14
+(GEN_324): 214
+(GEN_139):     117248
+(GEN_23):          1
+(GEN_24):     117247
+(GEN_25):          0
+(GEN_26): Elapsed WallClock Time (HH:MM:SS)00 00:00:01
+(GEN_27): Elapsed WallClock Time (HH:MM:SS)00 00:00:01
+(GEN_281): Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_282): Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_283): Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_28): Elapsed WallClock Time (HH:MM:SS)00 00:00:02
+(GEN_145): Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_146): Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_158): Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_159): Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_135): Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_143): Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_311): Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_312): Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_313): Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_104): 00 00:00:04
+(GEN_149): Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_224): Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_254): 2.871000e+03
+(GEN_255): 0.000000e+00
+(GEN_13): 
+(GEN_258): 0
+(GEN_264): 0
+(GEN_285): 0
+(GEN_267): 00 00:00:25
+(GEN_268): 00 00:00:12
+(GEN_269): 00 00:00:05
+(GEN_270): 00 00:00:04
+(GEN_273): 00 00:00:04
+(GEN_271): 149
+(GEN_272): 1180103
+(GEN_13): 
+(GEN_76): 
+(GEN_77):       8891
+(GEN_78):       7000
+(GEN_161): 00 00:00:05
+(GEN_181):     234504
+(GEN_167): DC: Elapsed WallClock Time (HH:MM:SS)00 00:00:02
+(GEN_168): DC: Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_292): 00 00:00:00
+(GEN_368): 00 00:00:00
+(GEN_162):     118031
+(GEN_163):        790
+(GEN_164):     117241
+(GEN_165):          0
+(GEN_169): DC: Elapsed WallClock Time (HH:MM:SS)00 00:00:01
+(GEN_170): DC: Elapsed WallClock Time (HH:MM:SS)00 00:00:01
+(GEN_281): DC: Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_282): DC: Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_283): DC: Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_171): DC: Elapsed WallClock Time (HH:MM:SS)00 00:00:02
+(GEN_172): DC: Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_173): DC: Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_174): DC: Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_175): DC: Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_176): DC: Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_166): 00 00:00:04
+(GEN_177): DC: Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(GEN_29): 
+(GEN_30):     116471
+(GEN_31):         44        44         0
+(GEN_32):     233723
+(GEN_33):          5
+(GEN_34):         2.01
+(GEN_13): 
+(GEN_45): 
+(GEN_35): 
+(GEN_46):         56
+(GEN_47):         92
+(GEN_50):         68
+(GEN_114):        233
+(GEN_115):        233
+(GEN_116):        125
+(GEN_117):        198
+(GEN_118):        323
+(VAR_7): Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+(VAR_18): Elapsed WallClock Time (HH:MM:SS)00 00:00:00
+
+Sweep finished successfully.
+
+*** Statistical Sweep Results for Sweep   ***
+
+Measure Variable = icol
+Swept variable: Leaf Iteration; Data set size=10
+Mean = 3.1856e-06
+Min = 3.1856e-06 at Leaf Iteration=9
+Max = 3.1856e-06 at Leaf Iteration=0
+Median = 3.1856e-06 between Leaf Iteration=(1,3)
+
+Measure Variable = rms_vcol
+Swept variable: Leaf Iteration; Data set size=10
+Mean = 2.78789
+Min = 2.78789 at Leaf Iteration=0
+Max = 2.78789 at Leaf Iteration=9
+Median = 2.78789 between Leaf Iteration=(4,3)
+
+Measure Variable = rms_vcolr
+Swept variable: Leaf Iteration; Data set size=10
+Mean = 2.78783
+Min = 2.78783 at Leaf Iteration=7
+Max = 2.78783 at Leaf Iteration=5
+Median = 2.78783 between Leaf Iteration=(2,3)
+
+Measure Variable = rms_vsr0
+Swept variable: Leaf Iteration; Data set size=10
+Mean = 2.47083e-06
+Min = 2.89271e-08 at Leaf Iteration=3
+Max = 5.55112e-06 at Leaf Iteration=7
+Median = 2.43545e-06 between Leaf Iteration=(0,5)
+
+Measure Variable = rms_vsr0_tk
+Swept variable: Leaf Iteration; Data set size=10
+Mean = 2.47083e-06
+Min = 2.89271e-08 at Leaf Iteration=3
+Max = 5.55112e-06 at Leaf Iteration=7
+Median = 2.43545e-06 between Leaf Iteration=(0,5)
+
+Measure Variable = vcol
+Swept variable: Leaf Iteration; Data set size=10
+Mean = 2.78789
+Min = 2.78789 at Leaf Iteration=0
+Max = 2.78789 at Leaf Iteration=9
+Median = 2.78789 between Leaf Iteration=(3,4)
+
+Measure Variable = vpd
+Swept variable: Leaf Iteration; Data set size=10
+Mean = 3.17683
+Min = 3.17683 at Leaf Iteration=0
+Max = 3.17683 at Leaf Iteration=9
+Median = 3.17683 between Leaf Iteration=(4,3)
+
+Measure Variable = vsr0
+Swept variable: Leaf Iteration; Data set size=10
+Mean = 1.99506e-06
+Min = -2.37899e-06 at Leaf Iteration=0
+Max = 5.54497e-06 at Leaf Iteration=7
+Median = 1.8752e-06 between Leaf Iteration=(4,5)
+List of Suppressed  Messages ([message id]: count (last suppressed message):
+    [ANA4  ]: 5 (For dc analysis, traditional Newton Raphson did not converge.)
+    [DEV23 ]: 9 (x_pix_smp_col21.xm24.m1: Ps = 4.96e-06 is less than weff.)
+    [DEV149]: 21 (Device x_inv_25d_57da1.xm2.m1 has model parameter noic=-5.200000e-13. A negative value can cause unphysical noise behavior.)
+    [MOD28 ]: 50 (/home/tlim/afs/rayence/testcase8/afs/packdir_jari_20161031/SPICEINCLUDE/ne3i.mod:29: The parameter tlev = 1.000000e+00 in MOS model x_pix_smp_col21.xm24.ne3imod.19 is not supported. It will be ignored.)
+
+Machine Load: 6 out of 48 processor cores busy.
+
+******** SIMULATION finished with 0 error(s) and 110 warning(s) ********
+
+***** Statistics For This Simulation Run:
+Job Start Time: Wed Nov  2 14:41:13 2016
+Job End Time:   Wed Nov  2 14:46:01 2016
+
+Time Spent Acquiring Licenses: 0 00:00:14
+Time Spent Simulating        : 0 00:04:34
+-----------------------------------------
+Elapsed Time: 0 00:04:48
+Released AFS license
+Released AFS license
+Released AFS license
+

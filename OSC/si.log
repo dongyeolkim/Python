@@ -1,0 +1,43 @@
+Virtuoso Framework License (111) was checked out successfully. Total checkout time was 0.01s.
+*WARNING* LIB PI4008K_AP from File /rnda2/Project/PI4008K_AIP/Digital/PI4008K/cds.lib Line 16 redefines
+LIB PI4008K_AP from File /rnda6/home/kimdy/work/PI4008K_AIP/cds.lib
+Insert UNDEFINE PI4008K_AP
+before DEFINE PI4008K_AP
+    in /rnda2/Project/PI4008K_AIP/Digital/PI4008K/cds.lib
+Or remove or comment out DEFINE PI4008K_AP
+    in /rnda6/home/kimdy/work/PI4008K_AIP/cds.lib
+to suppress this warning message.
+*WARNING* LIB umc55lp from File /rnda2/Project/PI4008K_AIP/Digital/PI4008K/cds.lib Line 17 redefines
+LIB umc55lp from File /rnda6/home/kimdy/work/PI4008K_AIP/cds.lib
+Insert UNDEFINE umc55lp
+before DEFINE umc55lp
+    in /rnda2/Project/PI4008K_AIP/Digital/PI4008K/cds.lib
+Or remove or comment out DEFINE umc55lp
+    in /rnda6/home/kimdy/work/PI4008K_AIP/cds.lib
+to suppress this warning message.
+*WARNING* LIB PI4008K_AP from File /rnda2/Project/PI4008K_AIP/Digital/PI4008K/cds.lib Line 16 redefines
+LIB PI4008K_AP from File /rnda6/home/kimdy/work/PI4008K_AIP/cds.lib
+Insert UNDEFINE PI4008K_AP
+before DEFINE PI4008K_AP
+    in /rnda2/Project/PI4008K_AIP/Digital/PI4008K/cds.lib
+Or remove or comment out DEFINE PI4008K_AP
+    in /rnda6/home/kimdy/work/PI4008K_AIP/cds.lib
+to suppress this warning message.
+*WARNING* LIB umc55lp from File /rnda2/Project/PI4008K_AIP/Digital/PI4008K/cds.lib Line 17 redefines
+LIB umc55lp from File /rnda6/home/kimdy/work/PI4008K_AIP/cds.lib
+Insert UNDEFINE umc55lp
+before DEFINE umc55lp
+    in /rnda2/Project/PI4008K_AIP/Digital/PI4008K/cds.lib
+Or remove or comment out DEFINE umc55lp
+    in /rnda6/home/kimdy/work/PI4008K_AIP/cds.lib
+to suppress this warning message.
+Loading umc55lp/libInit.il ...
+	Loading umc55lp/loadCxt.ile ... done!
+	Loading context 'umc55lp' from library 'umc55lp' ... done!
+	Loading context 'plotting_patch' from library 'umc55lp' ... done!
+	Loading context 'pdkUtils' from library 'umc55lp' ... done!
+	Loading context 'oxf_cb' from library 'umc55lp' ... done!
+	Loading umc55lp/libInitCustomExit.il ... done!
+Loaded umc55lp/libInit.il successfully!
+Running Artist Hierarchical Netlisting ...
+End netlisting Jun 24 11:00:16 2016

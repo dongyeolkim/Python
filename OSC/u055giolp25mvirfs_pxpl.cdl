@@ -1,0 +1,1313 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  UM055GIOLP25MVIRFS
+* Top Cell Name: UM055GIOLP25MVIRFS
+* View Name:     schematic
+* Netlisted on:  Jun 21 11:10:39 2014
+************************************************************************
+
+*.BIPOLAR
+*.RESI = 2000 
+*.RESVAL
+*.CAPVAL
+*.DIOPERI
+*.DIOAREA
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IVDDANACFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IVDDANACFS VDDANAC VSSANAC
+RR0 VDDANAC net19 420.588K $SUB=VDDANAC $[RNPPO_LP] $W=500.0n $L=278.145u
+MPM1 net13 net19 net052 VDDANAC P_25OD33_LP W=8.8u L=440.00n M=18
+MNM1 VDDANAC net13 VSSANAC VSSANAC N_12_LPRVT W=23.75u L=150.00n M=160
+DD0 VSSANAC VDDANAC DIOP_12_LPRVT 49.94p 53.5315u M=4
+RR2 net045 VSSANAC 26.7768 $SUB=VSSANAC $[RSNPO_LP] $W=550.00n $L=1.145u
+RR1 VDDANAC net052 23.6873 $SUB=VDDANAC $[RSPPO_LP] $W=550.00n $L=1.145u
+MNM0 net13 net19 net045 VSSANAC N_25OD33_LP W=5u L=2u M=2
+MN3 VSSANAC net19 VSSANAC VSSANAC N_25OD33_LP W=9u L=2.22u M=11
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    invt
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT invt A Y VDDIO VSS
+MN1 Y A VSS VSS N_25OD33_LP W=wn1 L=ln1 M=1
+MP1 Y A VDDIO VDDIO P_25OD33_LP W=wp1 L=lp1 M=1
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    inv
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT inv A Y VDD VSS
+MN1 Y A VSS VSS N_12_LPRVT W=wn1 L=ln1 M=1
+MP1 Y A VDD VDD P_12_LPRVT W=wp1 L=lp1 M=1
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    LS4_T
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT LS4_T A AOB DV2 VDD VDDIO VSS
+XI16 net021 net036 VDDIO VSS / invt lp1=0.42u wp1=1.2u ln1=0.5u wn1=1.2u
+XI19 net036 DV2 VDD VSS / invt lp1=0.42u wp1=3u ln1=0.5u wn1=1u
+XI15 A net021 VDDIO VSS / invt lp1=0.42u wp1=1.5u ln1=0.5u wn1=0.6u
+XI21 net053 AOB VDD VSS / inv lp1=90n wp1=6u ln1=90n wn1=2u
+XI17 DV2 net053 VDD VSS / inv lp1=90n wp1=1.6u ln1=90n wn1=0.8u
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    nor2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT nor2 A B Y VDD VSS
+MN2 Y A VSS VSS N_12_LPRVT W=wn1 L=ln1 M=1
+MN1 Y B VSS VSS N_12_LPRVT W=wn1 L=ln1 M=1
+MP1 Y A net032 VDD P_12_LPRVT W=wp1 L=lp1 M=1
+MP2 net032 B VDD VDD P_12_LPRVT W=wp1 L=lp1 M=1
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    LS3
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT LS3 A AOB VDD VDDIO VSS PORE
+MND net062 PORE VSS VSS N_25OD33_LP W=600n L=500n M=1
+MN1 net062 net6 VSS VSS N_25OD33_LP W=8u L=500n M=1
+MN0 AOB A VSS VSS N_25OD33_LP W=8u L=500n M=1
+MPOFF1 net062 net6 net035 VDDIO P_25OD33_LP W=800n L=420n M=1
+MPOFF AOB A net039 VDDIO P_25OD33_LP W=800n L=420n M=1
+MPL net039 net062 VDDIO VDDIO P_25OD33_LP W=800n L=420n M=1
+MPL1 net035 AOB VDDIO VDDIO P_25OD33_LP W=800n L=420n M=1
+XIIV1 A net6 VDD VSS / inv lp1=0.09u wp1=1u ln1=0.09u wn1=0.6u
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    PU_PD_control
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT PU_PD_control DV2 IDDQ PD PD1 PU PU1 VDD VSS
+MN20 PU1 PU net072 VSS N_12_LPRVT W=400n L=90n M=1
+MN14 net072 net7 net30 VSS N_12_LPRVT W=400n L=90n M=1
+MN16 VSS DV2 net30 VSS N_12_LPRVT W=400n L=90n M=1
+MN21 net30 net40 VSS VSS N_12_LPRVT W=400n L=90n M=1
+MN19 PD1 PU net37 VSS N_12_LPRVT W=400n L=90n M=1
+MN18 PD1 net40 VSS VSS N_12_LPRVT W=400n L=90n M=1
+MN22 PD1 IDDQ VSS VSS N_12_LPRVT W=400n L=90n M=1
+MN17 net37 DV2 VSS VSS N_12_LPRVT W=400n L=90n M=1
+MP14 net61 DV2 VDD VDD P_12_LPRVT W=800n L=90n M=1
+MP16 PU1 PU VDD VDD P_12_LPRVT W=800n L=90n M=1
+MP15 PU1 net40 net61 VDD P_12_LPRVT W=800n L=90n M=1
+MP17 PU1 net7 VDD VDD P_12_LPRVT W=800n L=90n M=1
+MP19 VDD DV2 net77 VDD P_12_LPRVT W=800n L=90n M=1
+MP18 net77 PU VDD VDD P_12_LPRVT W=800n L=90n M=1
+MP12 net81 IDDQ net77 VDD P_12_LPRVT W=800n L=90n M=1
+MP13 PD1 net40 net81 VDD P_12_LPRVT W=800n L=90n M=1
+XI424 IDDQ net7 VDD VSS / inv lp1=0.09u wp1=1u ln1=0.09u wn1=0.6u
+XI423 PD net40 VDD VSS / inv lp1=0.09u wp1=1u ln1=0.09u wn1=0.6u
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    LS3_1
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT LS3_1 A AOB VDD VDDIO VSS PORE
+MND AOB PORE VSS VSS N_25OD33_LP W=600n L=500n M=1
+MN1 net063 net6 VSS VSS N_25OD33_LP W=8u L=500n M=1
+MN0 AOB A VSS VSS N_25OD33_LP W=8u L=500n M=1
+MPOFF1 net063 net6 net035 VDDIO P_25OD33_LP W=800n L=420n M=1
+MPOFF AOB A net039 VDDIO P_25OD33_LP W=800n L=420n M=1
+MPL net039 net063 VDDIO VDDIO P_25OD33_LP W=800n L=420n M=1
+MPL1 net035 AOB VDDIO VDDIO P_25OD33_LP W=800n L=420n M=1
+XIIV1 A net6 VDD VSS / inv lp1=0.09u wp1=1u ln1=0.09u wn1=0.6u
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    nor2t
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT nor2t A B Y VDDIO VSS
+MN12 Y A VSS VSS N_25OD33_LP W=wn1 L=ln1 M=1
+MN13 Y B VSS VSS N_25OD33_LP W=wn1 L=ln1 M=1
+MP14 Y A net032 VDDIO P_25OD33_LP W=wp1 L=lp1 M=1
+MP15 net032 B VDDIO VDDIO P_25OD33_LP W=wp1 L=lp1 M=1
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    P_driver
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT P_driver D G1 G2 S SUB
+MMP2 net018 G1 S SUB P_25OD33_LP W=wp1 L=lp1 M=1
+MPM1 D G2 net018 SUB P_25OD33_LP W=wp1 L=lp1 M=1
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    LS2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT LS2 A AO PORE VDD VDDIO VSS
+MMM OL PORE VSS VSS N_25OD33_LP W=400n L=500n M=1
+MNL0 OL AB VSS VSS N_25OD33_LP W=8u L=500n M=1
+MNR0 OR ABB VSS VSS N_25OD33_LP W=8u L=500n M=1
+MPR1 R OL VDDIO VDDIO P_25OD33_LP W=0.8u L=420n M=1
+MPL1 L OR VDDIO VDDIO P_25OD33_LP W=0.8u L=420n M=1
+MPL0 OL AB L VDDIO P_25OD33_LP W=0.8u L=420n M=1
+MPR0 OR ABB R VDDIO P_25OD33_LP W=0.8u L=420n M=1
+XIV0 A AB VDD VSS / inv lp1=0.09u wp1=1.2u ln1=0.09u wn1=0.6u
+XIV1 AB ABB VDD VSS / inv lp1=0.09u wp1=0.6u ln1=0.09u wn1=1.2u
+XIVT0 OL OLB VDDIO VSS / invt lp1=0.42u wp1=0.8u ln1=0.5u wn1=1.0u
+XIVT1 OLB AO VDDIO VSS / invt lp1=0.42u wp1=8.2u ln1=0.5u wn1=1.2u
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    N_driver
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT N_driver D G1 G2 S SUB
+MNM2 D G1 net019 SUB N_25OD33_LP W=wn2 L=ln2 M=1
+MNM1 net019 G2 S SUB N_25OD33_LP W=wn1 L=ln1 M=1
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    nand2t
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT nand2t A B VDDIO VSS Y
+MN2 Y A net18 VSS N_25OD33_LP W=wn1 L=ln1 M=1
+MN1 net18 B VSS VSS N_25OD33_LP W=wn1 L=ln1 M=1
+MP1 Y A VDDIO VDDIO P_25OD33_LP W=wp1 L=lp1 M=1
+MP2 Y B VDDIO VDDIO P_25OD33_LP W=wp1 L=lp1 M=1
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    LS1
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT LS1 A AO AOB PORE VDD VDDIO VSS
+MNM0 AO PORE VSS VSS N_25OD33_LP W=400n L=500n M=1
+MN0 AOB A VSS VSS N_25OD33_LP W=8u L=500n M=1
+MN1 AO net63 VSS VSS N_25OD33_LP W=8u L=500n M=1
+MPL1 net42 AOB VDDIO VDDIO P_25OD33_LP W=800n L=420n M=1
+MPL net46 AO VDDIO VDDIO P_25OD33_LP W=500n L=420n M=1
+MPOFF AOB A net46 VDDIO P_25OD33_LP W=500n L=420n M=1
+MPOFF1 AO net63 net42 VDDIO P_25OD33_LP W=800n L=420n M=1
+XIIV1 A net63 VDD VSS / inv lp1=0.09u wp1=1u ln1=0.09u wn1=0.6u
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    nand2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT nand2 A B VDD VSS Y
+MN2 Y A net18 VSS N_12_LPRVT W=wn1 L=ln1 M=1
+MN1 net18 B VSS VSS N_12_LPRVT W=wn1 L=ln1 M=1
+MP1 Y A VDD VDD P_12_LPRVT W=wp1 L=lp1 M=1
+MP2 Y B VDD VDD P_12_LPRVT W=wp1 L=lp1 M=1
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IDDQ_OE_Strength
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IDDQ_OE_Strength IDDQ OE PIN1 PIN2 Strength0 Strength1 Strength2 VDD 
++ VSS
+XINOR0 IDDQ net94 Strength0 VDD VSS / nor2 lp1=90n wp1=1u ln1=90n wn1=0.6u
+XIINV0 OE net94 VDD VSS / inv lp1=90n wp1=1u ln1=90n wn1=0.6u
+XIINV2 net86 Strength1 VDD VSS / inv lp1=90n wp1=1u ln1=90n wn1=0.6u
+XIINV1 net70 Strength2 VDD VSS / inv lp1=90n wp1=1u ln1=90n wn1=0.6u
+XINAND0 PIN2 Strength0 VDD VSS net70 / nand2 lp1=90n wp1=1u ln1=90n wn1=0.6u
+XINAND1 PIN1 Strength0 VDD VSS net86 / nand2 lp1=90n wp1=1u ln1=90n wn1=0.6u
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    PR_DRIVE_ADBD
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT PR_DRIVE_ADBD DI DO IDDQ IE NROUT2_A NROUT2_B NROUT2_C OE PAD PD PIN1 
++ PIN2 PORE PROUT3_A PROUT3_B PROUT3_C PROUT4_A PU SMT VDD VDDIO VNW VSS VSSIO
+DD0 VSSIO PAD DION_25_LP 58.72p 72.8915u M=2
+RRNW1 PADIN PAD 713.712 $SUB=VDDIO $[RNPPO_LP] $W=1.9u $L=1.8u
+RRNW0 PADIN PAD 713.712 $SUB=VDDIO $[RNPPO_LP] $W=1.9u $L=1.8u
+XI580 DV DI DV2 VDD VDDIO VSS / LS4_T
+XINOR0 IDDQ net0220 net0215 VDD VSS / nor2 lp1=90n wp1=1u ln1=90n wn1=0.6u
+XIINV0 IE net0220 VDD VSS / inv lp1=90n wp1=1u ln1=90n wn1=0.6u
+XI490 net163 PD2 VDD VDDIO VSS PORE / LS3
+XI521 DV2 IDDQ PD net163 PU net162 VDD VSS / PU_PD_control
+XI491 net162 PU2 VDD VDDIO VSS PORE / LS3_1
+XI0 OEAOB_A DOAO PADIN_VSS VDDIO VSS / nor2t lp1=0.42u wp1=1u ln1=0.5u wn1=0.6u
+XINROUT0_A DOAO OEAOB_A NROUT0_A VDDIO VSS / nor2t lp1=0.42u wp1=2.8u ln1=0.5u 
++ wn1=1.4u
+XINROUT0_B DOAO OEAOB_B NROUT0_B VDDIO VSS / nor2t lp1=0.42u wp1=2.8u ln1=0.5u 
++ wn1=1.4u
+XINROUT0_C DOAO OEAOB_C NROUT0_C VDDIO VSS / nor2t lp1=0.42u wp1=2.8u ln1=0.5u 
++ wn1=1.4u
+XI577 PD2 OEAO_A PD_gate VDDIO VSS / nor2t lp1=0.42u wp1=1u ln1=0.5u wn1=0.6u
+XINROUT2A_C NROUT2_C NROUT1_C OEAOB_C VDDIO VDDIO / P_driver lp1=0.42u wp1=2.8u
+XINROUT2A_B NROUT2_B NROUT1_B OEAOB_B VDDIO VDDIO / P_driver lp1=0.42u wp1=2.8u
+XINROUT2A_A NROUT2_A NROUT1_A OEAOB_A VDDIO VDDIO / P_driver lp1=0.42u wp1=2.2u
+XI489 DO DOAO PORE VDD VDDIO VSS / LS2
+XIPDN1 PADIN VDDIO PD_gate VSS VSS / N_driver ln1=2.45u wn1=0.8u ln2=2.45u 
++ wn2=0.8u
+XIPROUT2A_C PROUT2_C OEAO_C PROUT1_C VSS VSS / N_driver ln1=0.5u wn1=2.6u 
++ ln2=0.5u wn2=2.6u
+XIPROUT2A_A PROUT2_A OEAO_A PROUT1_A VSS VSS / N_driver ln1=0.5u wn1=2U 
++ ln2=0.5u wn2=2u
+XIPROUT2A_B PROUT2_B OEAO_B PROUT1_B VSS VSS / N_driver ln1=0.5u wn1=2.6u 
++ ln2=0.5u wn2=2.6u
+XIV3SW2 V3SW VDDIO PADIN_VSS VSS VSS / N_driver ln1=0.5u wn1=3u ln2=0.5u wn2=3u
+XIV3SW1 V3SW PADIN_VNW VDDIO PADIN VSS / N_driver ln1=0.5u wn1=4u ln2=0.5u 
++ wn2=4u
+XI2 DOAO DOAOB VDDIO VSS / invt lp1=0.42u wp1=1u ln1=0.5u wn1=0.6u
+XINROUT2_C NROUT1_C NROUT2_C VDDIO VSS / invt lp1=0.42u wp1=2.4u ln1=0.5u 
++ wn1=3.8u
+XINROUT1_C NROUT0_C NROUT1_C VDDIO VSS / invt lp1=0.42u wp1=4.7u ln1=0.5u 
++ wn1=3u
+XIPROUT1_A PROUT0_A PROUT1_A VDDIO VSS / invt lp1=0.42u wp1=4.6u ln1=0.5u 
++ wn1=3u
+XINROUT2_A NROUT1_A NROUT2_A VDDIO VSS / invt lp1=0.42u wp1=4.4u ln1=0.5u 
++ wn1=12u
+XIPROUT2_B PROUT1_B PROUT2_B VDDIO VSS / invt lp1=0.42u wp1=9.4u ln1=0.5u 
++ wn1=1.8u
+XIPROUT1_B PROUT0_B PROUT1_B VDDIO VSS / invt lp1=0.42u wp1=4.6u ln1=0.5u 
++ wn1=3u
+XINROUT1_A NROUT0_A NROUT1_A VDDIO VSS / invt lp1=0.42u wp1=4.6u ln1=0.5u 
++ wn1=3u
+XINROUT2_B NROUT1_B NROUT2_B VDDIO VSS / invt lp1=0.42u wp1=1.4u ln1=0.5u 
++ wn1=2.8u
+XIPROUT2_C PROUT1_C PROUT2_C VDDIO VSS / invt lp1=0.42u wp1=9.4u ln1=0.5u 
++ wn1=2u
+XIPROUT2_A PROUT1_A PROUT2_A VDDIO VSS / invt lp1=0.42u wp1=11.2u ln1=0.5u 
++ wn1=5u
+XINROUT1_B NROUT0_B NROUT1_B VDDIO VSS / invt lp1=0.42u wp1=4.6u ln1=0.5u 
++ wn1=3u
+XIPROUT1_C PROUT0_C PROUT1_C VDDIO VSS / invt lp1=0.42u wp1=4.7u ln1=0.5u 
++ wn1=3u
+XI1 OEAO_A DOAOB VDDIO VSS PADIN_VNW / nand2t lp1=0.42u wp1=0.6u ln1=0.5u 
++ wn1=1u
+XI516 PU2 OEAOB_A VDDIO VSS net49 / nand2t lp1=0.42u wp1=1u ln1=0.5u wn1=0.6u
+XIPROUT0_A DOAO VSS VDDIO VSS PROUT0_A / nand2t lp1=0.42u wp1=3u ln1=0.5u 
++ wn1=1.2u
+XIPROUT0_C DOAO VSS VDDIO VSS PROUT0_C / nand2t lp1=0.42u wp1=3u ln1=0.5u 
++ wn1=1.2u
+XIPROUT0_B DOAO VSS VDDIO VSS PROUT0_B / nand2t lp1=0.42u wp1=3u ln1=0.5u 
++ wn1=1.2u
+XI4 net0215 IEAO IEAOB PORE VDD VDDIO VSS / LS1
+XI576 N0 OEAO_B OEAOB_B PORE VDD VDDIO VSS / LS1
+XI488 N1 OEAO_A OEAOB_A PORE VDD VDDIO VSS / LS1
+XI563 N2 OEAO_C OEAOB_C PORE VDD VDDIO VSS / LS1
+XI493 SMT SMTAO SMTAOB PORE VDD VDDIO VSS / LS1
+XI558 IDDQ OE PIN1 PIN2 N1 N0 N2 VDD VSS / IDDQ_OE_Strength
+MN56 PADIN VDDIO PGATE VSS N_25OD33_LPNVT W=6u L=1.2u M=1
+DDD7 VSS DO DION_12_LPRVT 250.0f 2u M=1
+DD1 VSS IE DION_12_LPRVT 0.25e-12 2e-06 M=1
+DDD5 VSS PU DION_12_LPRVT 250.0f 2u M=1
+DDD1 VSS PIN1 DION_12_LPRVT 250.0f 2u M=1
+DDD2 VSS PIN2 DION_12_LPRVT 250.0f 2u M=1
+DDD4 VSS PD DION_12_LPRVT 250.0f 2u M=1
+DDD6 VSS SMT DION_12_LPRVT 250.0f 2u M=1
+DDD3 VSS IDDQ DION_12_LPRVT 250.0f 2u M=1
+DDD0 VSS OE DION_12_LPRVT 250.0f 2u M=1
+MNM0 VSS IEAO net0472 VSS N_25OD33_LP W=1.8u L=500n M=1
+MNPROUT3W3_B PROUT3_B VDDIO PROUT2_B VSS N_25OD33_LP W=8u L=500n M=1
+MSTN2 SMTP1 SMTAO VSS VSS N_25OD33_LP W=600.0n L=500n M=1
+MN58 net49 VDDIO PU_gate VSS N_25OD33_LP W=600n L=500n M=1
+MN4 net0472 PGATE SMTN2 VSS N_25OD33_LP W=1.8u L=500n M=1
+MN6 SMTN2 DV SMTN1 VSS N_25OD33_LP W=700.0n L=1u M=1
+MNPROUT3W3_A PROUT3_A VDDIO PROUT2_A VSS N_25OD33_LP W=8u L=500n M=1
+MN5 SMTN2 PGATE DV VSS N_25OD33_LP W=1.8u L=500n M=1
+MNPROUT3W3_C PROUT3_C VDDIO PROUT2_C VSS N_25OD33_LP W=8u L=500n M=1
+MPM2 DV IEAO VDDIO VDDIO P_25OD33_LP W=2.5u L=420n M=1
+MPV3SW1 PADIN VDDIO VNW VNW P_25OD33_LP W=6u L=420n M=3
+MPM0 VDDIO IEAOB net0573 VDDIO P_25OD33_LP W=3u L=420n M=1
+MPV3SW6 PU_gate V3SW net49 VNW P_25OD33_LP W=600n L=420n M=1
+MPPROUT3W1_A PROUT2_A PADIN PROUT3_A VNW P_25OD33_LP W=6u L=420n M=1
+MPPROUT3W4_C PROUT3_C VDDIO PADIN VNW P_25OD33_LP W=4u L=420n M=4
+MPPROUT3W2_C PROUT2_C V3SW PROUT3_C VNW P_25OD33_LP W=8u L=420n M=1
+MPPROUT3W1_B PROUT2_B PADIN PROUT3_B VNW P_25OD33_LP W=6u L=420n M=1
+MPPROUT3W4_A PROUT3_A VDDIO PADIN VNW P_25OD33_LP W=4u L=420n M=4
+MPV3SW7 PU_gate PADIN net49 VNW P_25OD33_LP W=600n L=420n M=1
+MPPROUT3W4_B PROUT3_B VDDIO PADIN VNW P_25OD33_LP W=4u L=420n M=2
+MPPROUT3W5_A PROUT4_A V3SW VDDIO VNW P_25OD33_LP W=8u L=420n M=1
+MSTP3 SMTN1 SMTAOB VDDIO VDDIO P_25OD33_LP W=2.6u L=420n M=1
+MP4 SMTP2 DV SMTP1 VDDIO P_25OD33_LP W=0.6u L=600.0n M=1
+MPUP1 VDDIO PU_gate PADIN VNW P_25OD33_LP W=560n L=1.1u M=1
+MPPROUT3W2_A PROUT2_A V3SW PROUT3_A VNW P_25OD33_LP W=8u L=420n M=1
+MP0 SMTP2 PGATE DV VDDIO P_25OD33_LP W=3u L=420n M=1
+MP2 net0573 PGATE SMTP2 VDDIO P_25OD33_LP W=3u L=420n M=1
+MPPROUT3W1_C PROUT2_C PADIN PROUT3_C VNW P_25OD33_LP W=6u L=420n M=1
+MPV3SW2 VNW VNW VDDIO VNW P_25OD33_LP W=4u L=420n M=1
+MPPROUT3W6_A PROUT4_A VDDIO PADIN VNW P_25OD33_LP W=4u L=420n M=6
+MPPROUT3W2_B PROUT2_B V3SW PROUT3_B VNW P_25OD33_LP W=8u L=420n M=1
+MPV3SW5 PADIN VDDIO PU_gate VNW P_25OD33_LP W=2u L=420n M=1
+MPV3SW3 PADIN VDDIO V3SW VNW P_25OD33_LP W=6u L=420n M=2
+MPV3SW4 VNW V3SW VDDIO VNW P_25OD33_LP W=6u L=420n M=1
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IUMBDFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IUMBDFS DI DO IDDQ IE OE PAD PD PIN1 PIN2 PORE PU SMT VDD VDDIO VSS VSSIO
+XIPRE_DRIVE DI DO IDDQ IE N1 N2 N3 OE PAD PD PIN1 PIN2 PORE P1 P2 P3 net250 PU 
++ SMT VDD VDDIO VNW VSS VSSIO / PR_DRIVE_ADBD
+XNNROUT2_C<1> PAD VDDIO N3 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_C<2> PAD VDDIO N3 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_C<3> PAD VDDIO N3 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_C<4> PAD VDDIO N3 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_C<5> PAD VDDIO N3 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_C<6> PAD VDDIO N3 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_C<7> PAD VDDIO N3 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_B<1> PAD VDDIO N2 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_B<2> PAD VDDIO N2 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_B<3> PAD VDDIO N2 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_A<1> PAD VDDIO N1 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_A<2> PAD VDDIO N1 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_A<3> PAD VDDIO N1 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_A<4> PAD VDDIO N1 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_D<1> PAD VDDIO VSSIO VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_D<2> PAD VDDIO VSSIO VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_D<3> PAD VDDIO VSSIO VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_D<4> PAD VDDIO VSSIO VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+MPPROUT3_C PAD P3 VDDIO VNW P_25OD33_LP W=20u L=420n M=9
+MPPROUT3_B PAD P2 VDDIO VNW P_25OD33_LP W=20u L=420n M=4
+MPPROUT3_A PAD P1 VDDIO VNW P_25OD33_LP W=20u L=420n M=5
+MPPROUT4_A PAD net250 VDDIO VNW P_25OD33_LP W=20u L=420n M=2
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    PR_DRIVE_ATBT
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT PR_DRIVE_ATBT DI DO IDDQ IE NROUT2_A NROUT2_B NROUT2_C OE PAD PD PIN1 
++ PIN2 PORE PROUT3_A PROUT3_B PROUT3_C PROUT4_A PU SMT VDD VDDIO VNW VSS VSSIO
+RRNW1 PADIN PAD 713.712 $SUB=VDDIO $[RNPPO_LP] $W=1.9u $L=1.8u
+RRNW0 PADIN PAD 713.712 $SUB=VDDIO $[RNPPO_LP] $W=1.9u $L=1.8u
+DD0 VSSIO PAD DION_25_LP 58.72p 72.8915u M=2
+XI580 DV DI DV2 VDD VDDIO VSS / LS4_T
+XINOR0 IDDQ net0220 net0215 VDD VSS / nor2 lp1=90n wp1=1u ln1=90n wn1=0.6u
+XIINV0 IE net0220 VDD VSS / inv lp1=90n wp1=1u ln1=90n wn1=0.6u
+XI490 net163 PD2 VDD VDDIO VSS PORE / LS3
+XI521 DV2 IDDQ PD net163 PU net162 VDD VSS / PU_PD_control
+XI491 net162 PU2 VDD VDDIO VSS PORE / LS3_1
+XI0 OEAOB_A VSS PADIN_VSS VDDIO VSS / nor2t lp1=0.42u wp1=1u ln1=0.5u wn1=0.6u
+XINROUT0_A DOAO OEAOB_A NROUT0_A VDDIO VSS / nor2t lp1=0.42u wp1=2.8u ln1=0.5u 
++ wn1=1.4u
+XINROUT0_B DOAO OEAOB_B NROUT0_B VDDIO VSS / nor2t lp1=0.42u wp1=2.8u ln1=0.5u 
++ wn1=1.4u
+XINROUT0_C DOAO OEAOB_C NROUT0_C VDDIO VSS / nor2t lp1=0.42u wp1=2.8u ln1=0.5u 
++ wn1=1.4u
+XI577 PD2 OEAO_A PD_gate VDDIO VSS / nor2t lp1=0.42u wp1=1u ln1=0.5u wn1=0.6u
+XINROUT2A_C NROUT2_C NROUT1_C OEAOB_C VDDIO VDDIO / P_driver lp1=0.42u wp1=2.8u
+XINROUT2A_B NROUT2_B NROUT1_B OEAOB_B VDDIO VDDIO / P_driver lp1=0.42u wp1=2.8u
+XINROUT2A_A NROUT2_A NROUT1_A OEAOB_A VDDIO VDDIO / P_driver lp1=0.42u wp1=2.2u
+XI489 DO DOAO PORE VDD VDDIO VSS / LS2
+XIPDN1 PADIN VDDIO PD_gate VSS VSS / N_driver ln1=2.45u wn1=0.8u ln2=2.45u 
++ wn2=0.8u
+XIPROUT2A_C PROUT2_C OEAO_C PROUT1_C VSS VSS / N_driver ln1=0.5u wn1=2.6u 
++ ln2=0.5u wn2=2.6u
+XIPROUT2A_A PROUT2_A OEAO_A PROUT1_A VSS VSS / N_driver ln1=0.5u wn1=2U 
++ ln2=0.5u wn2=2u
+XIPROUT2A_B PROUT2_B OEAO_B PROUT1_B VSS VSS / N_driver ln1=0.5u wn1=2.6u 
++ ln2=0.5u wn2=2.6u
+XIV3SW2 V3SW VDDIO PADIN_VSS VSS VSS / N_driver ln1=0.5u wn1=3u ln2=0.5u wn2=3u
+XIV3SW1 V3SW PADIN_VNW VDDIO PADIN VSS / N_driver ln1=0.5u wn1=4u ln2=0.5u 
++ wn2=4u
+XI2 VSS DOAOB VDDIO VSS / invt lp1=0.42u wp1=1u ln1=0.5u wn1=0.6u
+XINROUT2_C NROUT1_C NROUT2_C VDDIO VSS / invt lp1=0.42u wp1=2.4u ln1=0.5u 
++ wn1=3.8u
+XINROUT1_C NROUT0_C NROUT1_C VDDIO VSS / invt lp1=0.42u wp1=4.7u ln1=0.5u 
++ wn1=3u
+XIPROUT1_A PROUT0_A PROUT1_A VDDIO VSS / invt lp1=0.42u wp1=4.6u ln1=0.5u 
++ wn1=3u
+XINROUT2_A NROUT1_A NROUT2_A VDDIO VSS / invt lp1=0.42u wp1=4.4u ln1=0.5u 
++ wn1=12u
+XIPROUT2_B PROUT1_B PROUT2_B VDDIO VSS / invt lp1=0.42u wp1=9.4u ln1=0.5u 
++ wn1=1.8u
+XIPROUT1_B PROUT0_B PROUT1_B VDDIO VSS / invt lp1=0.42u wp1=4.6u ln1=0.5u 
++ wn1=3u
+XINROUT1_A NROUT0_A NROUT1_A VDDIO VSS / invt lp1=0.42u wp1=4.6u ln1=0.5u 
++ wn1=3u
+XINROUT2_B NROUT1_B NROUT2_B VDDIO VSS / invt lp1=0.42u wp1=1.4u ln1=0.5u 
++ wn1=2.8u
+XIPROUT2_C PROUT1_C PROUT2_C VDDIO VSS / invt lp1=0.42u wp1=9.4u ln1=0.5u 
++ wn1=2u
+XIPROUT2_A PROUT1_A PROUT2_A VDDIO VSS / invt lp1=0.42u wp1=11.2u ln1=0.5u 
++ wn1=5u
+XINROUT1_B NROUT0_B NROUT1_B VDDIO VSS / invt lp1=0.42u wp1=4.6u ln1=0.5u 
++ wn1=3u
+XIPROUT1_C PROUT0_C PROUT1_C VDDIO VSS / invt lp1=0.42u wp1=4.7u ln1=0.5u 
++ wn1=3u
+XI1 OEAO_A DOAOB VDDIO VSS PADIN_VNW / nand2t lp1=0.42u wp1=0.6u ln1=0.5u 
++ wn1=1u
+XI516 PU2 OEAOB_A VDDIO VSS net49 / nand2t lp1=0.42u wp1=1u ln1=0.5u wn1=0.6u
+XIPROUT0_A DOAO OEAO_A VDDIO VSS PROUT0_A / nand2t lp1=0.42u wp1=3u ln1=0.5u 
++ wn1=1.2u
+XIPROUT0_C DOAO OEAO_C VDDIO VSS PROUT0_C / nand2t lp1=0.42u wp1=3u ln1=0.5u 
++ wn1=1.2u
+XIPROUT0_B DOAO OEAO_B VDDIO VSS PROUT0_B / nand2t lp1=0.42u wp1=3u ln1=0.5u 
++ wn1=1.2u
+XI4 net0215 IEAO IEAOB PORE VDD VDDIO VSS / LS1
+XI576 N0 OEAO_B OEAOB_B PORE VDD VDDIO VSS / LS1
+XI488 N1 OEAO_A OEAOB_A PORE VDD VDDIO VSS / LS1
+XI563 N2 OEAO_C OEAOB_C PORE VDD VDDIO VSS / LS1
+XI493 SMT SMTAO SMTAOB PORE VDD VDDIO VSS / LS1
+XI558 IDDQ OE PIN1 PIN2 N1 N0 N2 VDD VSS / IDDQ_OE_Strength
+MN56 PADIN VDDIO PGATE VSS N_25OD33_LPNVT W=6u L=1.2u M=1
+DDD7 VSS DO DION_12_LPRVT 250.0f 2u M=1
+DD1 VSS IE DION_12_LPRVT 0.25e-12 2e-06 M=1
+DDD5 VSS PU DION_12_LPRVT 250.0f 2u M=1
+DDD1 VSS PIN1 DION_12_LPRVT 250.0f 2u M=1
+DDD2 VSS PIN2 DION_12_LPRVT 250.0f 2u M=1
+DDD4 VSS PD DION_12_LPRVT 250.0f 2u M=1
+DDD6 VSS SMT DION_12_LPRVT 250.0f 2u M=1
+DDD3 VSS IDDQ DION_12_LPRVT 250.0f 2u M=1
+DDD0 VSS OE DION_12_LPRVT 250.0f 2u M=1
+MNM0 VSS IEAO net0472 VSS N_25OD33_LP W=1.8u L=500n M=1
+MNPROUT3W3_B PROUT3_B VDDIO PROUT2_B VSS N_25OD33_LP W=8u L=500n M=1
+MSTN2 SMTP1 SMTAO VSS VSS N_25OD33_LP W=600.0n L=500n M=1
+MN58 net49 VDDIO PU_gate VSS N_25OD33_LP W=600n L=500n M=1
+MN4 net0472 PGATE SMTN2 VSS N_25OD33_LP W=1.8u L=500n M=1
+MN6 SMTN2 DV SMTN1 VSS N_25OD33_LP W=700.0n L=1u M=1
+MNPROUT3W3_A PROUT3_A VDDIO PROUT2_A VSS N_25OD33_LP W=8u L=500n M=1
+MN5 SMTN2 PGATE DV VSS N_25OD33_LP W=1.8u L=500n M=1
+MNPROUT3W3_C PROUT3_C VDDIO PROUT2_C VSS N_25OD33_LP W=8u L=500n M=1
+MPM2 DV IEAO VDDIO VDDIO P_25OD33_LP W=2.5u L=420n M=1
+MPM0 VDDIO IEAOB net0573 VDDIO P_25OD33_LP W=3u L=420n M=1
+MPV3SW6 PU_gate V3SW net49 VNW P_25OD33_LP W=600n L=420n M=1
+MPPROUT3W1_A PROUT2_A PADIN PROUT3_A VNW P_25OD33_LP W=6u L=420n M=1
+MPPROUT3W4_C PROUT3_C VDDIO PADIN VNW P_25OD33_LP W=4u L=420n M=4
+MPPROUT3W2_C PROUT2_C V3SW PROUT3_C VNW P_25OD33_LP W=8u L=420n M=1
+MPPROUT3W1_B PROUT2_B PADIN PROUT3_B VNW P_25OD33_LP W=6u L=420n M=1
+MPV3SW1 PADIN VDDIO VNW VNW P_25OD33_LP W=6u L=420n M=3
+MPPROUT3W4_A PROUT3_A VDDIO PADIN VNW P_25OD33_LP W=4u L=420n M=4
+MPV3SW7 PU_gate PADIN net49 VNW P_25OD33_LP W=600n L=420n M=1
+MPPROUT3W4_B PROUT3_B VDDIO PADIN VNW P_25OD33_LP W=4u L=420n M=2
+MPPROUT3W5_A PROUT4_A V3SW VDDIO VNW P_25OD33_LP W=8u L=420n M=1
+MSTP3 SMTN1 SMTAOB VDDIO VDDIO P_25OD33_LP W=2.6u L=420n M=1
+MP4 SMTP2 DV SMTP1 VDDIO P_25OD33_LP W=0.6u L=600.0n M=1
+MPUP1 VDDIO PU_gate PADIN VNW P_25OD33_LP W=560n L=1.1u M=1
+MPPROUT3W2_A PROUT2_A V3SW PROUT3_A VNW P_25OD33_LP W=8u L=420n M=1
+MP0 SMTP2 PGATE DV VDDIO P_25OD33_LP W=3u L=420n M=1
+MP2 net0573 PGATE SMTP2 VDDIO P_25OD33_LP W=3u L=420n M=1
+MPPROUT3W1_C PROUT2_C PADIN PROUT3_C VNW P_25OD33_LP W=6u L=420n M=1
+MPV3SW2 VNW VNW VDDIO VNW P_25OD33_LP W=4u L=420n M=1
+MPPROUT3W6_A PROUT4_A VDDIO PADIN VNW P_25OD33_LP W=4u L=420n M=6
+MPPROUT3W2_B PROUT2_B V3SW PROUT3_B VNW P_25OD33_LP W=8u L=420n M=1
+MPV3SW5 PADIN VDDIO PU_gate VNW P_25OD33_LP W=2u L=420n M=1
+MPV3SW3 PADIN VDDIO V3SW VNW P_25OD33_LP W=6u L=420n M=2
+MPV3SW4 VNW V3SW VDDIO VNW P_25OD33_LP W=6u L=420n M=1
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IUMBTFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IUMBTFS DI DO IDDQ IE OE PAD PD PIN1 PIN2 PORE PU SMT VDD VDDIO VSS VSSIO
+XNNROUT2_C<1> PAD VDDIO N3 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_C<2> PAD VDDIO N3 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_C<3> PAD VDDIO N3 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_C<4> PAD VDDIO N3 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_C<5> PAD VDDIO N3 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_C<6> PAD VDDIO N3 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_C<7> PAD VDDIO N3 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_B<1> PAD VDDIO N2 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_B<2> PAD VDDIO N2 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_B<3> PAD VDDIO N2 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_A<1> PAD VDDIO N1 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_A<2> PAD VDDIO N1 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_A<3> PAD VDDIO N1 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_A<4> PAD VDDIO N1 VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_D<1> PAD VDDIO VSSIO VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_D<2> PAD VDDIO VSSIO VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_D<3> PAD VDDIO VSSIO VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XNNROUT2_D<4> PAD VDDIO VSSIO VSSIO VSS / N_driver ln1=0.5u wn1=22.6u ln2=0.5u 
++ wn2=22.6u
+XIPRE_DRIVE DI DO IDDQ IE N1 N2 N3 OE PAD PD PIN1 PIN2 PORE P1 P2 P3 net250 PU 
++ SMT VDD VDDIO VNW VSS VSSIO / PR_DRIVE_ATBT
+MPPROUT3_C PAD P3 VDDIO VNW P_25OD33_LP W=20u L=420n M=9
+MPPROUT3_B PAD P2 VDDIO VNW P_25OD33_LP W=20u L=420n M=4
+MPPROUT3_A PAD P1 VDDIO VNW P_25OD33_LP W=20u L=420n M=5
+MPPROUT4_A PAD net250 VDDIO VNW P_25OD33_LP W=20u L=420n M=2
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IVDDFS_ISO
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IVDDFS_ISO VDD VSS VDDISO
+RR0 VDD net32 420.588K $SUB=VDD $[RNPPO_LP] $W=500.0n $L=278.145u
+RR1 VDD net41 23.6873 $SUB=VDD $[RSPPO_LP] $W=550.00n $L=1.145u
+MNM0 net34 net32 net48 VSS N_25OD33_LP W=5u L=2u M=2
+MN3 VSS net32 VSS VSS N_25OD33_LP W=9u L=2.22u M=11
+MPM1 net34 net32 net41 VDD P_25OD33_LP W=8.8u L=440.00n M=18
+MNM1 VDD net34 VSS VSS N_12_LPRVT W=23.75u L=150.00n M=136
+RR2 net48 VSS 26.7768 $SUB=VSS $[RSNPO_LP] $W=550.00n $L=1.145u
+DD1 VSS VDDISO DIOP_12_LPRVT 24.92p 51.53125u M=6
+DD0 VDDISO VDD DIOP_12_LPRVT 36.92p 51.53125u M=6
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    PC_IOA
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT PC_IOA VDDANAISO VSSANAISO
+RR0 VDDANAISO net19 420.588K $SUB=VDDANAISO $[RNPPO_LP] $W=500.0n $L=278.145u
+MPM1 net13 net19 net052 VDDANAISO P_25OD33_LP W=8.8u L=440.00n M=18
+DD0 VSSANAISO VDDANAISO DIOP_25_LP 38.17p 52.5915u M=4
+RR2 net045 VSSANAISO 26.7768 $SUB=VSSANAISO $[RSNPO_LP] $W=550.00n $L=1.145u
+RR1 VDDANAISO net052 23.6873 $SUB=VDDANAISO $[RSPPO_LP] $W=550.00n $L=1.145u
+MNM0 net13 net19 net045 VSSANAISO N_25OD33_LP W=5u L=2u M=2
+MNM1 VDDANAISO net13 VSSANAISO VSSANAISO N_25OD33_LP W=23.75u L=500.0n M=132
+MN3 VSSANAISO net19 VSSANAISO VSSANAISO N_25OD33_LP W=9u L=2.22u M=11
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    PC_CA
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT PC_CA VDDANACISO VSSANACISO
+RR0 VDDANACISO net19 420.588K $SUB=VDDANACISO $[RNPPO_LP] $W=500.0n $L=278.145u
+MNM1 VDDANACISO net13 VSSANACISO VSSANACISO N_12_LPRVT W=23.75u L=150.00n M=160
+DD0 VSSANACISO VDDANACISO DIOP_12_LPRVT 50p 53.5315u M=4
+RR2 net045 VSSANACISO 26.7768 $SUB=VSSANACISO $[RSNPO_LP] $W=550.00n $L=1.145u
+RR1 VDDANACISO net052 23.6873 $SUB=VDDANACISO $[RSPPO_LP] $W=550.00n $L=1.145u
+MPM1 net13 net19 net052 VDDANACISO P_25OD33_LP W=8.8u L=440.00n M=18
+MNM0 net13 net19 net045 VSSANACISO N_25OD33_LP W=5u L=2u M=2
+MN3 VSSANACISO net19 VSSANACISO VSSANACISO N_25OD33_LP W=9u L=2.22u M=11
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IVDDANACFS_ISO
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IVDDANACFS_ISO VDDANAC VDDANACISO VSSANAC
+RR0 VDDANAC net19 420.588K $SUB=VDDANAC $[RNPPO_LP] $W=500.0n $L=278.145u
+RR1 VDDANAC net043 23.6873 $SUB=VDDANAC $[RSPPO_LP] $W=550.00n $L=1.145u
+DD1 VSSANAC VDDANACISO DIOP_12_LPRVT 24.92p 51.53125u M=6
+DD0 VDDANACISO VDDANAC DIOP_12_LPRVT 36.92p 54u M=6
+RR2 net025 VSSANAC 26.7768 $SUB=VSSANAC $[RSNPO_LP] $W=550.00n $L=1.145u
+MNM1 VDDANAC net13 VSSANAC VSSANAC N_12_LPRVT W=23.75u L=150.00n M=136
+MPM1 net13 net19 net043 VDDANAC P_25OD33_LP W=8.8u L=440.00n M=18
+MNM0 net13 net19 net025 VSSANAC N_25OD33_LP W=5u L=2u M=2
+MN3 VSSANAC net19 VSSANAC VSSANAC N_25OD33_LP W=9u L=2.22u M=11
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    DI_BTB_G
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT DI_BTB_G G0 G1
+DD1 G1 G0 DIOP_12_LPRVT 69.98p 73.76575u M=4
+DD0 G0 G1 DIOP_12_LPRVT 69.98p 73.76575u M=4
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    DI_P
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT DI_P GND POWER SIG
+DD0 SIG POWER DIOP_12_LPRVT 51.34p 55.12575u M=4
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    DI_G
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT DI_G GND SIG
+DD0 GND SIG DIOP_12_LPRVT 51.34p 55.12575u M=4
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IAABREAKFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IAABREAKFS
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IAGBREAKFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IAGBREAKFS VSSANA VSSANAC
+DD8 VSSANAC VSSANA DIOP_12_LPRVT 273.158p 482.071u M=1
+DD7 VSSANA VSSANAC DIOP_12_LPRVT 273.158p 482.071u M=1
+DD4 VSSANAC VSSANA DIOP_12_LPRVT 273.158p 482.071u M=1
+DD6 VSSANA VSSANAC DIOP_12_LPRVT 273.158p 482.071u M=1
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IACLAMPCFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IACLAMPCFS VDDANAC VSSANAC
+RR0 VDDANAC net19 420.588K $SUB=VDDANAC $[RNPPO_LP] $W=500.0n $L=278.145u
+MPM1 net13 net19 net052 VDDANAC P_25OD33_LP W=8.8u L=440.00n M=18
+MNM1 VDDANAC net13 VSSANAC VSSANAC N_12_LPRVT W=23.75u L=150.00n M=160
+DD0 VSSANAC VDDANAC DIOP_12_LPRVT 49.94p 53.5315u M=4
+RR2 net045 VSSANAC 26.7768 $SUB=VSSANAC $[RSNPO_LP] $W=550.00n $L=1.145u
+RR1 VDDANAC net052 23.6873 $SUB=VDDANAC $[RSPPO_LP] $W=550.00n $L=1.145u
+MNM0 net13 net19 net045 VSSANAC N_25OD33_LP W=5u L=2u M=2
+MN3 VSSANAC net19 VSSANAC VSSANAC N_25OD33_LP W=9u L=2.22u M=11
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IVSSANACFS_ISO
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IVSSANACFS_ISO VDDANAC VSSANAC VSSANACISO
+DD2 VSSANACISO VDDANAC DIOP_12_LPRVT 21.98p 45.765625u M=8
+DD3 VSSANAC VSSANACISO DIOP_12_LPRVT 21.98p 45.765625u M=8
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IANAIOCFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IANAIOCFS AIOC50 AIOC250 ANAIOC VDDANAC VSSANAC
+DD2 ANAIOC VDDANAC DIOP_12_LPRVT 21.98p 45.765625u M=8
+DD3 VSSANAC ANAIOC DIOP_12_LPRVT 21.98p 45.765625u M=8
+RR1 ANAIOC AIOC50 50.8652 $SUB=VDDANAC $[RSPPO_LP] $W=3u $L=13.11u
+RR0 AIOC250 ANAIOC 247.434 $SUB=VDDANAC $[RSPPO_LP] $W=2.3u $L=48.97u
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IVSSANACFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IVSSANACFS VDDANAC VSSANAC
+RR0 VDDANAC net19 420.588K $SUB=VDDANAC $[RNPPO_LP] $W=500.0n $L=278.145u
+MPM1 net13 net19 net052 VDDANAC P_25OD33_LP W=8.8u L=440.00n M=18
+MNM1 VDDANAC net13 VSSANAC VSSANAC N_12_LPRVT W=23.75u L=150.00n M=160
+DD0 VSSANAC VDDANAC DIOP_12_LPRVT 50p 54u M=4
+RR2 net045 VSSANAC 26.7768 $SUB=VSSANAC $[RSNPO_LP] $W=550.00n $L=1.145u
+RR1 VDDANAC net052 23.6873 $SUB=VDDANAC $[RSPPO_LP] $W=550.00n $L=1.145u
+MNM0 net13 net19 net045 VSSANAC N_25OD33_LP W=5u L=2u M=2
+MN3 VSSANAC net19 VSSANAC VSSANAC N_25OD33_LP W=9u L=2.22u M=11
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IACLAMPFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IACLAMPFS VDDANA VSSANA
+RR0 VDDANA net19 420.588K $SUB=VDDANA $[RNPPO_LP] $W=500.0n $L=278.145u
+MPM1 net13 net19 net052 VDDANA P_25OD33_LP W=8.8u L=440.00n M=18
+DD0 VSSANA VDDANA DIOP_25_LP 38.25p 52.5915u M=4
+RR2 net045 VSSANA 26.7768 $SUB=VSSANA $[RSNPO_LP] $W=550.00n $L=1.145u
+RR1 VDDANA net052 23.6873 $SUB=VDDANA $[RSPPO_LP] $W=550.00n $L=1.145u
+MNM0 net13 net19 net045 VSSANA N_25OD33_LP W=5u L=2u M=2
+MNM1 VDDANA net13 VSSANA VSSANA N_25OD33_LP W=23.75u L=500.0n M=132
+MN3 VSSANA net19 VSSANA VSSANA N_25OD33_LP W=9u L=2.22u M=11
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IVSSANAFS_ISO
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IVSSANAFS_ISO VDDANA VSSANA VSSANAISO
+DD2 VSSANAISO VDDANA DIOP_25_LP 21.98p 45.765625u M=8
+DD3 VSSANA VSSANAISO DIOP_25_LP 21.98p 45.765625u M=8
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IVDDANAFS_ISO
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IVDDANAFS_ISO VDDANA VDDANAISO VSSANA
+RR0 VDDANA net19 420.588K $SUB=VDDANA $[RNPPO_LP] $W=500.0n $L=278.145u
+RR1 VDDANA net043 23.6873 $SUB=VDDANA $[RSPPO_LP] $W=550.00n $L=1.145u
+DD1 VSSANA VDDANAISO DIOP_25_LP 24.92p 51.53125u M=6
+DD0 VDDANAISO VDDANA DIOP_25_LP 36.92p 51.53125u M=6
+RR2 net025 VSSANA 26.7768 $SUB=VSSANA $[RSNPO_LP] $W=550.00n $L=1.145u
+MPM1 net13 net19 net043 VDDANA P_25OD33_LP W=8.8u L=440.00n M=18
+MNM0 net13 net19 net025 VSSANA N_25OD33_LP W=5u L=2u M=2
+MNM1 VDDANA net13 VSSANA VSSANA N_25OD33_LP W=23.75u L=500.0n M=100
+MN3 VSSANA net19 VSSANA VSSANA N_25OD33_LP W=9u L=2.22u M=11
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IANAIOFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IANAIOFS AIO250 AIO50 ANAIO VDDANA VSSANA
+DD2 ANAIO VDDANA DIOP_25_LP 21.98p 45.765625u M=8
+DD3 VSSANA ANAIO DIOP_25_LP 21.98p 45.765625u M=8
+RR1 ANAIO AIO50 50.8652 $SUB=VDDANA $[RSPPO_LP] $W=3u $L=13.11u
+RR0 AIO250 ANAIO 247.434 $SUB=VDDANA $[RSPPO_LP] $W=2.3u $L=48.97u
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IVSSANAFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IVSSANAFS VDDANA VSSANA
+RR0 VDDANA net19 420.588K $SUB=VDDANA $[RNPPO_LP] $W=500.0n $L=278.145u
+MPM1 net13 net19 net052 VDDANA P_25OD33_LP W=8.8u L=440.00n M=18
+DD0 VSSANA VDDANA DIOP_25_LP 38.25p 53.06u M=4
+RR2 net045 VSSANA 26.7768 $SUB=VSSANA $[RSNPO_LP] $W=550.00n $L=1.145u
+RR1 VDDANA net052 23.6873 $SUB=VDDANA $[RSPPO_LP] $W=550.00n $L=1.145u
+MNM0 net13 net19 net045 VSSANA N_25OD33_LP W=5u L=2u M=2
+MNM1 VDDANA net13 VSSANA VSSANA N_25OD33_LP W=23.75u L=500.0n M=132
+MN3 VSSANA net19 VSSANA VSSANA N_25OD33_LP W=9u L=2.22u M=11
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IVDDANAFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IVDDANAFS VDDANA VSSANA
+RR0 VDDANA net19 420.588K $SUB=VDDANA $[RNPPO_LP] $W=500.0n $L=278.145u
+MPM1 net13 net19 net052 VDDANA P_25OD33_LP W=8.585u L=440.00n M=8
+DD0 VSSANA VDDANA DIOP_25_LP 38.25p 53.06u M=4
+RR2 net045 VSSANA 26.7768 $SUB=VSSANA $[RSNPO_LP] $W=550.00n $L=1.145u
+RR1 VDDANA net052 23.6873 $SUB=VDDANA $[RSPPO_LP] $W=550.00n $L=1.145u
+MNM0 net13 net19 net045 VSSANA N_25OD33_LP W=4u L=800.0n M=2
+MNM1 VDDANA net13 VSSANA VSSANA N_25OD33_LP W=46u L=500.0n M=16
+MN3 VSSANA net19 VSSANA VSSANA N_25OD33_LP W=9u L=2.22u M=11
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IDABREAKRFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IDABREAKRFS VSS VSSANA VSSIO
+DD8 VSSANA VSSIO DIOP_12_LPRVT 273.158p 482.071u M=1
+DD6 VSS VSSANA DIOP_12_LPRVT 273.158p 482.071u M=1
+DD7 VSSIO VSSANA DIOP_12_LPRVT 273.158p 482.071u M=1
+DD4 VSSANA VSS DIOP_12_LPRVT 273.158p 482.071u M=1
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IDABREAKRFS_PXPL
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IDABREAKRFS_PXPL VSS VSSANA VSSIO
+DD8 VSSANA VSSIO DIOP_12_LPRVT 273.158p 482.071u M=1
+DD6 VSS VSSIO DIOP_12_LPRVT 273.158p 482.071u M=1
+DD7 VSSIO VSSANA DIOP_12_LPRVT 273.158p 482.071u M=1
+DD4 VSSIO VSS DIOP_12_LPRVT 273.158p 482.071u M=1
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IDABREAKLFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IDABREAKLFS VSS VSSANA VSSIO
+DD8 VSSANA VSSIO DIOP_12_LPRVT 273.158p 482.071u M=1
+DD7 VSSIO VSSANA DIOP_12_LPRVT 273.158p 482.071u M=1
+DD4 VSSANA VSS DIOP_12_LPRVT 273.158p 482.071u M=1
+DD6 VSS VSSANA DIOP_12_LPRVT 273.158p 482.071u M=1
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IDABREAKLFS_PXPL
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IDABREAKLFS_PXPL VSS VSSANA VSSIO
+DD8 VSSANA VSSIO DIOP_12_LPRVT 273.158p 482.071u M=1
+DD7 VSSIO VSSANA DIOP_12_LPRVT 273.158p 482.071u M=1
+DD4 VSSIO VSS DIOP_12_LPRVT 273.158p 482.071u M=1
+DD6 VSS VSSIO DIOP_12_LPRVT 273.158p 482.071u M=1
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IENDFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IENDFS
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IFILLER10FS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IFILLER10FS
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IFILLER5FS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IFILLER5FS
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IFILLER1FS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IFILLER1FS
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IFILLER0FS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IFILLER0FS
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IDCLAMPCFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IDCLAMPCFS VDD VSS
+RR0 VDD net19 420.588K $SUB=VDD $[RNPPO_LP] $W=500.0n $L=278.145u
+MPM1 net13 net19 net052 VDD P_25OD33_LP W=8.8u L=440.00n M=18
+MNM1 VDD net13 VSS VSS N_12_LPRVT W=23.75u L=150.00n M=160
+DD0 VSS VDD DIOP_12_LPRVT 50p 54u M=4
+RR2 net045 VSS 26.7768 $SUB=VSS $[RSNPO_LP] $W=550.00n $L=1.145u
+RR1 VDD net052 23.6873 $SUB=VDD $[RSPPO_LP] $W=550.00n $L=1.145u
+MNM0 net13 net19 net045 VSS N_25OD33_LP W=5u L=2u M=2
+MN3 VSS net19 VSS VSS N_25OD33_LP W=9u L=2.22u M=11
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IDDIOBREAKFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IDDIOBREAKFS VDDIO VSS VSSIO
+RR0 VDDIO net19 420.588K $SUB=VDDIO $[RNPPO_LP] $W=500.0n $L=278.145u
+MPM1 net13 net19 net052 VDDIO P_25OD33_LP W=8.585u L=440.00n M=8
+DD1 VSS VSSIO DIOP_12_LPRVT 24.92p 51.53125u M=4
+DD0 VSSIO VSS DIOP_12_LPRVT 24.92p 51.53125u M=4
+RR2 net045 VSS 26.7768 $SUB=VSS $[RSNPO_LP] $W=550.00n $L=1.145u
+RR1 VDDIO net052 23.6873 $SUB=VDDIO $[RSPPO_LP] $W=550.00n $L=1.145u
+MNM0 net13 net19 net045 VSS N_25OD33_LP W=4u L=800.0n M=2
+MNM1 VDDIO net13 VSS VSS N_25OD33_LP W=46u L=500.0n M=14
+MN3 VSS net19 VSS VSS N_25OD33_LP W=9u L=2.22u M=11
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IDDIOBREAKFS_PXPL
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IDDIOBREAKFS_PXPL VDDIO VSS DVSS VSSIO VDD DVDD
+RR0 VDDIO net19 420.588K $SUB=VDDIO $[RNPPO_LP] $W=500.0n $L=278.145u
+MPM1 net13 net19 net052 VDDIO P_25OD33_LP W=8.585u L=440.00n M=8
+DD4 VDD DVDD DIOP_12_LPRVT 24.92p 51.53125u M=8
+DD3 DVSS VSSIO DIOP_12_LPRVT 24.92p 51.53125u M=4
+DD2 VSSIO DVSS DIOP_12_LPRVT 24.92p 51.53125u M=4
+DD1 VSS VSSIO DIOP_12_LPRVT 24.92p 51.53125u M=4
+DD0 VSSIO VSS DIOP_12_LPRVT 24.92p 51.53125u M=4
+RR2 net045 VSS 26.7768 $SUB=VSS $[RSNPO_LP] $W=550.00n $L=1.145u
+RR1 VDDIO net052 23.6873 $SUB=VDDIO $[RSPPO_LP] $W=550.00n $L=1.145u
+MNM0 net13 net19 net045 VSS N_25OD33_LP W=4u L=800.0n M=2
+MNM1 VDDIO net13 VSS VSS N_25OD33_LP W=46u L=500.0n M=14
+MN3 VSS net19 VSS VSS N_25OD33_LP W=9u L=2.22u M=11
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    ICORNERAFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT ICORNERAFS VSSANA
+DD1 VSSANA VSSANA DIOP_12_LPRVT 186.2p 389.314u M=1
+DD0 VSSANA VSSANA DIOP_12_LPRVT 186.2p 389.314u M=1
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    ICORNERFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT ICORNERFS VSS VSSIO
+DD0 VSS VSSIO DIOP_12_LPRVT 186.2p 389.314u M=1
+DD1 VSSIO VSS DIOP_12_LPRVT 186.2p 389.314u M=1
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IVSSIOFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IVSSIOFS VDD VSS VSSIO
+RR0 VDD net19 420.588K $SUB=VDD $[RNPPO_LP] $W=500.0n $L=278.145u
+MPM1 net13 net19 net052 VDD P_25OD33_LP W=8.585u L=440.00n M=8
+DD0 VSS VSSIO DIOP_12_LPRVT 24.92p 51.53125u M=4
+DD1 VSSIO VSS DIOP_12_LPRVT 24.92p 51.53125u M=4
+MNM1 VDD net13 VSSIO VSSIO N_12_LPRVT W=46u L=130.00n M=16
+RR2 net045 VSSIO 26.7768 $SUB=VSSIO $[RSNPO_LP] $W=550.00n $L=1.145u
+RR1 VDD net052 23.6873 $SUB=VDD $[RSPPO_LP] $W=550.00n $L=1.145u
+MNM0 net13 net19 net045 VSSIO N_25OD33_LP W=4u L=800.0n M=2
+MN3 VSSIO net19 VSSIO VSSIO N_25OD33_LP W=9u L=2.22u M=11
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IVSSFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IVSSFS VDDIO VSS VSSIO
+RR0 VDDIO net19 420.588K $SUB=VDDIO $[RNPPO_LP] $W=500.0n $L=278.145u
+MPM1 net13 net19 net052 VDDIO P_25OD33_LP W=8.585u L=440.00n M=8
+DD0 VSSIO VSS DIOP_12_LPRVT 24.92p 51.53125u M=4
+DD1 VSS VSSIO DIOP_12_LPRVT 24.92p 51.53125u M=4
+RR2 net045 VSS 26.7768 $SUB=VSS $[RSNPO_LP] $W=550.00n $L=1.145u
+RR1 VDDIO net052 23.6873 $SUB=VDDIO $[RSPPO_LP] $W=550.00n $L=1.145u
+MNM0 net13 net19 net045 VSS N_25OD33_LP W=4u L=800.0n M=2
+MNM1 VDDIO net13 VSS VSS N_25OD33_LP W=46u L=500.0n M=14
+MN3 VSS net19 VSS VSS N_25OD33_LP W=9u L=2.22u M=11
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IVDDIOFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IVDDIOFS VDDIO VSSIO
+RR0 VDDIO net19 420.588K $SUB=VDDIO $[RNPPO_LP] $W=500.0n $L=278.145u
+MPM1 net13 net19 net052 VDDIO P_25OD33_LP W=8.585u L=440.00n M=8
+DD0 VSSIO VDDIO DIOP_25_LP 38.17p 52.5915u M=4
+RR2 net045 VSSIO 26.7768 $SUB=VSSIO $[RSNPO_LP] $W=550.00n $L=1.145u
+RR1 VDDIO net052 23.6873 $SUB=VDDIO $[RSPPO_LP] $W=550.00n $L=1.145u
+MNM0 net13 net19 net045 VSSIO N_25OD33_LP W=4u L=800.0n M=2
+MNM1 VDDIO net13 VSSIO VSSIO N_25OD33_LP W=46u L=500.0n M=16
+MN3 VSSIO net19 VSSIO VSSIO N_25OD33_LP W=9u L=2.22u M=11
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IVDDFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IVDDFS VDD VSS
+MNM1 VDD net13 VSS VSS N_12_LPRVT W=46u L=130.00n M=18
+DD0 VSS VDD DIOP_12_LPRVT 50p 53.5315u M=4
+RR2 net045 VSS 26.7768 $SUB=VSS $[RSNPO_LP] $W=550.00n $L=1.145u
+RR1 VDD net052 23.6873 $SUB=VDD $[RSPPO_LP] $W=550.00n $L=1.145u
+MPM1 net13 net19 net052 VDD P_25OD33_LP W=8.585u L=440.00n M=8
+MNM0 net13 net19 net045 VSS N_25OD33_LP W=4u L=800.0n M=2
+MN3 VSS net19 VSS VSS N_25OD33_LP W=9u L=2.22u M=11
+RR0 VDD net19 420.588K $SUB=VDD $[RNPPO_LP] $W=500.0n $L=278.145u
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    POC
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT POC PORE VDD VDDIO VSS
+MNP0 net63 net63 VSS VSS N_12_LPRVT W=5u L=90.00n M=1
+XI16 net49 net095 VDD VSS / inv lp1=0.09u wp1=10u ln1=0.09u wn1=5u
+XI15 net57 net49 VDD VSS / inv lp1=0.09u wp1=5u ln1=0.09u wn1=2.5u
+MPM0 net57 net63 VDD VDD P_12_LPRVT W=5u L=90.00n M=1
+MNM4 net093 net086 VSS VSS N_25OD33_LP W=5u L=500n M=1
+MN1 net082 net095 VSS VSS N_25OD33_LP W=10u L=500n M=1
+MNM9 PORE net093 VSS VSS N_25OD33_LP W=10u L=500n M=1
+MN3 net095 net086 VSS VSS N_25OD33_LP W=1.5u L=500n M=1
+MN2 net086 net095 net082 VSS N_25OD33_LP W=10u L=500n M=1
+MP7 net80 net095 net84 VDDIO P_25OD33_LP W=0.5u L=10u M=1
+MP8 net84 net095 net92 VDDIO P_25OD33_LP W=0.5u L=10u M=1
+MP5 net108 net095 net100 VDDIO P_25OD33_LP W=0.5u L=10u M=1
+MPM26 PORE net093 VDDIO VDDIO P_25OD33_LP W=20u L=420.00n M=1
+MP10 net88 net095 VDDIO VDDIO P_25OD33_LP W=0.5u L=10u M=1
+MP2 net116 net095 net112 VDDIO P_25OD33_LP W=0.5u L=10u M=1
+MP6 net100 net095 net80 VDDIO P_25OD33_LP W=0.5u L=10u M=1
+MP3 net112 net095 net104 VDDIO P_25OD33_LP W=0.5u L=10u M=1
+MP1 net086 net095 net116 VDDIO P_25OD33_LP W=0.5u L=10u M=1
+MP9 net92 net095 net88 VDDIO P_25OD33_LP W=0.5u L=10u M=1
+MPM11 net093 net086 VDDIO VDDIO P_25OD33_LP W=10u L=420.00n M=1
+MP4 net104 net095 net108 VDDIO P_25OD33_LP W=0.5u L=10u M=1
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IPOC
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IPOC PORE VDD VDDIO VSS
+RR3 VDDIO net47 23.6873 $SUB=VDDIO $[RSPPO_LP] $W=550.00n $L=1.145u
+RR2 net22 VSS 26.7768 $SUB=VSS $[RSNPO_LP] $W=550.00n $L=1.145u
+XI17 PORE VDD VDDIO VSS / POC
+RR1 VDDIO net34 420.588K $SUB=VDDIO $[RNPPO_LP] $W=500.0n $L=278.145u
+MNM12 net40 net34 net22 VSS N_25OD33_LP W=4u L=800.0n M=2
+MNM13 VDDIO net40 VSS VSS N_25OD33_LP W=46u L=500.0n M=12
+MN3 VSS net34 VSS VSS N_25OD33_LP W=9u L=2.22u M=11
+MPM1 net40 net34 net47 VDDIO P_25OD33_LP W=8.585u L=440.00n M=8
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    LS4
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT LS4 A AOB DV2 VDD VDDIO VSS
+XI16 net021 net036 VDDIO VSS / invt lp1=0.42u wp1=1.2u ln1=0.5u wn1=1.2u
+XI19 net036 DV2 VDD VSS / invt lp1=0.42u wp1=3u ln1=0.5u wn1=0.6u
+XI15 A net021 VDDIO VSS / invt lp1=0.42u wp1=1.5u ln1=0.5u wn1=0.6u
+XI21 net053 AOB VDD VSS / inv lp1=90n wp1=6u ln1=90n wn1=2u
+XI17 DV2 net053 VDD VSS / inv lp1=90n wp1=1.6u ln1=90n wn1=0.8u
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    PR_DRIVE_AB
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT PR_DRIVE_AB DI DO IDDQ IE NROUT2_A NROUT2_B NROUT2_C OE PAD PD PIN1 
++ PIN2 PORE PROUT2_A PROUT2_B PROUT2_C PU SMT VDD VDDIO VSS VSSIO
+RR2 VSS net0261 38.4881 $SUB=VSS $[RSNPO_LP] $W=500.0n $L=1.5u
+DD0 VSSIO PAD DION_25_LP 24.92p 51.53125u M=4
+XINROUT2A_A NROUT2_A NROUT1_A OEAOB_A VDDIO VDDIO / P_driver lp1=0.42u wp1=2.2u
+XINROUT2A_B NROUT2_B NROUT1_B OEAOB_B VDDIO VDDIO / P_driver lp1=0.42u wp1=2.8u
+XINROUT2A_C NROUT2_C NROUT1_C OEAOB_C VDDIO VDDIO / P_driver lp1=0.42u wp1=2.8u
+XIPROUT2A_A PROUT2_A OEAO_A PROUT1_A VSS VSS / N_driver ln1=0.5u wn1=2u 
++ ln2=0.5u wn2=2u
+XIPROUT2A_B PROUT2_B OEAO_B PROUT1_B VSS VSS / N_driver ln1=0.5u wn1=2.6u 
++ ln2=0.5u wn2=2.6u
+XIPROUT2A_C PROUT2_C OEAO_C PROUT1_C VSS VSS / N_driver ln1=0.5u wn1=2.6u 
++ ln2=0.5u wn2=2.6u
+XIINV0 IE net0166 VDD VSS / inv lp1=90n wp1=1u ln1=90n wn1=0.6u
+XINOR0 IDDQ net0166 net0144 VDD VSS / nor2 lp1=90n wp1=1u ln1=90n wn1=0.6u
+DD1 VSS IE DION_12_LPRVT 0.25e-12 2e-06 M=1
+DDD7 VSS DO DION_12_LPRVT 0.25e-12 2e-06 M=1
+DDD5 VSS PU DION_12_LPRVT 0.25e-12 2e-06 M=1
+DDD6 VSS SMT DION_12_LPRVT 0.25e-12 2e-06 M=1
+DDD4 VSS PD DION_12_LPRVT 0.25e-12 2e-06 M=1
+DDD2 VSS PIN2 DION_12_LPRVT 0.25e-12 2e-06 M=1
+DDD3 VSS IDDQ DION_12_LPRVT 0.25e-12 2e-06 M=1
+DDD0 VSS OE DION_12_LPRVT 0.25e-12 2e-06 M=1
+DDD1 VSS PIN1 DION_12_LPRVT 0.25e-12 2e-06 M=1
+MN44 PGATE VSS net0261 VSS N_25OD33_LP W=8u L=500n M=1
+MN4 VSS IEAO net0184 VSS N_25OD33_LP W=3.2u L=500n M=1
+MN2 SMTN1 PGATE DV VSS N_25OD33_LP W=3.2u L=500n M=1
+MSTN0 SMTP0 SMTAO VSS VSS N_25OD33_LP W=600n L=500n M=1
+MN3 SMTN1 DV SMTN0 VSS N_25OD33_LP W=800.0n L=560.00n M=1
+MPDN1 VSS PD_GATE PGATE VSS N_25OD33_LP W=500n L=2.95u M=1
+MN1 net0184 PGATE SMTN1 VSS N_25OD33_LP W=3.2u L=500n M=1
+RRNW1 PGATE PAD 938.568 $SUB=VDDIO $[RNPPO_LP] $W=1.5u $L=1.865u
+RRNW0 PGATE PAD 938.568 $SUB=VDDIO $[RNPPO_LP] $W=1.5u $L=1.865u
+MP40 PGATE VDDIO VDDIO VDDIO P_25OD33_LP W=8u L=420n M=1
+MPM1 VDDIO IEAO DV VDDIO P_25OD33_LP W=4u L=420n M=1
+MP4 VDDIO IEAOB net0232 VDDIO P_25OD33_LP W=4u L=420n M=1
+MPUP1 VDDIO PU_GATE PGATE VDDIO P_25OD33_LP W=0.8u L=1.49u M=1
+MP3 SMTP1 DV SMTP0 VDDIO P_25OD33_LP W=600n L=500.0n M=1
+MSTP0 SMTN0 SMTAOB VDDIO VDDIO P_25OD33_LP W=2.6u L=420n M=1
+MP2 net0232 PGATE SMTP1 VDDIO P_25OD33_LP W=4.6u L=420n M=1
+MP1 SMTP1 PGATE DV VDDIO P_25OD33_LP W=4.8u L=420n M=1
+XI489 DO DOAO PORE VDD VDDIO VSS / LS2
+XI521 DV2 IDDQ PD net0423 PU net33 VDD VSS / PU_PD_control
+XI580 DV DI DV2 VDD VDDIO VSS / LS4
+XI490 net33 PU2 VDD VDDIO VSS PORE / LS3_1
+XI4 net0144 IEAO IEAOB PORE VDD VDDIO VSS / LS1
+XI488 N4 OEAO_A OEAOB_A PORE VDD VDDIO VSS / LS1
+XI563 N5 OEAO_C OEAOB_C PORE VDD VDDIO VSS / LS1
+XI493 SMT SMTAO SMTAOB PORE VDD VDDIO VSS / LS1
+XI576 N6 OEAO_B OEAOB_B PORE VDD VDDIO VSS / LS1
+XIPROUT0_A DOAO OEAO_A VDDIO VSS PROUT0_A / nand2t lp1=0.42u wp1=3u ln1=0.5u 
++ wn1=1.2u
+XIPROUT0_C DOAO OEAO_C VDDIO VSS PROUT0_C / nand2t lp1=0.42u wp1=3u ln1=0.5u 
++ wn1=1.2u
+XI481 OEAOB_A PU2 VDDIO VSS PU_GATE / nand2t lp1=0.42u wp1=1u ln1=0.5u wn1=0.8u
+XIPROUT0_B DOAO OEAO_B VDDIO VSS PROUT0_B / nand2t lp1=0.42u wp1=3u ln1=0.5u 
++ wn1=1.2u
+XI558 IDDQ OE PIN1 PIN2 N4 N6 N5 VDD VSS / IDDQ_OE_Strength
+XINROUT2_A NROUT1_A NROUT2_A VDDIO VSS / invt lp1=0.42u wp1=4.4u ln1=0.5u 
++ wn1=12u
+XINROUT1_A NROUT0_A NROUT1_A VDDIO VSS / invt lp1=0.42u wp1=4.6u ln1=0.5u 
++ wn1=3u
+XIPROUT2_A PROUT1_A PROUT2_A VDDIO VSS / invt lp1=0.42u wp1=11.2u ln1=0.5u 
++ wn1=3u
+XIPROUT1_A PROUT0_A PROUT1_A VDDIO VSS / invt lp1=0.42u wp1=4.6u ln1=0.5u 
++ wn1=3u
+XIPROUT2_C PROUT1_C PROUT2_C VDDIO VSS / invt lp1=0.42u wp1=9.4u ln1=0.5u 
++ wn1=2u
+XIPROUT1_C PROUT0_C PROUT1_C VDDIO VSS / invt lp1=0.42u wp1=4.7u ln1=0.5u 
++ wn1=3u
+XINROUT2_C NROUT1_C NROUT2_C VDDIO VSS / invt lp1=0.42u wp1=2.4u ln1=0.5u 
++ wn1=3.8u
+XINROUT1_C NROUT0_C NROUT1_C VDDIO VSS / invt lp1=0.42u wp1=4.7u ln1=0.5u 
++ wn1=3u
+XIPROUT2_B PROUT1_B PROUT2_B VDDIO VSS / invt lp1=0.42u wp1=9.4u ln1=0.5u 
++ wn1=1.8u
+XIPROUT1_B PROUT0_B PROUT1_B VDDIO VSS / invt lp1=0.42u wp1=4.6u ln1=0.5u 
++ wn1=3u
+XINROUT2_B NROUT1_B NROUT2_B VDDIO VSS / invt lp1=0.42u wp1=1.4u ln1=0.5u 
++ wn1=2.8u
+XINROUT1_B NROUT0_B NROUT1_B VDDIO VSS / invt lp1=0.42u wp1=4.6u ln1=0.5u 
++ wn1=3u
+XINROUT0_A DOAO OEAOB_A NROUT0_A VDDIO VSS / nor2t lp1=0.42u wp1=2.8u ln1=0.5u 
++ wn1=1.4u
+XINROUT0_C DOAO OEAOB_C NROUT0_C VDDIO VSS / nor2t lp1=0.42u wp1=2.8u ln1=0.5u 
++ wn1=1.4u
+XI480 OEAO_A PD2 PD_GATE VDDIO VSS / nor2t lp1=0.42u wp1=2u ln1=0.5u wn1=0.8u
+XINROUT0_B DOAO OEAOB_B NROUT0_B VDDIO VSS / nor2t lp1=0.42u wp1=2.8u ln1=0.5u 
++ wn1=1.4u
+XI491 net0423 PD2 VDD VDDIO VSS PORE / LS3
+.ENDS
+
+************************************************************************
+* Library Name: UM055GIOLP25MVIRFS
+* Cell Name:    IUMBFS
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT IUMBFS DI DO IDDQ IE OE PAD PD PIN1 PIN2 PORE PU SMT VDD VDDIO VSS VSSIO
+MPPROUT3_D PAD VDDIO VDDIO VDDIO P_25OD33_LP W=25u L=420n M=1
+MPPROUT3_A PAD P1 VDDIO VDDIO P_25OD33_LP W=25u L=420n M=4
+MPPROUT3_C PAD P3 VDDIO VDDIO P_25OD33_LP W=25u L=420n M=7
+MPPROUT3_B PAD P2 VDDIO VDDIO P_25OD33_LP W=25u L=420n M=4
+MNNROUT3A_A PAD VSSIO VSSIO VSS N_25OD33_LP W=20u L=500n M=8
+MNNROUT3_B PAD N2 VSSIO VSS N_25OD33_LP W=20u L=500n M=2
+MNNROUT3_C PAD N3 VSSIO VSS N_25OD33_LP W=20u L=500n M=4
+MNNROUT3_A PAD N1 VSSIO VSS N_25OD33_LP W=20u L=500n M=2
+XIPRE_DRIVE DI DO IDDQ IE N1 N2 N3 OE PAD PD PIN1 PIN2 PORE P1 P2 P3 PU SMT 
++ VDD VDDIO VSS VSSIO / PR_DRIVE_AB
+.ENDS

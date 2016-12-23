@@ -1,0 +1,148 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'libraryBrowserDialog.ui'
+#
+# Created by: PyQt4 UI code generator 4.11.4
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt4 import QtCore, QtGui
+
+try:
+    _fromUtf8 = QtCore.QString.fromUtf8
+except AttributeError:
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
+
+class Ui_Dialog(object):
+    def setupUi(self, Dialog):
+        Dialog.setObjectName(_fromUtf8("Dialog"))
+        Dialog.resize(683, 558)
+        self.verticalLayout_21 = QtGui.QVBoxLayout(Dialog)
+        self.verticalLayout_21.setObjectName(_fromUtf8("verticalLayout_21"))
+        self.horizontalLayout_15 = QtGui.QHBoxLayout()
+        self.horizontalLayout_15.setObjectName(_fromUtf8("horizontalLayout_15"))
+        spacerItem = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
+        self.horizontalLayout_15.addItem(spacerItem)
+        self.ok = QtGui.QPushButton(Dialog)
+        self.ok.setMaximumSize(QtCore.QSize(16777215, 27))
+        self.ok.setObjectName(_fromUtf8("ok"))
+        self.horizontalLayout_15.addWidget(self.ok)
+        self.cancel = QtGui.QPushButton(Dialog)
+        self.cancel.setMaximumSize(QtCore.QSize(16777215, 27))
+        self.cancel.setObjectName(_fromUtf8("cancel"))
+        self.horizontalLayout_15.addWidget(self.cancel)
+        self.verticalLayout_21.addLayout(self.horizontalLayout_15)
+        self.frame = QtGui.QFrame(Dialog)
+        self.frame.setFrameShape(QtGui.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtGui.QFrame.Raised)
+        self.frame.setObjectName(_fromUtf8("frame"))
+        self.verticalLayout_16 = QtGui.QVBoxLayout(self.frame)
+        self.verticalLayout_16.setObjectName(_fromUtf8("verticalLayout_16"))
+        self.splitter_4 = QtGui.QSplitter(self.frame)
+        self.splitter_4.setOrientation(QtCore.Qt.Horizontal)
+        self.splitter_4.setHandleWidth(1)
+        self.splitter_4.setObjectName(_fromUtf8("splitter_4"))
+        self.Glibrary_4 = QtGui.QGroupBox(self.splitter_4)
+        self.Glibrary_4.setObjectName(_fromUtf8("Glibrary_4"))
+        self.verticalLayout_17 = QtGui.QVBoxLayout(self.Glibrary_4)
+        self.verticalLayout_17.setContentsMargins(3, -1, 3, 9)
+        self.verticalLayout_17.setObjectName(_fromUtf8("verticalLayout_17"))
+        self.horizontalLayout_16 = QtGui.QHBoxLayout()
+        self.horizontalLayout_16.setObjectName(_fromUtf8("horizontalLayout_16"))
+        self.label_13 = QtGui.QLabel(self.Glibrary_4)
+        self.label_13.setObjectName(_fromUtf8("label_13"))
+        self.horizontalLayout_16.addWidget(self.label_13)
+        self.libfilter = QtGui.QLineEdit(self.Glibrary_4)
+        self.libfilter.setObjectName(_fromUtf8("libfilter"))
+        self.horizontalLayout_16.addWidget(self.libfilter)
+        self.verticalLayout_17.addLayout(self.horizontalLayout_16)
+        self.library = QtGui.QListWidget(self.Glibrary_4)
+        self.library.setObjectName(_fromUtf8("library"))
+        self.verticalLayout_17.addWidget(self.library)
+        self.Gcategory_4 = QtGui.QGroupBox(self.splitter_4)
+        self.Gcategory_4.setObjectName(_fromUtf8("Gcategory_4"))
+        self.verticalLayout_18 = QtGui.QVBoxLayout(self.Gcategory_4)
+        self.verticalLayout_18.setContentsMargins(3, -1, 3, -1)
+        self.verticalLayout_18.setObjectName(_fromUtf8("verticalLayout_18"))
+        self.horizontalLayout_17 = QtGui.QHBoxLayout()
+        self.horizontalLayout_17.setObjectName(_fromUtf8("horizontalLayout_17"))
+        self.label_14 = QtGui.QLabel(self.Gcategory_4)
+        self.label_14.setObjectName(_fromUtf8("label_14"))
+        self.horizontalLayout_17.addWidget(self.label_14)
+        self.catfilter_4 = QtGui.QLineEdit(self.Gcategory_4)
+        self.catfilter_4.setEnabled(False)
+        self.catfilter_4.setAutoFillBackground(True)
+        self.catfilter_4.setObjectName(_fromUtf8("catfilter_4"))
+        self.horizontalLayout_17.addWidget(self.catfilter_4)
+        self.verticalLayout_18.addLayout(self.horizontalLayout_17)
+        self.category = QtGui.QListWidget(self.Gcategory_4)
+        self.category.setObjectName(_fromUtf8("category"))
+        self.verticalLayout_18.addWidget(self.category)
+        self.Gcell_4 = QtGui.QGroupBox(self.splitter_4)
+        self.Gcell_4.setObjectName(_fromUtf8("Gcell_4"))
+        self.verticalLayout_19 = QtGui.QVBoxLayout(self.Gcell_4)
+        self.verticalLayout_19.setContentsMargins(3, -1, -1, 3)
+        self.verticalLayout_19.setObjectName(_fromUtf8("verticalLayout_19"))
+        self.horizontalLayout_18 = QtGui.QHBoxLayout()
+        self.horizontalLayout_18.setObjectName(_fromUtf8("horizontalLayout_18"))
+        self.label_15 = QtGui.QLabel(self.Gcell_4)
+        self.label_15.setObjectName(_fromUtf8("label_15"))
+        self.horizontalLayout_18.addWidget(self.label_15)
+        self.cellfilter = QtGui.QLineEdit(self.Gcell_4)
+        self.cellfilter.setObjectName(_fromUtf8("cellfilter"))
+        self.horizontalLayout_18.addWidget(self.cellfilter)
+        self.verticalLayout_19.addLayout(self.horizontalLayout_18)
+        self.cell = QtGui.QListWidget(self.Gcell_4)
+        self.cell.setObjectName(_fromUtf8("cell"))
+        self.verticalLayout_19.addWidget(self.cell)
+        self.Gview_4 = QtGui.QGroupBox(self.splitter_4)
+        self.Gview_4.setObjectName(_fromUtf8("Gview_4"))
+        self.verticalLayout_20 = QtGui.QVBoxLayout(self.Gview_4)
+        self.verticalLayout_20.setContentsMargins(3, -1, -1, 3)
+        self.verticalLayout_20.setObjectName(_fromUtf8("verticalLayout_20"))
+        self.horizontalLayout_19 = QtGui.QHBoxLayout()
+        self.horizontalLayout_19.setObjectName(_fromUtf8("horizontalLayout_19"))
+        self.label_16 = QtGui.QLabel(self.Gview_4)
+        self.label_16.setObjectName(_fromUtf8("label_16"))
+        self.horizontalLayout_19.addWidget(self.label_16)
+        self.viewfilter_4 = QtGui.QLineEdit(self.Gview_4)
+        self.viewfilter_4.setEnabled(False)
+        self.viewfilter_4.setAutoFillBackground(True)
+        self.viewfilter_4.setObjectName(_fromUtf8("viewfilter_4"))
+        self.horizontalLayout_19.addWidget(self.viewfilter_4)
+        self.verticalLayout_20.addLayout(self.horizontalLayout_19)
+        self.view = QtGui.QListWidget(self.Gview_4)
+        self.view.setObjectName(_fromUtf8("view"))
+        self.verticalLayout_20.addWidget(self.view)
+        self.verticalLayout_16.addWidget(self.splitter_4)
+        self.verticalLayout_21.addWidget(self.frame)
+
+        self.retranslateUi(Dialog)
+        QtCore.QObject.connect(self.ok, QtCore.SIGNAL(_fromUtf8("clicked()")), Dialog.accept)
+        QtCore.QObject.connect(self.cancel, QtCore.SIGNAL(_fromUtf8("clicked()")), Dialog.reject)
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
+
+    def retranslateUi(self, Dialog):
+        Dialog.setWindowTitle(_translate("Dialog", "Library Manager", None))
+        self.ok.setText(_translate("Dialog", "OK", None))
+        self.cancel.setText(_translate("Dialog", "Cancel", None))
+        self.Glibrary_4.setTitle(_translate("Dialog", "Library", None))
+        self.label_13.setText(_translate("Dialog", "Filter", None))
+        self.Gcategory_4.setTitle(_translate("Dialog", "Category", None))
+        self.label_14.setText(_translate("Dialog", "Filter", None))
+        self.catfilter_4.setPlaceholderText(_translate("Dialog", "Disabled", None))
+        self.Gcell_4.setTitle(_translate("Dialog", "Cell", None))
+        self.label_15.setText(_translate("Dialog", "Filter", None))
+        self.Gview_4.setTitle(_translate("Dialog", "View", None))
+        self.label_16.setText(_translate("Dialog", "Filter", None))
+        self.viewfilter_4.setPlaceholderText(_translate("Dialog", "Disabled", None))
+

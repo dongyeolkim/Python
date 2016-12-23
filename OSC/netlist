@@ -1,0 +1,33 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  PLL_KIMDY
+* Top Cell Name: XOSCHINTLA_1
+* View Name:     schematic
+* Netlisted on:  Jun 24 11:00:16 2016
+************************************************************************
+
+*.BIPOLAR
+*.RESI = 2000 
+*.RESVAL
+*.CAPVAL
+*.DIOPERI
+*.DIOAREA
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: PLL_KIMDY
+* Cell Name:    XOSCHINTLA_1
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT XOSCHINTLA_1
+*.PININFO
+RR0 net3 net2 570.699 $SUB=net1 $[RNND_LP] $W=2u $L=10u M=1
+.ENDS
+

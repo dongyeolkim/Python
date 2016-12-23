@@ -1,0 +1,26 @@
+
+TITLE * Component: $CCS_SUDS150/default.group/logic.views/col_ccs_sim_full  Viewpoint: eldonet
+EXTRACT for TRANSIENT ANALYSIS                
+  TEMPERATURE =  25.0000     Celsius
+    *TAEK =  788.8269N     
+
+EXTRACT for TRANSIENT ANALYSIS                
+  TEMPERATURE =  25.0000     Celsius
+    *TAEK =  3.7947U       
+
+EXTRACT for TRANSIENT ANALYSIS                
+  TEMPERATURE =  25.0000     Celsius
+    *TAEK =  1.7193U       
+
+EXTRACT for TRANSIENT ANALYSIS                
+  TEMPERATURE =  25.0000     Celsius
+    *TAEK =  3.1375U       
+
+EXTRACT for TRANSIENT ANALYSIS                
+  TEMPERATURE =  25.0000     Celsius
+    *TAEK =  3.2141U       
+
+EXTRACT for TRANSIENT ANALYSIS                
+  TEMPERATURE =  25.0000     Celsius
+    *TAEK =  903.4317N     
+rms_vsr0_tk average=nanrms_vsr0_tk average=nanrms_vsr0_tk stddev=nanrms_vsr0_tk average=nanrms_vsr0_tk stddev=nanrms_vsr0_tk average=nanrms_vsr0_tk stddev=nan

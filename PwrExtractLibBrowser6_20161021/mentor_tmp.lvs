@@ -1,0 +1,29 @@
+M4_PWR = NET M4 "VDD" 
+save_m4_pwr { COPY M4_PWR } 
+DRC CHECK MAP save_m4_pwr GDSII 34 0 MYGDS.gds MAXIMUM RESULTS ALL 
+- See more at: http://compgroups.net/comp.cad.cadence/extracting-a-net-with-mentor-calibre/1354311#sthash.BHHvkS48.dpuf
+
+SVRF
+
+// Control the text 
+TEXT DEPTH PRIMARY 
+// define metalN pin layers as text and attach to the metal conectivity 
+TEXT LAYER 161 ATTACH 161 met1 
+TEXT LAYER 162 ATTACH 162 met2 
+TEXT LAYER 163 ATTACH 163 met3 
+
+// Connect statements - wire things up 
+CONNECT met3 met2 BY via2 
+CONNECT met2 met1 BY via1 
+
+// build rule to trace through the signal on each metal layer 
+signal_metal1 { NET met1 '<SIG1>' } 
+signal_metal2 { NET met2 '<SIG1>' } 
+signal_metal3 { NET met3 '<SIG1>' } 
+// write out to layers m1... 
+DRC CHECK MAP signal_metal1 61 0 
+DRC CHECK MAP signal_metal2 62 0 
+DRC CHECK MAP signal_metal3 63 0 
+
+- See more at: http://compgroups.net/comp.cad.cadence/extracting-a-net-with-mentor-calibre/1354311#sthash.BHHvkS48.dpuf
+
